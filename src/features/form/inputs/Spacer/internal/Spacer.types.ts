@@ -1,4 +1,4 @@
-import type Length from '@/features/others/types/Length';
+import type Length from '@/features/utils/types/Length';
 
 export type SpacerProps = {
   size: Length;

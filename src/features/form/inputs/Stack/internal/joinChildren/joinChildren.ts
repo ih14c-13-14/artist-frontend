@@ -27,18 +27,15 @@ import { Children, cloneElement } from 'react';
 const joinChildren = (children: ReactNode, separator: ReactElement) => {
   const childrenArray = Children.toArray(children).filter(Boolean);
 
-  return childrenArray.reduce<MutableArray<ReactNode>>(
-    (output, child, index) => {
-      output.push(child);
+  return childrenArray.reduce<Array<ReactNode>>((output, child, index) => {
+    output.push(child);
 
-      if (index < childrenArray.length - 1) {
-        output.push(cloneElement(separator, { key: `separator-${index}` }));
-      }
+    if (index < childrenArray.length - 1) {
+      output.push(cloneElement(separator, { key: `separator-${index}` }));
+    }
 
-      return output;
-    },
-    []
-  );
+    return output;
+  }, []);
 };
 
 export default joinChildren;
