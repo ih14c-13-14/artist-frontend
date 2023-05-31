@@ -1,23 +1,21 @@
-# install yarn
-
+# yarn をインストールしましょう
 ```
-npm uninstall -g yarn pnpm
+yarn -v
+```
+でバージョンが出なければインストールします。
+```
 corepack enable yarn
 ```
 参照：
 https://zenn.dev/teppeis/articles/2021-05-corepack
 
-```
-yarn -v
-```
-でバージョンが出れば成功
 
-# yarn setup
+# セットアップ
 ```
 yarn
 ```
 
 # 実行
 ```
-yarn run dev
+yarn dev
 ```
