@@ -1,3 +1,7 @@
 {
-  "recommendations": ["zixuanchen.vitest-explorer"]
+  "recommendations": [
+    "zixuanchen.vitest-explorer",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig"
+  ]
 }
