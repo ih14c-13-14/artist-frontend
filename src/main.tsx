@@ -1,10 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import App from './App';
-import "ress/ress.css"
+import 'ress/ress.css';
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+void (async () => {
+  if (import.meta.env.MODE === 'development') {
+    const { worker } = await import('./mocks/browser');
+    await worker.start({
+      serviceWorker: {
+        url: '/mockServiceWorker.js',
+      },
+    });
+  }
+
+  const container = document.getElementById('root');
+  if (!container) {
+    return;
+  }
+  const root = createRoot(container);
+
+  root.render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+})();
