@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "test": "vitest src/",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "setup-githooks": "git config core.hooksPath $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)/.githooks",
+    "postinstall": "yarn setup-githooks"
   },
   "engines": {
     "yarn": ">= 1.22.0",
