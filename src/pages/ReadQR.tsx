@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
 export const ReadQR: React.FC = () => {
-	return (
-		<h1>ReadQR</h1>
-	)
-}
+  return <h1>ReadQR</h1>;
+};

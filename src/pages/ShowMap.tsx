@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
 export const ShowMap: React.FC = () => {
-	return (
-		<h1>ShowMap</h1>
-	)
-}
+  return <h1>ShowMap</h1>;
+};

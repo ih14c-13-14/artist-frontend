@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
 export const PasswordForgot: React.FC = () => {
-	return (
-		<h1>PasswordForgot</h1>
-	)
-}
+  return <h1>PasswordForgot</h1>;
+};

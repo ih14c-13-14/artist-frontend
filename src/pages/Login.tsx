@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
 export const Login: React.FC = () => {
-	return (
-		<h1>Login</h1>
-	)
-}
+  return <h1>Login</h1>;
+};
