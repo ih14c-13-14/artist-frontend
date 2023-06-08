@@ -1,7 +1,6 @@
 import isNil from '@/features/utils/isNil';
 import * as jose from 'jose';
 
-const secretKey = 'secret-key';
 const generateSampleJWT = async (userId: string, expiresIn: number) => {
   const privateKey = new Uint8Array(32);
   return await new jose.SignJWT({ 'urn:artistdev:claim': true })
