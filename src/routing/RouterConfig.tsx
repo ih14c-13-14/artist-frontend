@@ -7,7 +7,7 @@ import { ReadQR } from '@/pages/ReadQR';
 import { ReferStamps } from '@/pages/ReferStamps';
 import { Login } from '@/pages/Login';
 import { Signup } from '@/pages/Signup';
-import { SignupCofirm } from '@/pages/SignupConfirm';
+import { SignupConfirm } from '@/pages/SignupConfirm';
 import { PasswordForgot } from '@/pages/PasswordForgot';
 import { PasswordReset } from '@/pages/PasswordReset';
 import { PasswordChanged } from '@/pages/PasswordChanged';

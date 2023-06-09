@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const SignupCofirm: React.FC = () => {
+export const SignupConfirm: React.FC = () => {
   return <h1>PasswordConfirm</h1>;
 };
