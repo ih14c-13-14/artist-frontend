@@ -16,6 +16,8 @@ on:
 jobs:
   Publish:
     runs-on: ubuntu-latest
+    outputs:
+      deploy-url: ${{ steps.publish.outputs.url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -30,6 +32,7 @@ jobs:
       - name: Build
         run: yarn build
       - name: Publish to Cloudflare Pages
+        id: publish
         uses: cloudflare/pages-action@1
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -42,4 +45,4 @@ jobs:
       steps:
         - name: Notify
           run: |
-            curl -X POST -H "Content-Type: application/json" -d '{"embeds": [{"title": "'"${{ github.event.pull_request.title }}"'", "url": "'"${{ github.event.pull_request.html_url }}"'"}]}' ${{ secrets.DEPLOY_NOTIFY_ENDPOINT }}
+            curl -X POST ${{ secrets.DEPLOY_NOTIFY_ENDPOINT }} -H "Content-Type: application/json" -d '{"embeds":[{"title":"${{ github.event.pull_request.title }}","url":"${{ github.event.pull_request.html_url }}","fields":[{"name":"Demo","value":"[URL](${{ needs.Publish.outputs.deploy-url }})","inline":true}]}]}'
