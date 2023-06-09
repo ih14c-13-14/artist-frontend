@@ -39,10 +39,37 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           projectName: qa-artist
           directory: ./dist
+  Storybook:
+    runs-on: ubuntu-latest
+    outputs:
+      deploy-url: ${{ steps.publish.outputs.url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup asdf
+        uses: asdf-vm/actions/setup@v2
+        # 2回目以降エラーが出るが問題なし
+        continue-on-error: true
+      - name: asdf install
+        uses: asdf-vm/actions/install@v2
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Build
+        run: yarn build-storybook
+      - name: Publish to Cloudflare Pages
+        id: publish
+        uses: cloudflare/pages-action@1
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          projectName: artist-storybook
+          directory: ./storybook-static
   Notify:
-      needs: Publish
+      needs:
+        - Publish
+        - Storybook
       runs-on: ubuntu-latest
       steps:
         - name: Notify
           run: |
-            curl -X POST ${{ secrets.DEPLOY_NOTIFY_ENDPOINT }} -H "Content-Type: application/json" -d '{"embeds":[{"title":"${{ github.event.pull_request.title }}","url":"${{ github.event.pull_request.html_url }}","fields":[{"name":"Demo","value":"[URL](${{ needs.Publish.outputs.deploy-url }})","inline":true}]}]}'
+            curl -X POST ${{ secrets.DEPLOY_NOTIFY_ENDPOINT }} -H "Content-Type: application/json" -d '{"embeds":[{"title":"${{ github.event.pull_request.title }}","url":"${{ github.event.pull_request.html_url }}","fields":[{"name":"Demo","value":"[URL](${{ needs.Publish.outputs.deploy-url }})","inline":true},{"name":"Storybook","value":"[URL](${{ needs.Storybook.outputs.deploy-url }})","inline":true}]}]}'
