@@ -72,4 +72,4 @@ jobs:
       steps:
         - name: Notify
           run: |
-            curl -X POST ${{ secrets.DEPLOY_NOTIFY_ENDPOINT }} -H "Content-Type: application/json" -d '{"embeds":[{"title":"${{ github.event.pull_request.title }}","url":"${{ github.event.pull_request.html_url }}","fields":[{"name":"Demo","value":"[URL](${{ needs.Publish.outputs.deploy-url }})","inline":true},{"name":"Storybook","value":"[URL](${{ needs.Storybook.outputs.deploy-url }})","inline":true}]}]}'
+            curl -X POST ${{ secrets.DEPLOY_NOTIFY_ENDPOINT }} -H "Content-Type: application/json" -d '{"embeds":[{"title":"${{ github.event.pull_request.title }}","url":"${{ github.event.pull_request.html_url }}","fields":[{"name":"Pull Request","value":"[URL](${{ github.event.pull_request.html_url }})","inline":true},{"name":"Demo","value":"[URL](${{ needs.Publish.outputs.deploy-url }})","inline":true},{"name":"Storybook","value":"[URL](${{ needs.Storybook.outputs.deploy-url }})","inline":true},{"name":"User","value":"${{ github.event.pull_request.user.login }}","inline":true}],"name":"Branch","value":"${{ github.ref_name }}","inline":true}]}'
