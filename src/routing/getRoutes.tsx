@@ -42,5 +42,9 @@ export const getRoutes = () => {
     others: {
       path: '/*',
     },
+  } as const satisfies {
+    [key: string]: {
+      path: string;
+    };
   };
 };
