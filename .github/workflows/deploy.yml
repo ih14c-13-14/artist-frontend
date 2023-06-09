@@ -102,7 +102,7 @@ jobs:
                           },
                           {
                             "name": "Branch",
-                            "value": "${{ github.ref_name }}",
+                            "value": "${{ github.head_ref }}",
                             "inline": true
                           }
                         ]
