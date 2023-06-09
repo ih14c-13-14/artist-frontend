@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { NotFound } from '@/pages/NotFound';
 import { MapShow } from '@/pages/MapShow';
@@ -17,40 +16,32 @@ import { PasswordChangeDone } from '@/pages/PasswordChangeDone';
 
 import { getRoutes } from './getRoutes';
 
-export const RouterConfig: React.FC = () => {
+export const RouterConfig = () => {
   const routes = getRoutes();
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path={routes.others.path} element={<NotFound />} />
-          <Route path={routes.mapShow.path} element={<MapShow />} />
-          <Route path={routes.serach.path} element={<Search />} />
-          <Route path={routes.qrRead.path} element={<QrRead />} />
-          <Route path={routes.stampRefer.path} element={<StampRefer />} />
-          <Route path={routes.login.path} element={<Login />} />
-          <Route path={routes.signup.path} element={<Signup />} />
-          <Route path={routes.signupConfirm.path} element={<SignupConfirm />} />
-          <Route path={routes.signupDone.path} element={<SignupDone />} />
-          <Route
-            path={routes.passwordForget.path}
-            element={<PasswordForget />}
-          />
-          <Route path={routes.passwordReset.path} element={<PasswordReset />} />
-          <Route
-            path={routes.passwordResetDone.path}
-            element={<PasswordResetDone />}
-          />
-          <Route
-            path={routes.passwordChange.path}
-            element={<PasswordChange />}
-          />
-          <Route
-            path={routes.passwordChangeDone.path}
-            element={<PasswordChangeDone />}
-          />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path={routes.others.path} element={<NotFound />} />
+        <Route path={routes.mapShow.path} element={<MapShow />} />
+        <Route path={routes.serach.path} element={<Search />} />
+        <Route path={routes.qrRead.path} element={<QrRead />} />
+        <Route path={routes.stampRefer.path} element={<StampRefer />} />
+        <Route path={routes.login.path} element={<Login />} />
+        <Route path={routes.signup.path} element={<Signup />} />
+        <Route path={routes.signupConfirm.path} element={<SignupConfirm />} />
+        <Route path={routes.signupDone.path} element={<SignupDone />} />
+        <Route path={routes.passwordForget.path} element={<PasswordForget />} />
+        <Route path={routes.passwordReset.path} element={<PasswordReset />} />
+        <Route
+          path={routes.passwordResetDone.path}
+          element={<PasswordResetDone />}
+        />
+        <Route path={routes.passwordChange.path} element={<PasswordChange />} />
+        <Route
+          path={routes.passwordChangeDone.path}
+          element={<PasswordChangeDone />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 };
