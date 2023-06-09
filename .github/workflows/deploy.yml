@@ -43,4 +43,3 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           projectName: qa-artist
           directory: ./dist
-          gitHubToken: ${{ steps.generate_token.outputs.token }}
