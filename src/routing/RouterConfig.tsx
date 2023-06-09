@@ -24,7 +24,7 @@ export const RouterConfig: React.FC = () => {
           <Route path="/stamp" element={<ReferStamps />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/signupconfirm" element={<SignupCofirm />} />
+          <Route path="/signupconfirm" element={<SignupConfirm />} />
           <Route path="/forgetpassword" element={<PasswordForgot />} />
           <Route path="/resetpassword" element={<PasswordReset />} />
           <Route path="/passwordchanged" element={<PasswordChanged />} />
