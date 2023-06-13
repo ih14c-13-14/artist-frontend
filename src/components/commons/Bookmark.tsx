@@ -1,3 +1,3 @@
 export const Bookmark = () => {
-    return
-}
+  return <div>Bookmark</div>;
+};
