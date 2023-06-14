@@ -1,4 +1,4 @@
-import isNil from '@/features/utils/isNil';
+import isNil from '@/utils/isNil';
 import * as jose from 'jose';
 
 const generateSampleJWT = async (userId: string, expiresIn: number) => {
