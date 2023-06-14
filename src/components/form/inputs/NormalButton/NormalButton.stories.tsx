@@ -13,5 +13,5 @@ const Template: StoryFn<typeof NormalButton> = args => (
 
 export const Contained = Template.bind({});
 Contained.args = {
-  label: 'Normal'
+  label: 'Normal',
 };
