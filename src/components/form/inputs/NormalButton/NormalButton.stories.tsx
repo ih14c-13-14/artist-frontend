@@ -15,3 +15,15 @@ export const Contained = Template.bind({});
 Contained.args = {
   label: 'Normal',
 };
+
+export const Outlined = Template.bind({});
+Outlined.args = {
+  label: 'Normal',
+  variant: 'outlined',
+};
+
+export const Text = Template.bind({});
+Text.args = {
+  label: 'Normal',
+  variant: 'text',
+};
