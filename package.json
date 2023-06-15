@@ -12,7 +12,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "setup-githooks": "git config core.hooksPath $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)/.githooks",
-    "postinstall": "yarn setup-githooks"
+    "postinstall": "yarn setup-githooks",
+    "ci:local": "yarn tsc --noEmit && yarn lint && yarn test && yarn build"
   },
   "engines": {
     "yarn": ">= 1.22.0",
