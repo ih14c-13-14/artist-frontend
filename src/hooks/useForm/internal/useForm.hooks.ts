@@ -4,7 +4,6 @@ import { useForm as useBaseForm } from 'react-hook-form'; // eslint-disable-line
 import type { UseFormProps } from './useForm.types';
 
 // NOTE: プロパティdefaultValues, resolverの指定を必須とする
-// reValidateMode, shouldFocusError, shouldUnregister, shouldUseNativeValidation, criteriaMode, delayErrorは画面側で指定できないようにする
 export const useForm = <TFieldValues extends FieldValues>(
   {
     defaultValues,
@@ -13,7 +12,7 @@ export const useForm = <TFieldValues extends FieldValues>(
     resetOptions,
     context,
   }: UseFormProps<TFieldValues>,
-  error?: any // TODO: API用のクライアントが決まらないとどうにもならない
+  _error?: unknown // TODO: API用のクライアントが決まらないとどうにもならない
 ) => {
   const { handleSubmit, register, formState, setError, ...rest } = useBaseForm({
     defaultValues,
