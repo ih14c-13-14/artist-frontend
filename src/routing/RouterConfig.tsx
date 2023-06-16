@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Index } from '@/pages/Index';
 import { NotFound } from '@/pages/NotFound';
 import { MapShow } from '@/pages/MapShow';
 import { Search } from '@/pages/Search';
@@ -21,6 +22,7 @@ export const RouterConfig = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path={routes.index.path} element={<Index />} />
         <Route path={routes.others.path} element={<NotFound />} />
         <Route path={routes.mapShow.path} element={<MapShow />} />
         <Route path={routes.serach.path} element={<Search />} />
