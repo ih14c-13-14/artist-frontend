@@ -1,5 +1,8 @@
 export const getRoutes = () => {
   return {
+    index: {
+      path: '/',
+    },
     mapShow: {
       path: '/map/show/',
     },
