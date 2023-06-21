@@ -29,5 +29,5 @@ export default defineConfig({
       '@root/': `${__dirname}/`,
     },
   },
-  assetsInclude: ['**/*.reality'],
+  assetsInclude: ['**/*.reality', '**/*.glb'],
 });
