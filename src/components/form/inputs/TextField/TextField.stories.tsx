@@ -1,10 +1,10 @@
-import { ComponentMeta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { TextField } from './TextField.component';
 import validation, { resolver } from '@/utils/validation/validation';
 import { useForm } from '@/hooks/useForm';
 import { Controller } from 'react-hook-form';
 
-const TextFieldStory: ComponentMeta<typeof TextField> = {
+const TextFieldStory: Meta<typeof TextField> = {
   component: TextField,
 };
 
