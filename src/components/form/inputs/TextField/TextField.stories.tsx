@@ -1,5 +1,8 @@
 import { ComponentMeta, StoryFn } from '@storybook/react';
 import { TextField } from './TextField.component';
+import validation, { resolver } from '@/utils/validation/validation';
+import { useForm } from '@/hooks/useForm';
+import { Controller } from 'react-hook-form';
 
 const TextFieldStory: ComponentMeta<typeof TextField> = {
   component: TextField,
@@ -30,4 +33,85 @@ Standard.args = {
   label: 'Standard',
   variant: 'standard',
   disabled: false,
+};
+
+type FormState = {
+  text: string;
+};
+
+const schema = validation.object().shape({
+  text: validation
+    .string()
+    .required('Required')
+    .equals(['test'], 'Must be test'),
+} as const satisfies {
+  [key in keyof FormState]: unknown;
+});
+
+const Wrapper = ({ defaultValues }: { defaultValues?: Partial<FormState> }) => {
+  const {
+    register,
+    watch,
+    formState: { isValid },
+  } = useForm<FormState>({
+    defaultValues: defaultValues ?? {},
+    resolver: resolver(schema),
+  });
+
+  return (
+    <fieldset>
+      <TextField label="storybook" {...register('text')} />
+      <br />
+      <output>{JSON.stringify(watch('text'))}</output>
+      <hr />
+      <p>isValid</p>
+      <output>{JSON.stringify(isValid)}</output>
+    </fieldset>
+  );
+};
+
+export const ReactHookForm = () => {
+  return <Wrapper />;
+};
+
+export const ReactHookFormWithDefaultValues = () => {
+  return <Wrapper defaultValues={{ text: 'test' }} />;
+};
+
+const WrapperWithController = ({
+  defaultValues,
+}: {
+  defaultValues?: Partial<FormState>;
+}) => {
+  const {
+    control,
+    watch,
+    formState: { isValid },
+  } = useForm<FormState>({
+    defaultValues: defaultValues ?? {},
+    resolver: resolver(schema),
+  });
+
+  return (
+    <fieldset>
+      <Controller
+        control={control}
+        name="text"
+        render={({ field }) => <TextField label="storybook" {...field} />}
+      />
+      <br />
+      <output>{JSON.stringify(watch('text'))}</output>
+      <hr />
+      <p>isValid</p>
+      <output>{JSON.stringify(isValid)}</output>
+    </fieldset>
+  );
+};
+
+export const ReactHookFormWithController = () => {
+  return <WrapperWithController />;
+};
+
+export const ReactHookFormWithDefaultValuesWithController = () => {
+  return <WrapperWithController defaultValues={{ text: 'test' }} />;
 };
