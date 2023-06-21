@@ -1,6 +1,12 @@
 import { ComponentMeta, StoryFn } from '@/utils/storybook';
 import { IconWithLabel } from './IconWithLabel.component';
-import { Approval, Home, LocationOn, ManageSearch, CropFree } from '@mui/icons-material';
+import {
+  Approval,
+  Home,
+  LocationOn,
+  ManageSearch,
+  CropFree,
+} from '@mui/icons-material';
 
 const IconWithLabelStory: ComponentMeta<typeof IconWithLabel> = {
   component: IconWithLabel,
@@ -16,7 +22,7 @@ export const Location = Template.bind({});
 Location.args = {
   label: 'マップ',
   icon: LocationOn,
-}
+};
 
 export const Search = Template.bind({});
 Search.args = {
