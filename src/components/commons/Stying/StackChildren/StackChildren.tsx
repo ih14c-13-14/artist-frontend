@@ -1,13 +1,10 @@
-import { PropsWithChildren } from 'react';
+import { CSSProperties, PropsWithChildren } from 'react';
 
-type StackChildrenProps = {
-  direction: 'column' | 'column-reverse' | 'row' | 'row-reverse' | undefined;
-  gap: 'px' | 'em' | '%' | `calc(${string})`;
-};
+type StackChildrenProps = Pick<CSSProperties, 'flexDirection' | 'gap'>;
 
 export const StackChildren = ({
   children,
-  direction,
+  flexDirection = 'column',
   gap,
 }: PropsWithChildren<StackChildrenProps>) => {
   return (
@@ -15,7 +12,7 @@ export const StackChildren = ({
       style={{
         display: 'flex',
         alignItems: 'center',
-        flexDirection: direction,
+        flexDirection,
         gap,
       }}
     >
