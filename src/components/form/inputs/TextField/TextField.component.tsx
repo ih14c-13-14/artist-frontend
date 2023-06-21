@@ -3,7 +3,7 @@ import { TextFieldProps } from './TextField.type';
 
 export const TextField = ({
   label,
-  variant,
+  variant = 'outlined',
   disabled = false,
   ...rest
 }: TextFieldProps) => {

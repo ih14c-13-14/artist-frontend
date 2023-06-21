@@ -1,5 +1,5 @@
 export type TextFieldProps = {
-  variant: 'outlined' | 'filled' | 'standard';
+  variant?: 'outlined' | 'filled' | 'standard';
   label: string;
-  disabled: boolean;
+  disabled?: boolean;
 };
