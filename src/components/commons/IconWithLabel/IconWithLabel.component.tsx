@@ -21,3 +21,7 @@ export const IconWithLabel = ({
     </MuiButton>
   );
 };
+
+// TODO
+// Footer に並べるときに等幅にする
+// issues #42
