@@ -1,10 +1,17 @@
 import { ArViewerProps } from './ArViewer.types';
+import ModelViewer from './ModelViewer.component';
 
-const ArViewer = ({ coverImage, realityModelPath }: ArViewerProps) => {
+const ArViewer = ({
+  coverImage,
+  glbModelPath,
+  realityModelPath,
+}: ArViewerProps) => {
   return (
-    <a rel="ar" href={realityModelPath}>
-      <img src={coverImage} />
-    </a>
+    <ModelViewer
+      poster={coverImage}
+      glb={glbModelPath}
+      reality={realityModelPath}
+    />
   );
 };
 

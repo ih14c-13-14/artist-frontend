@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import '@google/model-viewer'; // eslint-disable-line @typescript-eslint/no-restricted-imports
 
 import coverImage from './Image.stories.flower.jpg';
 import realityModelPathForIos from './Model.stories.flower_2.reality?url';
@@ -9,19 +10,11 @@ const ArViewerStory: Meta<typeof ArViewer> = {
   component: ArViewer,
   args: {
     coverImage,
+    glbModelPath: realityModelPathForAndroid,
+    realityModelPath: realityModelPathForIos,
   },
 };
 
 export default ArViewerStory;
 
-export const ForIos: StoryObj<typeof ArViewer> = {
-  args: {
-    realityModelPath: realityModelPathForIos,
-  },
-};
-
-export const ForAndroid: StoryObj<typeof ArViewer> = {
-  args: {
-    realityModelPath: realityModelPathForAndroid,
-  },
-};
+export const Default: StoryObj<typeof ArViewer> = {};
