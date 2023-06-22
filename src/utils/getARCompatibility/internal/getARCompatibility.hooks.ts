@@ -1,4 +1,5 @@
 import { UAParser } from 'ua-parser-js';
+
 import { OS_NAMES, SUPPORTED } from './getARCompatibility.constants';
 
 /**

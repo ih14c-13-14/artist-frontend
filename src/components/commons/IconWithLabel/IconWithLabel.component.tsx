@@ -1,6 +1,7 @@
-import { StackChildren } from '../Styling/StackChildren/StackChildren';
-import { IconWithLabelProps } from './IconWithLabel.type';
 import { Button as MuiButton, Typography } from '@mui/material';
+
+import { IconWithLabelProps } from './IconWithLabel.type';
+import { StackChildren } from '../Styling/StackChildren/StackChildren';
 
 export const IconWithLabel = ({
   label,

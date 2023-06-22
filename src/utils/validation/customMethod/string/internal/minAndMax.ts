@@ -1,6 +1,7 @@
-import isNil from '@/utils/isNil';
 import * as yup from 'yup';
 import type { Maybe, Message } from 'yup';
+
+import isNil from '@/utils/isNil';
 
 const addMinAndMax = () => {
   yup.addMethod(

@@ -1,4 +1,5 @@
 import { default as MuiButton } from '@mui/material/Button';
+
 import { ButtonProps } from './NormalButton.type';
 
 export const NormalButton = ({

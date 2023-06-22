@@ -1,8 +1,8 @@
 import * as yup from 'yup';
 import type { Maybe, Message } from 'yup';
 
-import isNil from '@/utils/isNil';
 import extractSymbolsFromRegex from '@/utils/extractSymbolsFromRegex';
+import isNil from '@/utils/isNil';
 
 const NUMBER_REGEX = '0-9';
 const ALPHABET_REGEX = 'a-zA-Z';
