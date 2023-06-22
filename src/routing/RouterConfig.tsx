@@ -1,19 +1,20 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import { Index } from '@/pages/Index';
-import { NotFound } from '@/pages/NotFound';
-import { MapShow } from '@/pages/MapShow';
-import { Search } from '@/pages/Search';
-import { QrRead } from '@/pages/QrRead';
-import { StampRefer } from '@/pages/StampRefer';
 import { Login } from '@/pages/Login';
-import { Signup } from '@/pages/Signup';
-import { SignupConfirm } from '@/pages/SignupConfirm';
-import { SignupDone } from '@/pages/SignupDone';
+import { MapShow } from '@/pages/MapShow';
+import { NotFound } from '@/pages/NotFound';
+import { PasswordChange } from '@/pages/PasswordChange';
+import { PasswordChangeDone } from '@/pages/PasswordChangeDone';
 import { PasswordForget } from '@/pages/PasswordForget';
 import { PasswordReset } from '@/pages/PasswordReset';
 import { PasswordResetDone } from '@/pages/PasswordResetDone';
-import { PasswordChange } from '@/pages/PasswordChange';
-import { PasswordChangeDone } from '@/pages/PasswordChangeDone';
+import { QrRead } from '@/pages/QrRead';
+import { Search } from '@/pages/Search';
+import { Signup } from '@/pages/Signup';
+import { SignupConfirm } from '@/pages/SignupConfirm';
+import { SignupDone } from '@/pages/SignupDone';
+import { StampRefer } from '@/pages/StampRefer';
 
 import { getRoutes } from './getRoutes';
 

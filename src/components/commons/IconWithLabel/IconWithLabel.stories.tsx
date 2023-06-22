@@ -1,5 +1,3 @@
-import { ComponentMeta, StoryFn } from '@/utils/storybook';
-import { IconWithLabel } from './IconWithLabel.component';
 import {
   Approval,
   Home,
@@ -7,6 +5,10 @@ import {
   ManageSearch,
   CropFree,
 } from '@mui/icons-material';
+
+import { ComponentMeta, StoryFn } from '@/utils/storybook';
+
+import { IconWithLabel } from './IconWithLabel.component';
 
 const IconWithLabelStory: ComponentMeta<typeof IconWithLabel> = {
   component: IconWithLabel,

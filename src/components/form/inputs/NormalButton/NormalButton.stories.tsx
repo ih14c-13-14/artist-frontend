@@ -1,4 +1,5 @@
 import { ComponentMeta, StoryFn } from '@/utils/storybook';
+
 import { NormalButton } from './NormalButton.component';
 
 const NormalButtonStory: ComponentMeta<typeof NormalButton> = {

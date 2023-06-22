@@ -1,5 +1,6 @@
-import isNil from '@/utils/isNil';
 import * as jose from 'jose';
+
+import isNil from '@/utils/isNil';
 
 const generateSampleJWT = async (userId: string, expiresIn: number) => {
   const privateKey = new Uint8Array(32);
