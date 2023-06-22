@@ -7,7 +7,7 @@ export const IconWithLabel = ({
   icon,
   variant = 'contained',
   disabled,
-  color = 'error',
+  color = 'inherit',
   ...rest
 }: IconWithLabelProps) => {
   const IconComponent = icon;
