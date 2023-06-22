@@ -2,6 +2,21 @@
 # yarn lockfile v1
 
 
+"@actions/core@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@actions/core/-/core-1.10.0.tgz#44551c3c71163949a2f06e94d9ca2157a0cfac4f"
+  integrity sha512-2aZDDa3zrrZbP5ZYg159sNoLRb61nQ7awl5pSvIq5Qpj81vwDzdMRKzkWJGJuwVvWpvZKx7vspJALyvaaIQyug==
+  dependencies:
+    "@actions/http-client" "^2.0.1"
+    uuid "^8.3.2"
+
+"@actions/http-client@^2.0.1":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@actions/http-client/-/http-client-2.1.0.tgz#b6d8c3934727d6a50d10d19f00a711a964599a9f"
+  integrity sha512-BonhODnXr3amchh4qkmjPMUO8mFi/zLaaCeCAJZqch8iQqyDnVIkySjB38VHAC8IJ+bnlgfOqlhpyCUZHlQsqw==
+  dependencies:
+    tunnel "^0.0.6"
+
 "@adobe/css-tools@^4.0.1":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.2.0.tgz#e1a84fca468f4b337816fcb7f0964beb620ba855"
@@ -8058,6 +8073,11 @@ tsutils@^3.21.0:
   dependencies:
     tslib "^1.8.1"
 
+tunnel@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/tunnel/-/tunnel-0.0.6.tgz#72f1314b34a5b192db012324df2cc587ca47f92c"
+  integrity sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==
+
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.4.0.tgz#07b8203bfa7056c0657050e3ccd2c37730bab8f1"
@@ -8278,6 +8298,11 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==
 
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
 uuid@^9.0.0:
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
@@ -8327,6 +8352,13 @@ vite-node@0.32.0:
     rollup "^3.21.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+vitest-github-actions-reporter@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/vitest-github-actions-reporter/-/vitest-github-actions-reporter-0.10.0.tgz#926183b196f3b6f62a913a3628b1b0ffea7595aa"
+  integrity sha512-ctFM1xlOVsXCNp5+LkaBZBhN1Iq5y9vVMZ9+Czls2CimOUKt0lH24MV1S0EzKysNUT7efs2OOSdmc6lgR8hqXg==
+  dependencies:
+    "@actions/core" "^1.10.0"
 
 vitest@^0.32.0:
   version "0.32.0"
