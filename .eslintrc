@@ -46,6 +46,10 @@
 					{
 						"group": "../**/internal/**/*",
 						"message": "Do not import internal modules."
+					},
+					{
+						"group": "@google/model-viewer",
+						"message": "DO NOT import @google/model-viewer."
 					}
 				],
 				"paths": [
@@ -63,7 +67,8 @@
 						],
 						"message": "Please import { resolver } from @/utils/validation/validation.ts instead."
 					}
-				]
+				],
+				// import '@google/model-viewer';を禁止
 			}
 		],
 		"import/order": [
