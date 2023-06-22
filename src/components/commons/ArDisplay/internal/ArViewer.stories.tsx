@@ -1,6 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import '@google/model-viewer'; // eslint-disable-line @typescript-eslint/no-restricted-imports
-
 import coverImage from './Image.stories.flower.jpg';
 import realityModelPathForIos from './Model.stories.flower_2.reality?url';
 import realityModelPathForAndroid from './Model.stories.flower_2.glb?url';
