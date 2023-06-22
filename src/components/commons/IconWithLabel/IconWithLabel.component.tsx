@@ -5,9 +5,9 @@ import { Button as MuiButton, Typography } from '@mui/material';
 export const IconWithLabel = ({
   label,
   icon,
-  variant = 'contained',
+  variant = 'text',
   disabled,
-  color = 'error',
+  color = 'inherit',
   ...rest
 }: IconWithLabelProps) => {
   const IconComponent = icon;
@@ -21,7 +21,3 @@ export const IconWithLabel = ({
     </MuiButton>
   );
 };
-
-// TODO
-// Footer に並べるときに等幅にする
-// issues #42
