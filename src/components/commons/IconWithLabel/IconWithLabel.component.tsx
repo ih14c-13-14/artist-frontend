@@ -5,7 +5,7 @@ import { Button as MuiButton, Typography } from '@mui/material';
 export const IconWithLabel = ({
   label,
   icon,
-  variant = 'contained',
+  variant = 'text',
   disabled,
   color = 'inherit',
   ...rest
