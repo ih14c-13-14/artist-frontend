@@ -16,7 +16,8 @@
 	},
 	"plugins": [
 		"react-refresh",
-		"prettier"
+		"prettier",
+		"import"
 	],
 	"rules": {
 		"react-refresh/only-export-components": "warn",
@@ -63,6 +64,26 @@
 						"message": "Please import { resolver } from @/utils/validation/validation.ts instead."
 					}
 				]
+			}
+		],
+		"import/order": [
+			"error",
+			{
+				"groups": [
+					"builtin",
+					"external"
+				],
+				"pathGroups": [
+					{
+						"pattern": "@/**",
+						"group": "external",
+						"position": "after"
+					}
+				],
+				"alphabetize": {
+					"order": "asc"
+				},
+				"newlines-between": "always"
 			}
 		],
 	}
