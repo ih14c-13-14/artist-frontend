@@ -67,8 +67,7 @@
 						],
 						"message": "Please import { resolver } from @/utils/validation/validation.ts instead."
 					}
-				],
-				// import '@google/model-viewer';を禁止
+				]
 			}
 		],
 		"import/order": [
