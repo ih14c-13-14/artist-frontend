@@ -1,10 +1,10 @@
 import { UAParser } from 'ua-parser-js';
-import { OS_NAMES, SUPPORTED } from './useARCompatibility.constants';
+import { OS_NAMES, SUPPORTED } from './getARCompatibility.constants';
 
 /**
  * TODO: #46|対応環境もうちょっとまともに洗い出す
  */
-export const useARCompatibility = () => {
+export const getARCompatibility = () => {
   const userAgent = navigator.userAgent;
   const parser = new UAParser(userAgent);
   const { name: osName, version } = parser.getOS();
