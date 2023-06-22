@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import coverImage from './Image.stories.flower.jpg';
-import realityModelPathForIos from './Model.stories.flower_2.reality?url';
-import realityModelPathForAndroid from './Model.stories.flower_2.glb?url';
+
 import ArViewer from './ArViewer.component';
+import coverImage from './Image.stories.flower.jpg';
+import realityModelPathForAndroid from './Model.stories.flower_2.glb?url';
+import realityModelPathForIos from './Model.stories.flower_2.reality?url';
 
 const ArViewerStory: Meta<typeof ArViewer> = {
   component: ArViewer,
