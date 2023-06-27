@@ -12,8 +12,8 @@ export const getRoutes = () => {
     qrRead: {
       path: '/qr/read/',
     },
-    login: {
-      path: '/login/',
+    signin: {
+      path: '/signin/',
     },
     signup: {
       path: '/signup/',

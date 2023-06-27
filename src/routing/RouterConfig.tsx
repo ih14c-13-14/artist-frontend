@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Layout } from '@/components/Layout/Layout/Layout.component';
 import { Index } from '@/pages/Index';
-import { Login } from '@/pages/Login';
+import { Signin } from '@/pages/Signin';
 import { MapShow } from '@/pages/MapShow';
 import { NotFound } from '@/pages/NotFound';
 import { PasswordChange } from '@/pages/PasswordChange';
@@ -29,7 +29,7 @@ export const RouterConfig = () => {
           <Route path={routes.mapShow.path} element={<MapShow />} />
           <Route path={routes.serach.path} element={<Search />} />
           <Route path={routes.qrRead.path} element={<QrRead />} />
-          <Route path={routes.login.path} element={<Login />} />
+          <Route path={routes.signin.path} element={<Signin />} />
           <Route path={routes.signup.path} element={<Signup />} />
           <Route path={routes.signupConfirm.path} element={<SignupConfirm />} />
           <Route path={routes.signupDone.path} element={<SignupDone />} />
