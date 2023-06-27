@@ -12,11 +12,8 @@ export const getRoutes = () => {
     qrRead: {
       path: '/qr/read/',
     },
-    stampRefer: {
-      path: '/stamp/refer/',
-    },
-    login: {
-      path: '/login/',
+    signin: {
+      path: '/signin/',
     },
     signup: {
       path: '/signup/',
