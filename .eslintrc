@@ -46,6 +46,10 @@
 					{
 						"group": "../**/internal/**/*",
 						"message": "Do not import internal modules."
+					},
+					{
+						"group": "@google/model-viewer",
+						"message": "DO NOT import @google/model-viewer."
 					}
 				],
 				"paths": [
