@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Layout } from '@/components/Layout/Layout/Layout.component';
 import { Index } from '@/pages/Index';
-import { Signin } from '@/pages/Signin';
 import { MapShow } from '@/pages/MapShow';
 import { NotFound } from '@/pages/NotFound';
 import { PasswordChange } from '@/pages/PasswordChange';
@@ -12,6 +11,7 @@ import { PasswordReset } from '@/pages/PasswordReset';
 import { PasswordResetDone } from '@/pages/PasswordResetDone';
 import { QrRead } from '@/pages/QrRead';
 import { Search } from '@/pages/Search';
+import { Signin } from '@/pages/Signin';
 import { Signup } from '@/pages/Signup';
 import { SignupConfirm } from '@/pages/SignupConfirm';
 import { SignupDone } from '@/pages/SignupDone';
