@@ -14,7 +14,6 @@ import { Search } from '@/pages/Search';
 import { Signup } from '@/pages/Signup';
 import { SignupConfirm } from '@/pages/SignupConfirm';
 import { SignupDone } from '@/pages/SignupDone';
-import { StampRefer } from '@/pages/StampRefer';
 
 import { getRoutes } from './getRoutes';
 
@@ -28,7 +27,6 @@ export const RouterConfig = () => {
         <Route path={routes.mapShow.path} element={<MapShow />} />
         <Route path={routes.serach.path} element={<Search />} />
         <Route path={routes.qrRead.path} element={<QrRead />} />
-        <Route path={routes.stampRefer.path} element={<StampRefer />} />
         <Route path={routes.login.path} element={<Login />} />
         <Route path={routes.signup.path} element={<Signup />} />
         <Route path={routes.signupConfirm.path} element={<SignupConfirm />} />
