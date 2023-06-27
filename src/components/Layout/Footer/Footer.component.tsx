@@ -1,7 +1,7 @@
 import { LocationOn, ManageSearch, CropFree } from '@mui/icons-material';
 
-import { IconWithLabel } from '../commons/IconWithLabel/IconWithLabel.component';
-import { StackChildren } from '../commons/Styling/StackChildren/StackChildren';
+import { IconWithLabel } from '../../commons/IconWithLabel/IconWithLabel.component';
+import { StackChildren } from '../../commons/Styling/StackChildren/StackChildren';
 
 export const Footer = () => {
   return (
