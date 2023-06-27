@@ -1,9 +1,4 @@
-import {
-  Approval,
-  LocationOn,
-  ManageSearch,
-  CropFree,
-} from '@mui/icons-material';
+import { LocationOn, ManageSearch, CropFree } from '@mui/icons-material';
 
 import { IconWithLabel } from '../commons/IconWithLabel/IconWithLabel.component';
 import { StackChildren } from '../commons/Styling/StackChildren/StackChildren';
@@ -19,7 +14,6 @@ export const Footer = () => {
       />
       <IconWithLabel icon={ManageSearch} label={'探す'} fullWidth />
       <IconWithLabel icon={CropFree} label={'QRリーダー'} fullWidth />
-      <IconWithLabel icon={Approval} label={'スタンプ'} fullWidth />
     </StackChildren>
   );
 };
