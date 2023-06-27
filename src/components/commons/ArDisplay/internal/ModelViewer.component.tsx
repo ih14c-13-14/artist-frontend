@@ -25,6 +25,7 @@ type ModelViewerProps = {
   alt?: string;
   scale?: number;
   height?: string;
+  shadowIntensity?: string;
 };
 
 /**
@@ -37,6 +38,7 @@ const ModelViewer = ({
   alt = '',
   scale = 1,
   height = '80vh',
+  shadowIntensity = '1',
 }: ModelViewerProps) => {
   const containerStyles = css`
     width: 100%;
@@ -53,7 +55,7 @@ const ModelViewer = ({
         ios-src={reality}
         poster={poster}
         alt={alt}
-        shadow-intensity="1"
+        shadow-intensity={shadowIntensity}
         camera-controls
         ar
         scale={`${scale} ${scale} ${scale}`}
