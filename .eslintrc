@@ -66,6 +66,10 @@
 							"yupResolver"
 						],
 						"message": "Please import { resolver } from @/utils/validation/validation.ts instead."
+					},
+					{
+						"name": "axios",
+						"message": "Please import { useAppSWR } from '@/utils/axios' instead."
 					}
 				]
 			}
@@ -89,6 +93,6 @@
 				},
 				"newlines-between": "always"
 			}
-		],
+		]
 	}
 }
