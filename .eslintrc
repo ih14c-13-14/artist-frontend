@@ -17,7 +17,9 @@
 	"plugins": [
 		"react-refresh",
 		"prettier",
-		"import"
+		"import",
+		"react",
+		"react-hooks"
 	],
 	"rules": {
 		"react-refresh/only-export-components": "warn",
@@ -92,6 +94,12 @@
 					"order": "asc"
 				},
 				"newlines-between": "always"
+			}
+		],
+		"react/jsx-key": [
+			"error",
+			{
+				"checkFragmentShorthand": true
 			}
 		]
 	}
