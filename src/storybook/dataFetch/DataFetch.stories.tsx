@@ -8,6 +8,7 @@ const DataFetchExampleStory = () => {
     url: '/arts',
     method: 'get',
   });
+  // TODO: #83
   if (isLoading) return <div>loading...</div>;
   if (error) return <div>error!</div>;
   return (
