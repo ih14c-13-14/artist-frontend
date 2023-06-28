@@ -5,7 +5,7 @@ import { useAppSWR } from '@/utils/axios';
 
 const DataFetchExampleStory = () => {
   const { data, isLoading, error } = useAppSWR({
-    url: '/arts',
+    url: '/api/v1/arts',
     method: 'get',
   });
   // TODO: #83
