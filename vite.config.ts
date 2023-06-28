@@ -10,7 +10,8 @@ export default defineConfig({
     react(),
     splitVendorChunkPlugin(),
     ViteEjsPlugin({
-      apiBaseUrl: process.env.API_BASE_URL ?? 'http://localhost:4010/api/',
+      // TODO: https://github.com/ih14c-13-14/schema/issues/10
+      apiBaseUrl: process.env.API_BASE_URL ?? 'http://127.0.0.1:4010',
     }),
   ],
   define: {
