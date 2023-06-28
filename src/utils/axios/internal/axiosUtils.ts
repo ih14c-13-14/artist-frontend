@@ -17,7 +17,7 @@ export function request<
   Path extends schemaHelper.UrlPaths,
   Method extends schemaHelper.HttpMethods
 >({ url: pathUrl, ...rest }: AxiosConfigWrapper<Path, Method>) {
-  const apiBaseUrl = getConfig().api.url('/api/v1');
+  const apiBaseUrl = getConfig().api.url('');
 
   const url = `${apiBaseUrl}${pathUrl}`.replace(/(\r\n|\n|\r| )/gm, '');
 
