@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Layout } from '@/components/Layout/Layout/Layout.component';
-import { Index } from '@/pages/Index';
 import { MapShow } from '@/pages/MapShow';
 import { NotFound } from '@/pages/NotFound';
 import { PasswordChange } from '@/pages/PasswordChange';
@@ -23,12 +22,15 @@ export const RouterConfig = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={routes.index.path} element={<Layout />}>
-          <Route path={routes.index.path} element={<Index />} />
-          <Route path={routes.others.path} element={<NotFound />} />
+        <Route
+          path={routes.index.path}
+          element={<Layout hasHeader={true} hasFooter={true} />}
+        >
           <Route path={routes.mapShow.path} element={<MapShow />} />
           <Route path={routes.serach.path} element={<Search />} />
           <Route path={routes.qrRead.path} element={<QrRead />} />
+        </Route>
+        <Route path={routes.index.path} element={<Layout hasHeader={true} />}>
           <Route path={routes.signin.path} element={<Signin />} />
           <Route path={routes.signup.path} element={<Signup />} />
           <Route path={routes.signupConfirm.path} element={<SignupConfirm />} />
@@ -50,6 +52,7 @@ export const RouterConfig = () => {
             path={routes.passwordChangeDone.path}
             element={<PasswordChangeDone />}
           />
+          <Route path={routes.others.path} element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
