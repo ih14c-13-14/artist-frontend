@@ -1,0 +1,49 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    "group:allNonMajor",
+    ":timezone(Asia/Tokyo)",
+    ":prHourlyLimitNone"
+  ],
+  "schedule": ["after 9am", "before 12am"],
+  "labels": ["renovate"],
+  "rangeStrategy": "bump",
+  "reviewers": ["na2na-p"],
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "packageRules": [
+    {
+      "groupName": "nodejs",
+      "matchPackageNames": ["nodejs/node", "node", "nodejs"]
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": false
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["major update"]
+    },
+    {
+      "groupName": "vite",
+      "matchSourceUrlPrefixes": [
+        "https://github.com/vitejs/vite",
+        "https://github.com/vitest-dev/vitest"
+      ]
+    },
+    {
+      "groupName": "storybook",
+      "matchPackageNames": [
+        "storybook",
+        "@storybook/addon-actions",
+        "@storybook/addon-essentials",
+        "@storybook/addon-interactions",
+        "@storybook/addon-links",
+        "@storybook/react",
+        "@storybook/react-vite",
+        "@storybook/addon-mdx-gfm"
+      ]
+    }
+  ]
+}
