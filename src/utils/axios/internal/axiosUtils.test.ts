@@ -10,12 +10,12 @@ describe('axiosUtils', () => {
         .mockResolvedValueOnce(mockResponse);
 
       const result = await request({
-        url: '/arts',
+        url: '/api/v1/arts',
         method: 'get',
       });
 
       expect(mockAxios).toHaveBeenCalledWith({
-        url: '/api/arts',
+        url: '/api/v1/arts',
         method: 'get',
       });
       expect(result).toEqual(mockResponse);
