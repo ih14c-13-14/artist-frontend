@@ -13,6 +13,7 @@ dist-ssr
 *.local
 storybook-static
 coverage
+src/generated
 
 # Editor directories and files
 .vscode/*
