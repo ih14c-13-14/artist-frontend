@@ -4,7 +4,6 @@ import { Fragment } from 'react';
 import { useAppSWR } from '@/utils/axios';
 
 const DataFetchExampleStory = () => {
-  // ログイン状況に応じて表示させる画面を切り替える
   const { data, isLoading, error } = useAppSWR({
     url: '/arts',
     method: 'get',
