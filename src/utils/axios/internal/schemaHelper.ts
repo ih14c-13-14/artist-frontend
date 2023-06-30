@@ -22,4 +22,5 @@ export type RequestData<
 export type ResponseData<
   Path extends UrlPaths,
   Method extends HttpMethods
+  // HACK: もう許してください(RESTの原則から外れて成功時のステータスコードを全部200にしてもらった)
 > = Get<paths, `${Path}.${Method}.responses.200.content.application/json`>;
