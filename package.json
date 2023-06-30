@@ -22,7 +22,7 @@
     "openapi-generate": "openapi-typescript ./schema/openapi/openapi.json --output src/generated/schema.ts --immutable-types -t"
   },
   "engines": {
-    "yarn": ">= 1.22.19",
+    "yarn": ">= 1.22.0",
     "npm": "use yarn instead."
   },
   "dependencies": {
