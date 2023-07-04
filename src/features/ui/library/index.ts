@@ -2,6 +2,7 @@ export {
   ToggleButton as MuiToggleButton,
   ToggleButtonGroup as MuiToggleButtonGroup,
   Box as MuiBox,
+  Button as MuiButton,
   Divider as MuiDivider,
   Card as MuiCard,
   CardActions as MuiCardActions,
@@ -26,6 +27,7 @@ export {
 } from '@mui/material';
 export type {
   BoxProps as MuiBoxProps,
+  ButtonProps as MuiButtonProps,
   DividerProps as MuiDividerProps,
   CardProps as MuiCardProps,
   CardActionsProps as MuiCardActionsProps,
