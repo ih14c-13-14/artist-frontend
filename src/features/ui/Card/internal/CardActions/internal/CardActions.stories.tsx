@@ -1,6 +1,5 @@
+import { Button } from '@mui/material';
 import type { Meta } from '@storybook/react';
-
-import { Icon } from '@/features/ui/Icon';
 
 import CardActions from './CardActions.component';
 
@@ -12,8 +11,8 @@ export default CardActionsStory;
 
 export const Default = () => (
   <CardActions>
-    <Icon shape="Square" />
-    <Icon shape="StopCircle" />
-    <Icon shape="ChevronLeft" fill="currentColor" />
+    <Button>add</Button>
+    <Button>edit</Button>
+    <Button>delete</Button>
   </CardActions>
 );

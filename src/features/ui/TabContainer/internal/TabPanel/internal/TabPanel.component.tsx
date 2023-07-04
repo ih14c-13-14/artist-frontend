@@ -13,6 +13,7 @@ const TabPanel = ({ children, value, selected }: TabPanelProps) => {
       hidden={!selected}
       id={`simple-tabpanel-${value}`}
       aria-labelledby={`simple-tab-${value}`}
+      data-testid={`simple-tabpanel-${value}`}
     >
       {selected && (
         <Box height="100%" paddingY={`${PADDING}px`} boxSizing="border-box">

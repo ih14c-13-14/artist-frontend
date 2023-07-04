@@ -1,6 +1,8 @@
 import type { Meta } from '@storybook/react';
 import { useState } from 'react';
 
+import { uuidv4 } from '@/utils/uuid';
+
 import Tabs from './Tabs.component';
 import { a11yProps, Tab } from '../../Tab';
 
@@ -39,7 +41,7 @@ export const Default = () => {
         <Tab
           key={`${tab.label}${index}`}
           label={tab.label}
-          {...a11yProps(index)}
+          {...a11yProps(uuidv4(), index)}
         />
       ))}
     </Tabs>

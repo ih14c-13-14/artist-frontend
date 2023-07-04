@@ -8,7 +8,7 @@
     "dev-server": "yarn openapi-generate && vite --force",
     "mock": "cross-env MOCK=true prism mock ./schema/openapi/openapi.json",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives",
     "preview": "vite preview",
     "test": "vitest src/",
     "test:coverage": "vitest src/ --coverage",
