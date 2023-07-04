@@ -1,0 +1,15 @@
+export type TypographyVariant =
+  | 'HEADLINE_1'
+  | 'HEADLINE_2'
+  | 'HEADLINE_3'
+  | 'HEADLINE_4'
+  | 'BODY_1'
+  | 'BUTTON_LARGE'
+  | 'BUTTON_MEDIUM'
+  | 'BUTTON_SMALL'
+  | 'CAPTION'
+  | 'FORM_TEXT'
+  | 'FORM_TEXT_BOLD'
+  | 'TEXT_DESCRIPTION'
+  | 'TEXT_TITLE'
+  | 'LABEL';
