@@ -5,6 +5,7 @@ import React from 'react';
 
 import { Bookmark } from '@/components/commons/Bookmark/Bookmark.component';
 import { StackChildren } from '@/components/commons/Styling/StackChildren/StackChildren';
+
 import { CardProps } from './ArtCart.type';
 
 export const ArtCard: React.FC<CardProps> = ({
@@ -14,7 +15,10 @@ export const ArtCard: React.FC<CardProps> = ({
   address,
 }) => {
   return (
-    <Card sx={{ p: 0, display: 'flex', alignItems: 'center' }}>
+    <Card
+      sx={{ p: 0, display: 'flex', alignItems: 'center', marginBottom: '10px' }}
+      // marginBottom 入れないと複数表示したときに互いにぴったりくっついてしまう
+    >
       <CardMedia
         component="img"
         src={imageSrc}
