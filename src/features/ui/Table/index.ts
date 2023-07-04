@@ -1,0 +1,16 @@
+export { Table } from './internal/Table';
+export type { TableProps } from './internal/Table';
+export { TableBody } from './internal/TableBody';
+export type { TableBodyProps } from './internal/TableBody';
+export { TableCell } from './internal/TableCell';
+export type { TableCellProps } from './internal/TableCell';
+export { TableContainer } from './internal/TableContainer';
+export type { TableContainerProps } from './internal/TableContainer';
+export { TableHead } from './internal/TableHead';
+export type { TableHeadProps } from './internal/TableHead';
+export { TablePagination } from './internal/TablePagination';
+export type { TablePaginationProps } from './internal/TablePagination';
+export { TableRow } from './internal/TableRow';
+export type { TableRowProps } from './internal/TableRow';
+export { TableSortLabel } from './internal/TableSortLabel';
+export type { TableSortLabelProps } from './internal/TableSortLabel';
