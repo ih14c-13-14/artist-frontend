@@ -1,4 +1,4 @@
-import { MuiStack } from '@/features/ui/library/Stack';
+import { MuiStack } from '@/features/ui/library';
 
 import type { StackProps } from './Stack.types';
 

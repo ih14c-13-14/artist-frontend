@@ -1,3 +1,3 @@
-import type { MuiTabsProps } from '@/features/ui/library/Tab';
+import type { MuiTabsProps } from '@/features/ui/library';
 
 export type TabsProps = MuiTabsProps;

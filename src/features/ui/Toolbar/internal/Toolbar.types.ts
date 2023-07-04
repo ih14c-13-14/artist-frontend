@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { StackProps } from '@/features/ui/Stack';
-import type { MuiToolbarProps } from '@/features/ui/library/Toolbar';
+import type { MuiToolbarProps } from '@/features/ui/library';
 import type Length from '@/types/Length';
 
 export type ToolbarProps = Omit<MuiToolbarProps, 'variant'> & {

@@ -1,3 +1,3 @@
-import type { MuiListItemTextProps } from '@/features/ui/library/List';
+import type { MuiListItemTextProps } from '@/features/ui/library';
 
 export type ListItemTextProps = MuiListItemTextProps;

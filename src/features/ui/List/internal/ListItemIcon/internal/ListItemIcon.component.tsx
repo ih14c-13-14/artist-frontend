@@ -1,4 +1,4 @@
-import { MuiListItemIcon } from '@/features/ui/library/List';
+import { MuiListItemIcon } from '@/features/ui/library';
 
 import { useListItemIcon } from './ListItemIcon.hooks';
 import type { ListItemIconProps } from './ListItemIcon.types';

@@ -1,3 +1,3 @@
-import type { MuiListProps } from '@/features/ui/library/List';
+import type { MuiListProps } from '@/features/ui/library';
 
 export type ListProps = MuiListProps;

@@ -1,4 +1,4 @@
-import { MuiListItemText } from '@/features/ui/library/List';
+import { MuiListItemText } from '@/features/ui/library';
 
 import { useListItemText } from './ListItemText.hooks';
 import type { ListItemTextProps } from './ListItemText.types';

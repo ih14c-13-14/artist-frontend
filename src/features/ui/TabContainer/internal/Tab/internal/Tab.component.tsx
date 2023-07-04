@@ -1,4 +1,4 @@
-import { MuiTab } from '@/features/ui/library/Tab';
+import { MuiTab } from '@/features/ui/library';
 
 import { useTab } from './Tab.hooks';
 import type { TabProps } from './Tab.types';

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Stack } from '@/features/ui/Stack';
-import { MuiToolbar } from '@/features/ui/library/Toolbar';
+import { MuiToolbar } from '@/features/ui/library';
 
 import {
   TOOLBAR_DEFAULT_HEIGHT,

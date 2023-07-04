@@ -1,4 +1,4 @@
-import { MuiTypography } from '@/features/ui/library/Typography';
+import { MuiTypography } from '@/features/ui/library';
 
 import useTypography from './Typography.hooks';
 import type { TypographyProps } from './Typography.types';

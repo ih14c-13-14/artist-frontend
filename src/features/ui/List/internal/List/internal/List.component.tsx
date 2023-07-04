@@ -1,4 +1,4 @@
-import { MuiList } from '@/features/ui/library/List';
+import { MuiList } from '@/features/ui/library';
 
 import { useList } from './List.hooks';
 import type { ListProps } from './List.types';
