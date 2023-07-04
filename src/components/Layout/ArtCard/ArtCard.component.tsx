@@ -5,13 +5,7 @@ import React from 'react';
 
 import { Bookmark } from '@/components/commons/Bookmark/Bookmark.component';
 import { StackChildren } from '@/components/commons/Styling/StackChildren/StackChildren';
-
-interface CardProps {
-  imageSrc: string;
-  title: string;
-  author: string;
-  address: string;
-}
+import { CardProps } from './ArtCart.type';
 
 export const ArtCard: React.FC<CardProps> = ({
   imageSrc,
