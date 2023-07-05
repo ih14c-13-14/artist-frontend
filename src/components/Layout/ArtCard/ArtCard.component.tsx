@@ -1,7 +1,6 @@
 import { LocationOn } from '@mui/icons-material';
 import { TurnedIn } from '@mui/icons-material/';
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
-import React from 'react';
 
 import { Bookmark } from '@/components/commons/Bookmark/Bookmark.component';
 import { StackChildren } from '@/components/commons/Styling/StackChildren/StackChildren';
