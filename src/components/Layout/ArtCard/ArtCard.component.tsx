@@ -7,6 +7,7 @@ import { Stack } from '@/features/ui/Stack';
 
 import { CardProps } from './ArtCard.type';
 
+// TODO: #106|デザイン適用
 export const ArtCard: React.FC<CardProps> = ({
   imageSrc,
   title,
