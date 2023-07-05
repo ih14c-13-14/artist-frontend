@@ -3,7 +3,7 @@ import { TurnedIn } from '@mui/icons-material/';
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 
 import { Bookmark } from '@/components/commons/Bookmark/Bookmark.component';
-import { StackChildren } from '@/components/commons/Styling/StackChildren/StackChildren';
+import { Stack } from '@/features/ui/Stack';
 
 import { CardProps } from './ArtCard.type';
 
@@ -26,7 +26,6 @@ export const ArtCard: React.FC<CardProps> = ({
           margin: '5px',
           padding: '5px',
           borderRadius: '5px',
-          backgroundColor: '#1a1a1a',
         }}
       />
       <CardContent sx={{ flex: 1 }}>
@@ -35,10 +34,10 @@ export const ArtCard: React.FC<CardProps> = ({
           <Bookmark icon={TurnedIn} />
         </Box>
         <Typography variant="body1">{author}</Typography>
-        <StackChildren flexDirection="row">
+        <Stack flexDirection="row">
           <LocationOn sx={{ marginRight: '5px' }} />
           <Typography variant="body1">{address}</Typography>
-        </StackChildren>
+        </Stack>
       </CardContent>
     </Card>
   );
