@@ -1,3 +1,4 @@
+import { StackChildren } from '@/components/commons/Styling/StackChildren/StackChildren';
 import { ComponentMeta } from '@/utils/storybook';
 
 import { ArtCard } from './ArtCard.component';
@@ -21,7 +22,7 @@ export const ArtCardDemo = () => {
 
 export const MultiArtCardsDemo = () => {
   return (
-    <>
+    <StackChildren gap={'10px'}>
       <ArtCard
         imageSrc="" // ここどうすればいいんですか？
         title="1しましまなしま"
@@ -40,6 +41,6 @@ export const MultiArtCardsDemo = () => {
         author="3ロイド・ダロ"
         address="3〒943-0831新潟県上越市…"
       />
-    </>
+    </StackChildren>
   );
 };

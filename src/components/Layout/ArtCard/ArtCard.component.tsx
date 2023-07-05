@@ -15,10 +15,7 @@ export const ArtCard: React.FC<CardProps> = ({
   address,
 }) => {
   return (
-    <Card
-      sx={{ p: 0, display: 'flex', alignItems: 'center', marginBottom: '10px' }}
-      // marginBottom 入れないと複数表示したときに互いにぴったりくっついてしまう
-    >
+    <Card sx={{ p: 0, display: 'flex', alignItems: 'center', width: '100%' }}>
       <CardMedia
         component="img"
         src={imageSrc}
