@@ -5,7 +5,7 @@ import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { Bookmark } from '@/components/commons/Bookmark/Bookmark.component';
 import { StackChildren } from '@/components/commons/Styling/StackChildren/StackChildren';
 
-import { CardProps } from './ArtCart.type';
+import { CardProps } from './ArtCard.type';
 
 export const ArtCard: React.FC<CardProps> = ({
   imageSrc,
