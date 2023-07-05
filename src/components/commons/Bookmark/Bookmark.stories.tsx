@@ -1,5 +1,3 @@
-import { TurnedIn, TurnedInNot } from '@mui/icons-material/';
-
 import { ComponentMeta, StoryFn } from '@/utils/storybook';
 
 import { Bookmark } from './Bookmark.component';
@@ -16,10 +14,10 @@ const Template: StoryFn<typeof Bookmark> = args => {
 
 export const NotBookmarked = Template.bind({});
 NotBookmarked.args = {
-  icon: TurnedInNot,
+  isAlradyBookmarked: false,
 };
 
-export const Bookmarked = Template.bind({});
-Bookmarked.args = {
-  icon: TurnedIn,
+export const AlreadyBookmarked = Template.bind({});
+AlreadyBookmarked.args = {
+  isAlradyBookmarked: true,
 };
