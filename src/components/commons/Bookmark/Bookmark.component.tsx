@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Button as MuiButton } from '@mui/material';
 import { TurnedIn, TurnedInNot } from '@mui/icons-material';
+import { Button as MuiButton } from '@mui/material';
+import { useState } from 'react';
 
 import { BookmarkProps } from './Bookmark.type';
 
@@ -20,8 +20,14 @@ export const Bookmark = ({
   };
 
   return (
-    <MuiButton variant={variant} disabled={disabled} color={color} onClick={handleToggleBookmark} {...rest}>
-    {isBookmarked ? <TurnedIn /> : <TurnedInNot />}
+    <MuiButton
+      variant={variant}
+      disabled={disabled}
+      color={color}
+      onClick={handleToggleBookmark}
+      {...rest}
+    >
+      {isBookmarked ? <TurnedIn /> : <TurnedInNot />}
     </MuiButton>
   );
 };
