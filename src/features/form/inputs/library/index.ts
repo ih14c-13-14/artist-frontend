@@ -6,7 +6,7 @@ export {
 export type {
   TextFieldProps as MuiTextFieldProps,
   FormControlLabelProps as MuiFormControlLabelProps,
-	CheckboxProps as MuiCheckboxProps,
+  CheckboxProps as MuiCheckboxProps,
   SxProps,
   Theme,
 } from '@mui/material';
