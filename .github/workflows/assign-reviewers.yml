@@ -6,8 +6,8 @@ on:
       - ready_for_review
 
 jobs:
-  add-reviews:
-    if: github.event.pull_request.draft == false && toJSON(github.event.pull_request.requested_reviewers) == '[]' && contains(github.actor, 'renovate') == false
+  auto_assign:
+    if: github.event.pull_request.draft == false && toJSON(github.event.pull_request.requested_reviewers) == '[]' && contains(github.actor, 'renovate') == false && !contains(github.event.pull_request.labels.*.name, 'Skip Review')
     runs-on:
       - ubuntu-latest
     steps:
