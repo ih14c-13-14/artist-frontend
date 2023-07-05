@@ -29,19 +29,19 @@ export const MultiArtCardsDemo = () => {
         imageSrc={imageFile}
         title="1しましまなしま"
         author="1ロイド・ダロ"
-        address="1〒943-0831新潟県上越市…"
+        address="0001〒100-0001 東京都千代田区千代田1番1号 江戸城ビル334号室"
       />
       <ArtCard
         imageSrc={imageFile}
         title="2しましまなしま"
         author="2ロイド・ダロ"
-        address="2〒943-0831新潟県上越市…"
+        address="0001〒100-0001 東京都千代田区千代田1番1号 江戸城ビル334号室"
       />
       <ArtCard
         imageSrc={imageFile}
         title="3しましまなしま"
         author="3ロイド・ダロ"
-        address="3〒943-0831新潟県上越市…"
+        address="0001〒100-0001 東京都千代田区千代田1番1号 江戸城ビル334号室"
       />
     </Stack>
   );
