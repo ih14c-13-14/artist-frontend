@@ -1,18 +1,17 @@
 import { Outlet } from 'react-router-dom';
 
+import { ErrorBoundary } from '@/features/errorHandling';
+
 import { LayoutProps } from './Layout.type';
 import { Footer } from '../Footer/Footer.component';
 import { Header } from '../Header/Header.component';
 
-export const Layout = ({
-  hasHeader = false,
-  hasFooter = false,
-}: LayoutProps) => {
+export const Layout = ({ hasFooter = false }: LayoutProps) => {
   return (
-    <>
-      {hasHeader && <Header />}
+    <ErrorBoundary>
+      <Header />
       <Outlet />
       {hasFooter && <Footer />}
-    </>
+    </ErrorBoundary>
   );
 };

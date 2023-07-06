@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Header } from '@/components/Layout/Header/Header.component';
 import { DEFAULT_ERROR_MESSAGE } from '@/features/errorHandling';
 import { getRoutes } from '@/routes/getRoutes';
 
@@ -19,7 +18,6 @@ const FallbackDisplay = (props?: FallbackDisplayProps) => {
 
   return (
     <>
-      <Header />
       <h1>{title ?? DEFAULT_ERROR_MESSAGE.title}</h1>
       <h2>{subtitle ?? DEFAULT_ERROR_MESSAGE.subtitle}</h2>
       {(contentRows ?? DEFAULT_ERROR_MESSAGE.contentRows).map(
