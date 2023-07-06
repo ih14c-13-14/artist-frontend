@@ -39,9 +39,6 @@ export const getRoutes = () => {
     passwordChangeDone: {
       path: '/password/change/done/',
     },
-    others: {
-      path: '/*',
-    },
   } as const satisfies {
     [key: string]: {
       path: string;
