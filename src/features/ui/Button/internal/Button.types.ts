@@ -1,5 +1,5 @@
 import { ButtonProps as MuiButtonProps } from '@mui/material/Button';
-import { PropsWithChildren } from 'react';
+import { ReactNode } from 'react';
 
 export type VariantKey = 'CONTAINED' | 'OUTLINED' | 'PLAIN';
 
@@ -8,9 +8,8 @@ export type MuiBasedButtonProps = MuiButtonProps & {
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 };
 
-export type ButtonProps = PropsWithChildren<
-  {
-    dataTestid?: string;
-    variant?: VariantKey;
-  } & JSX.IntrinsicElements['button']
->;
+export type ButtonProps = {
+  children: ReactNode;
+  dataTestid?: string;
+  variant?: VariantKey;
+} & JSX.IntrinsicElements['button'];
