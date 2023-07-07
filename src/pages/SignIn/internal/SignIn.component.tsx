@@ -9,7 +9,9 @@ import { FormPageSection } from '@/features/ui/FormPageSection';
 import { Spacer } from '@/features/ui/Spacer';
 import { Stack } from '@/features/ui/Stack';
 
-export const SignIn = () => {
+import styles from './SignIn.module.scss';
+
+const SignIn = () => {
   return (
     <FormPageSection type="h1" title="ログイン・新規会員登録">
       <FormPageSection type="h2" title="登録済みの方">
@@ -26,11 +28,25 @@ export const SignIn = () => {
           <Spacer size="16px" />
           <FormControlLabel
             control={<Checkbox />}
-            label="次回から自動ログインにする"
+            label={
+              <p className={styles.autoLoginLabel}>
+                次回から自動ログインにする
+              </p>
+            }
             sx={{ width: '100%' }}
           />
           <Spacer size="24px" />
           <Button label="ログイン" sx={{ width: '100%' }} />
+          <Spacer size="16px" />
+          <div className={styles.navigatePasswordResetContainer}>
+            <span>パスワードをお忘れの方は</span>
+            <a
+              className={styles.navigatePasswordResetAnchor}
+              onClick={() => {}}
+            >
+              こちら
+            </a>
+          </div>
         </form>
       </FormPageSection>
       <FormPageSection type="h2" title="はじめての方">
@@ -43,4 +59,5 @@ export const SignIn = () => {
     </FormPageSection>
   );
 };
-1;
+
+export default SignIn;
