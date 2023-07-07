@@ -7,11 +7,12 @@ import { StackChildren } from '../StackChildren/StackChildren';
 
 export const PostCode = ({ postCode, address }: PostCodeProps) => {
   // 郵便番号の整形
-  const postCodeString = postCode.toString();
-  const firstPart = postCodeString.slice(0, 3);
-  const secondPart = postCodeString.slice(3, 7);
-
-  const fixedPostCode = `${firstPart}-${secondPart}`;
+  const fixedPostCode = useMemo(() => {
+    const postCodeString = postCode.toString();
+    const firstPart = postCodeString.slice(0, 3);
+    const secondPart = postCodeString.slice(3, 7);
+    return `${firstPart}-${secondPart}`;
+  }, [postCode]);
 
   return (
     <div style={{ display: 'flex', maxWidth: '100px' }}>
