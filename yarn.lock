@@ -7436,10 +7436,10 @@ open@^8.4.0:
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
 
-openapi-typescript@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/openapi-typescript/-/openapi-typescript-6.3.0.tgz#854f067044b0b25f847bb8d672200304dd3c2780"
-  integrity sha512-qNl6whVcfPqB2JvB8YmWWeBIP5X+Y1n3PgKnq8Hd5OcsMnFUx6jPxFZ/Lc6UN4377IOaQwsx0hSMxwdUz5L1aQ==
+openapi-typescript@^6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/openapi-typescript/-/openapi-typescript-6.3.1.tgz#4add2e7ccca76ad41639e2b9f4b5414023cc01e2"
+  integrity sha512-CsKjTspBBSRCVlkvPQnsc/Dg0DvmA5iVslxNspEkvgv9SQGW2U4Zf6jqditp3IdWvcqfVylKuUrYfQqaFr6dQA==
   dependencies:
     ansi-colors "^4.1.3"
     fast-glob "^3.3.0"
