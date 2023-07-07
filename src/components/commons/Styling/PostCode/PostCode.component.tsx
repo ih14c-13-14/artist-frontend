@@ -41,7 +41,7 @@ export const PostCode = ({ postCode, address }: PostCodeProps) => {
         sx={{ maxWidth: iconSize + fieldWidth }}
       >
         <LocationOn sx={{ marginRight: 0 }} />
-        <Typography isTruncated sx={{ fontSize, lineHeight: 'inherit' }}>
+        <Typography isTruncated sx={{ fontSize, lineHeight: 'normal' }}>
           〒{fixedPostCode}
           {address}
         </Typography>
