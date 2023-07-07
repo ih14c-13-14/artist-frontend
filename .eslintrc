@@ -101,6 +101,7 @@
 			{
 				"checkFragmentShorthand": true
 			}
-		]
+		],
+		"@typescript-eslint/ban-types": "off"
 	}
 }
