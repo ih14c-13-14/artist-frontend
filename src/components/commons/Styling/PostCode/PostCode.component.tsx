@@ -1,29 +1,30 @@
 import { LocationOn } from '@mui/icons-material';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useMemo } from 'react';
 
 import { Stack } from '@/features/ui/Stack';
 import { Typography } from '@/features/ui/Typography';
+import { SxProps, Theme } from '@/features/ui/library';
 
 import { PostCodeProps } from './PostCode.type';
 
-export const PostCode = ({ postCode, address }: PostCodeProps) => {
-  const iconSize = 20;
-  const fieldWidth = 146;
-  const fontSize = 12;
+const iconSize = 20;
+const fieldWidth = 146;
+const fontSize = 12;
 
-  // アイコンのサイズ変更
-  const theme = createTheme({
-    components: {
-      MuiSvgIcon: {
-        styleOverrides: {
-          root: {
-            fontSize: iconSize,
-          },
-        },
-      },
+export const PostCode = ({ postCode, address }: PostCodeProps) => {
+
+  const IconSxProps = {
+    '&.MuiSvgIcon-root': {
+      fontSize: iconSize,
     },
-  });
+  } satisfies SxProps<Theme>;
+
+  const FontSx = {
+    '&.MuiTypography-root': {
+      fontSize,
+      lineHeight: 'normal',
+    },
+  };
 
   // 郵便番号の整形
   const fixedPostCode = useMemo(() => {
@@ -34,18 +35,16 @@ export const PostCode = ({ postCode, address }: PostCodeProps) => {
   }, [postCode]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Stack
-        spacing={0}
-        flexDirection="row"
-        sx={{ maxWidth: iconSize + fieldWidth }}
-      >
-        <LocationOn sx={{ marginRight: 0 }} />
-        <Typography isTruncated sx={{ fontSize, lineHeight: 'normal' }}>
-          〒{fixedPostCode}
-          {address}
-        </Typography>
-      </Stack>
-    </ThemeProvider>
+    <Stack
+      spacing={0}
+      flexDirection="row"
+      sx={{ maxWidth: iconSize + fieldWidth }}
+    >
+      <LocationOn sx={IconSxProps} />
+      <Typography isTruncated sx={FontSx}>
+        〒{fixedPostCode}
+        {address}
+      </Typography>
+    </Stack>
   );
 };
