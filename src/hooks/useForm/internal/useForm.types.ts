@@ -7,7 +7,7 @@ import type {
 
 export type UseFormProps<
   TFieldValues extends FieldValues,
-  TContext = {}
+  TContext = {},
 > = Required<{
   defaultValues: DefaultValues<TFieldValues>;
   resolver: Resolver<TFieldValues, TContext>;

@@ -4,7 +4,7 @@ import type { AnyObject, Maybe } from 'yup/lib/types';
 export interface CustomStringSchema<
   TType extends Maybe<string> = string | undefined,
   TContext extends AnyObject = AnyObject,
-  TOut extends TType = TType
+  TOut extends TType = TType,
 > extends yup.BaseSchema<TType, TContext, TOut> {
   minAndMax({
     min,

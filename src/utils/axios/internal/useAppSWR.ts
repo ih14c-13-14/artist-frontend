@@ -7,7 +7,7 @@ import * as schemaHelper from './schemaHelper';
 const fetcher = async <
   Path extends schemaHelper.UrlPaths,
   Method extends schemaHelper.HttpMethods,
-  PathParams extends { [K in Path extends `:${infer P}` ? P : never]?: string }
+  PathParams extends { [K in Path extends `:${infer P}` ? P : never]?: string },
 >(
   config: $axios.AxiosConfigWrapper<Path, Method, PathParams>
 ) => {
@@ -18,7 +18,7 @@ const fetcher = async <
 export const useAppSWR = <
   Path extends schemaHelper.UrlPaths,
   Method extends schemaHelper.HttpMethods,
-  PathParams extends { [K in Path extends `:${infer P}` ? P : never]?: string }
+  PathParams extends { [K in Path extends `:${infer P}` ? P : never]?: string },
 >(
   config: $axios.AxiosConfigWrapper<Path, Method, PathParams>
 ) =>

@@ -9,13 +9,13 @@ type InputLabelProps = {
 type ExcludedInputType = 'type' | 'placeholder';
 
 export type CustomInputIntrinsicElementsProps<
-  T extends 'input' | 'textarea' = 'input'
+  T extends 'input' | 'textarea' = 'input',
 > = Omit<ComponentPropsWithoutRef<T>, ExcludedInputType> & {
   dataTestid?: string;
 };
 
 export type InputBasePropsWithoutLabel<
-  T extends 'input' | 'textarea' = 'input'
+  T extends 'input' | 'textarea' = 'input',
 > = CustomInputIntrinsicElementsProps<T>;
 
 export type InputBasePropsWithLabel<T extends 'input' | 'textarea' = 'input'> =

@@ -7,7 +7,7 @@ import { HeadingProps } from '../../Heading';
 export type FormPageSectionProps<
   HeadingType extends HeadingProps<
     ExtractStrict<keyof JSX.IntrinsicElements, 'h1' | 'h2'>
-  >['type']
+  >['type'],
 > = PropsWithChildren<
   HeadingType extends 'h1'
     ? {
