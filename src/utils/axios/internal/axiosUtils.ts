@@ -6,7 +6,7 @@ import * as schemaHelper from './schemaHelper';
 export type AxiosConfigWrapper<
   Path extends schemaHelper.UrlPaths,
   Method extends schemaHelper.HttpMethods,
-  PathParams extends { [K in Path extends `:${infer P}` ? P : never]?: string }
+  PathParams extends { [K in Path extends `:${infer P}` ? P : never]?: string },
 > = {
   url: Path;
   method: Method & schemaHelper.HttpMethodsFilteredByPath<Path>;
@@ -18,7 +18,7 @@ export type AxiosConfigWrapper<
 export function request<
   Path extends schemaHelper.UrlPaths,
   Method extends schemaHelper.HttpMethods,
-  PathParams extends { [K in Path extends `:${infer P}` ? P : never]?: string }
+  PathParams extends { [K in Path extends `:${infer P}` ? P : never]?: string },
 >({
   url: pathUrl,
   pathParams,

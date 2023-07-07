@@ -11,7 +11,7 @@ import { Heading, HeadingProps } from '../../Heading';
 const FormPageSection = <
   T extends HeadingProps<
     ExtractStrict<keyof JSX.IntrinsicElements, 'h1' | 'h2'>
-  >['type']
+  >['type'],
 >(
   props: FormPageSectionProps<T>
 ) => {
