@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Layout } from '@/features/Layout';
+import { Layout, MapLayout } from '@/features/Layout';
 import { FallbackDisplay } from '@/features/errorHandling';
 import { MapShow } from '@/pages/MapShow';
 import { PasswordChange } from '@/pages/PasswordChange';
@@ -25,15 +25,14 @@ function App() {
     <BrowserRouter>
       <ErrorBoundary>
         <Routes>
-          <Route
-            path={routes.index.path}
-            element={<Layout hasHeader={true} hasFooter={true} />}
-          >
+          <Route element={<MapLayout />}>
             <Route path={routes.mapShow.path} element={<MapShow />} />
+          </Route>
+          <Route element={<Layout hasHeader={true} hasFooter={true} />}>
             <Route path={routes.serach.path} element={<Search />} />
             <Route path={routes.qrRead.path} element={<QrRead />} />
           </Route>
-          <Route path={routes.index.path} element={<Layout hasHeader={true} />}>
+          <Route element={<Layout hasHeader={true} />}>
             <Route path={routes.signIn.path} element={<SignIn />} />
             <Route path={routes.signUp.path} element={<SignUp />} />
             <Route

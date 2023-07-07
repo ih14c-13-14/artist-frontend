@@ -1,2 +1,3 @@
-export { default as Layout } from './internal/Layout.component';
-export type { LayoutProps } from './internal/Layout.types';
+export { Layout } from './internal/Layout';
+export type { LayoutProps } from './internal/Layout';
+export { MapLayout } from './internal/MapLayout';
