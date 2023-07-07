@@ -23,7 +23,7 @@ export const PostCode = ({ postCode, address }: PostCodeProps) => {
       fontSize,
       lineHeight: 'normal',
     },
-  };
+  } satisfies SxProps<Theme>;
 
   // 郵便番号の整形
   const fixedPostCode = useMemo(() => {
