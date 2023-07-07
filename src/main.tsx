@@ -1,7 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import '@google/model-viewer'; // eslint-disable-line @typescript-eslint/no-restricted-imports
 import App from './App';
 import 'ress/ress.css';
 
