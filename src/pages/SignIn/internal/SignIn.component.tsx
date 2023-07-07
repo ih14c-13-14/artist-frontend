@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Checkbox } from '@/features/form/inputs/Checkbox';
-import { FormControlLabel } from '@/features/form/inputs/FormControlLabel';
 import { TextInput } from '@/features/form/inputs/TextInput';
 import { InputWrapper } from '@/features/form/inputs/commons/InputWrapper';
 import { Button } from '@/features/ui/Button';
@@ -26,15 +25,7 @@ const SignIn = () => {
             </InputWrapper>
           </Stack>
           <Spacer size="16px" />
-          <FormControlLabel
-            control={<Checkbox />}
-            label={
-              <p className={styles.autoLoginLabel}>
-                次回から自動ログインにする
-              </p>
-            }
-            sx={{ width: '100%' }}
-          />
+          <Checkbox choiceLabel="次回から自動ログインにする" />
           <Spacer size="24px" />
           <Button label="ログイン" sx={{ width: '100%' }} />
           <Spacer size="16px" />
