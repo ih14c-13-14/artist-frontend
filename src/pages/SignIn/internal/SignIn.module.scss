@@ -1,0 +1,22 @@
+@import '@/_variables';
+
+.autoLoginLabel {
+  color: $colorBlack;
+  font-size: $fontSizeSmall;
+  font-style: normal;
+  font-weight: $fontWeightNormal;
+  line-height: normal;
+}
+
+.navigatePasswordResetContainer {
+  color: $colorBlack;
+  font-size: $fontSizeSmall;
+  font-style: normal;
+  font-weight: $fontWeightNormal;
+  line-height: normal;
+}
+
+.navigatePasswordResetAnchor {
+  color: $colorRed;
+  cursor: pointer;
+}
