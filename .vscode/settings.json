@@ -4,5 +4,8 @@
 	"files.eol": "\n",
 	"[typescript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
-	}
+	},
+	"cSpell.words": [
+		"clsx"
+	]
 }
