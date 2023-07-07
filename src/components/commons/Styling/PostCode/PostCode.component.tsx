@@ -3,7 +3,7 @@ import { LocationOn } from '@mui/icons-material';
 import { Typography } from '@/features/ui/Typography';
 
 import { PostCodeProps } from './PostCode.type';
-import { StackChildren } from '../StackChildren/StackChildren';
+import { Stack } from '@/features/ui/Stack';
 
 export const PostCode = ({ postCode, address }: PostCodeProps) => {
   // 郵便番号の整形
