@@ -1,13 +1,9 @@
-import { PropsWithChildren } from 'react';
-
 import { Stack } from '@/features/ui/Stack';
 
 import styles from './InputWrapper.module.scss';
+import { InputWrapperProps } from './InputWrapper.types';
 
-const InputWrapper = ({
-  label,
-  children,
-}: PropsWithChildren<{ label: string }>) => {
+const InputWrapper = ({ label, children }: InputWrapperProps) => {
   return (
     <Stack gap="8px">
       <p className={styles.label}>{label}</p>
