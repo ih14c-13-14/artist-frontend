@@ -36,11 +36,7 @@ const FallbackDisplay = (props?: FallbackDisplayProps) => {
       {!hasProps && (
         <>
           <Spacer size="24px"></Spacer>
-          <Button
-            label="トップに戻る"
-            onClick={handleClickReturnToTop}
-            sx={{ width: '100%' }}
-          ></Button>
+          <Button onClick={handleClickReturnToTop}>トップに戻る</Button>
         </>
       )}
     </div>

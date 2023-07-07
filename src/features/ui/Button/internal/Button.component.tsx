@@ -1,25 +1,30 @@
-import { MuiButton } from '@/features/ui/library';
+import clsx from 'clsx';
 
+import { valiantClassNames } from './Button.constants';
 import { ButtonProps } from './Button.types';
 
-export const Button = ({
-  label,
-  onClick,
-  variant = 'contained',
-  disabled,
-  // HACK: スタイル適用まで仕方なくこれ
-  color = 'error',
+const Button = ({
+  className,
+  variant = 'CONTAINED',
+  disabled = false,
+  dataTestid,
+  type = 'button',
+  children,
   ...rest
 }: ButtonProps) => {
+  const variantClassName = valiantClassNames[variant];
+
   return (
-    <MuiButton
-      variant={variant}
+    <button
+      className={clsx(variantClassName, className)}
+      type={type}
       disabled={disabled}
-      color={color}
-      onClick={onClick}
+      data-testid={dataTestid}
       {...rest}
     >
-      {label}
-    </MuiButton>
+      {children}
+    </button>
   );
 };
+
+export default Button;
