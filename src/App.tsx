@@ -10,10 +10,10 @@ import { PasswordReset } from '@/pages/PasswordReset';
 import { PasswordResetDone } from '@/pages/PasswordResetDone';
 import { QrRead } from '@/pages/QrRead';
 import { Search } from '@/pages/Search';
-import { Signin } from '@/pages/Signin';
-import { Signup } from '@/pages/Signup';
-import { SignupConfirm } from '@/pages/SignupConfirm';
-import { SignupDone } from '@/pages/SignupDone';
+import { SignIn } from '@/pages/SignIn';
+import { SignUp } from '@/pages/SignUp';
+import { SignUpConfirm } from '@/pages/SignUpConfirm';
+import { SignUpDone } from '@/pages/SignUpDone';
 import { getRoutes } from '@/routes/getRoutes';
 
 import { ErrorBoundary } from './features/errorHandling';
@@ -34,13 +34,13 @@ function App() {
             <Route path={routes.qrRead.path} element={<QrRead />} />
           </Route>
           <Route path={routes.index.path} element={<Layout hasHeader={true} />}>
-            <Route path={routes.signin.path} element={<Signin />} />
-            <Route path={routes.signup.path} element={<Signup />} />
+            <Route path={routes.signIn.path} element={<SignIn />} />
+            <Route path={routes.signUp.path} element={<SignUp />} />
             <Route
-              path={routes.signupConfirm.path}
-              element={<SignupConfirm />}
+              path={routes.SignUpConfirm.path}
+              element={<SignUpConfirm />}
             />
-            <Route path={routes.signupDone.path} element={<SignupDone />} />
+            <Route path={routes.signUpDone.path} element={<SignUpDone />} />
             <Route
               path={routes.passwordForget.path}
               element={<PasswordForget />}

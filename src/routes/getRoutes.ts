@@ -12,17 +12,17 @@ export const getRoutes = () => {
     qrRead: {
       path: '/qr/read/',
     },
-    signin: {
-      path: '/signin/',
+    signIn: {
+      path: '/sign-in/',
     },
-    signup: {
-      path: '/signup/',
+    signUp: {
+      path: '/sign-up/',
     },
-    signupConfirm: {
-      path: '/signup/confirm/',
+    SignUpConfirm: {
+      path: '/sign-up/confirm/',
     },
-    signupDone: {
-      path: '/signup/done/',
+    signUpDone: {
+      path: '/sign-up/done/',
     },
     passwordForget: {
       path: '/password/forget/',
