@@ -1,0 +1,30 @@
+@import '@/_variables';
+
+.sectionRoot {
+  margin: 0;
+  width: 100%;
+
+  .sectionInnerContainer {
+    width: 100%;
+  }
+}
+
+.h1 {
+  > .sectionInnerContainer {
+    padding-top: 24px;
+  }
+
+  > .descriptionTop {
+    padding-top: 24px;
+  }
+}
+
+.h2 {
+  &:is(:not(:last-child)) {
+    margin-bottom: 40px;
+  }
+
+  > .sectionInnerContainer {
+    padding-top: 16px;
+  }
+}
