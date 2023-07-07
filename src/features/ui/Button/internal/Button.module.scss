@@ -1,0 +1,32 @@
+@import '@/_variables';
+
+@mixin button {
+  height: 56px;
+  border-radius: 8px;
+  font-style: normal;
+  font-size: $fontSizeLarge;
+  font-weight: $fontWeightBold;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.containedButton {
+  @include button;
+  color: $colorWhite;
+  background-color: $colorRed;
+}
+
+.outlinedButton {
+  @include button;
+  color: $colorRed;
+  background-color: $colorWhite;
+  border: 1px solid $colorRed;
+}
+
+.plainButton {
+  @include button;
+  color: $colorRed;
+  background-color: $colorWhite;
+  border: none;
+}

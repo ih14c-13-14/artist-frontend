@@ -1,6 +1,6 @@
 import { ComponentMeta, StoryFn } from '@/utils/storybook';
 
-import { Button } from './Button.component';
+import Button from './Button.component';
 
 const ButtonStory: ComponentMeta<typeof Button> = {
   component: Button,
@@ -12,20 +12,17 @@ const Template: StoryFn<typeof Button> = args => <Button {...args} />;
 
 export const Contained = Template.bind({});
 Contained.args = {
-  label: 'Button',
-  disabled: false,
+  children: '山路を登りながら',
 };
 
 export const Outlined = Template.bind({});
 Outlined.args = {
-  label: 'Button',
-  variant: 'outlined',
-  disabled: false,
+  variant: 'OUTLINED',
+  children: '山路を登りながら',
 };
 
-export const Text = Template.bind({});
-Text.args = {
-  label: 'Button',
-  variant: 'text',
-  disabled: false,
+export const Plain = Template.bind({});
+Plain.args = {
+  variant: 'PLAIN',
+  children: '山路を登りながら',
 };
