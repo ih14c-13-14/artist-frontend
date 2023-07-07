@@ -12,7 +12,6 @@ const fieldWidth = 146;
 const fontSize = 12;
 
 export const PostCode = ({ postCode, address }: PostCodeProps) => {
-
   const IconSxProps = {
     '&.MuiSvgIcon-root': {
       fontSize: iconSize,
