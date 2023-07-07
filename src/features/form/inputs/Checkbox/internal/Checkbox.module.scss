@@ -43,8 +43,6 @@
 
 .container input[type='checkbox']:disabled + span::before {
   border: 1px solid $colorGray;
-  // グレー
-  background: $colorGray;
   cursor: default;
 }
 
@@ -61,7 +59,7 @@
   content: '';
   width: 10px;
   height: 6px;
-  border-left: 2px solid $colorBlack;
-  border-bottom: 2px solid $colorBlack;
+  border-left: 3px solid $colorRed;
+  border-bottom: 3px solid $colorRed;
   transform: rotate(-50deg);
 }
