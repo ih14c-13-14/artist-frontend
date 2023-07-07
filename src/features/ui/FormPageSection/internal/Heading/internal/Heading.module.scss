@@ -1,0 +1,19 @@
+@import '@/_variables';
+
+.headingRoot {
+  &:is(h1) {
+    font-style: normal;
+    font-weight: $fontWeightBold;
+    font-size: $fontSizeLarge;
+    color: $colorBlack;
+    line-height: normal;
+  }
+
+  &:is(h2) {
+    font-style: normal;
+    font-weight: $fontWeightNormal;
+    font-size: $fontSizeLarge;
+    color: $colorBlack;
+    line-height: normal;
+  }
+}
