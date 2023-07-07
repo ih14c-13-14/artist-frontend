@@ -27,7 +27,7 @@ const SignIn = () => {
           <Spacer size="16px" />
           <Checkbox choiceLabel="次回から自動ログインにする" />
           <Spacer size="24px" />
-          <Button label="ログイン" sx={{ width: '100%' }} />
+          <Button>ログイン</Button>
           <Spacer size="16px" />
           <div className={styles.navigatePasswordResetContainer}>
             <span>パスワードをお忘れの方は</span>
@@ -41,11 +41,7 @@ const SignIn = () => {
         </form>
       </FormPageSection>
       <FormPageSection type="h2" title="はじめての方">
-        <Button
-          variant="outlined"
-          label="新規会員登録"
-          sx={{ width: '100%' }}
-        />
+        <Button variant="OUTLINED">新規会員登録</Button>
       </FormPageSection>
     </FormPageSection>
   );
