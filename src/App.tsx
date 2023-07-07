@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Layout } from '@/components/Layout/Layout/Layout.component';
+import { Layout } from '@/features/Layout';
 import { FallbackDisplay } from '@/features/errorHandling';
 import { MapShow } from '@/pages/MapShow';
 import { PasswordChange } from '@/pages/PasswordChange';
