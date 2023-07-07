@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 import 'ress/ress.css';
-import '@google/model-viewer'; // eslint-disable-line @typescript-eslint/no-restricted-imports
+// import '@google/model-viewer'; // eslint-disable-line @typescript-eslint/no-restricted-imports
 
 const preview: Preview = {
   parameters: {
