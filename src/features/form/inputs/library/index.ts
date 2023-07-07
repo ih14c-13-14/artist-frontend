@@ -1,10 +1,6 @@
-export {
-  TextField as MuiTextField,
-  FormControlLabel as MuiFormControlLabel,
-} from '@mui/material';
+export { TextField as MuiTextField } from '@mui/material';
 export type {
   TextFieldProps as MuiTextFieldProps,
-  FormControlLabelProps as MuiFormControlLabelProps,
   SxProps,
   Theme,
 } from '@mui/material';
