@@ -1,8 +1,8 @@
 @import '@/_variables';
 
 .container {
-  padding: 8px;
-  height: 179px;
+  padding: 12px;
+  height: 192px;
   border: 1px solid $colorBlack;
   background-color: #f4f6f8;
   // 高さはみ出したらスクロール
@@ -11,5 +11,5 @@
 
 .termsBody {
   white-space: pre-wrap;
-  font-size: $fontSizeXSmall;
+  font-size: $fontSizeSmall;
 }
