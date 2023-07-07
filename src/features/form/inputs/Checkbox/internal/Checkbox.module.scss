@@ -29,12 +29,9 @@
   left: -24px;
 }
 
-.container span:hover::before {
-  border: 1px solid $colorBlack;
-}
-
 .container input[type='checkbox']:checked + span::before {
-  border: 1px solid $colorBlack;
+  border: 1px solid $colorRed;
+  background-color: $colorRed;
 }
 
 .container input[type='checkbox']:disabled + span {
@@ -59,7 +56,7 @@
   content: '';
   width: 10px;
   height: 6px;
-  border-left: 3px solid $colorRed;
-  border-bottom: 3px solid $colorRed;
+  border-left: 3px solid $colorWhite;
+  border-bottom: 3px solid $colorWhite;
   transform: rotate(-50deg);
 }
