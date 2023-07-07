@@ -1,0 +1,28 @@
+import { TermsAgreement } from './TermsBody.constants';
+import styles from './TermsBody.module.scss';
+import { useDetectScrolledToBottom } from './hooks/useDetectScrolledToBottom';
+
+export type TermsBodyProps = {
+  setIsTermsScrolled: (isTermsScrolled: boolean) => void;
+};
+
+export const TermsBody = ({ setIsTermsScrolled }: TermsBodyProps) => {
+  const { inViewRef } = useDetectScrolledToBottom({
+    setIsScrolledToBottom: setIsTermsScrolled,
+  });
+
+  return (
+    <div className={styles.container}>
+      <p
+        dangerouslySetInnerHTML={{
+          __html: TermsAgreement,
+        }}
+        className={styles.termsBody}
+      ></p>
+      {/* NOTE: 最下部までスクロールされたか検知するための要素 */}
+      <div ref={inViewRef} />
+    </div>
+  );
+};
+
+export default TermsBody;
