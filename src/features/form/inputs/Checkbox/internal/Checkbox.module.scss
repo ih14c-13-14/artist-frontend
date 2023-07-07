@@ -1,0 +1,67 @@
+@import '@/_variables';
+
+.container {
+  display: block;
+  width: fit-content;
+}
+
+.container span {
+  position: relative;
+  display: block;
+  margin-left: 24px;
+  text-align: left;
+  font-style: normal;
+  font-weight: $fontWeightNormal;
+  font-size: $fontSizeSmall;
+  line-height: normal;
+  cursor: pointer;
+  user-select: none;
+}
+
+.container span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $colorBlack;
+  top: 0;
+  left: -24px;
+}
+
+.container span:hover::before {
+  border: 1px solid $colorBlack;
+}
+
+.container input[type='checkbox']:checked + span::before {
+  border: 1px solid $colorBlack;
+}
+
+.container input[type='checkbox']:disabled + span {
+  cursor: default;
+}
+
+.container input[type='checkbox']:disabled + span::before {
+  border: 1px solid $colorGray;
+  // グレー
+  background: $colorGray;
+  cursor: default;
+}
+
+.container input[type='checkbox'] {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.container input[type='checkbox']:checked + span::after {
+  position: absolute;
+  top: 3px;
+  left: -22px;
+  content: '';
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid $colorBlack;
+  border-bottom: 2px solid $colorBlack;
+  transform: rotate(-50deg);
+}

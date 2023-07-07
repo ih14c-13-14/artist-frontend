@@ -4,6 +4,9 @@ import Checkbox from './Checkbox.component';
 
 const CheckboxStory: Meta<typeof Checkbox> = {
   component: Checkbox,
+  args: {
+    choiceLabel: '山路を登りながら',
+  },
 };
 
 export default CheckboxStory;
