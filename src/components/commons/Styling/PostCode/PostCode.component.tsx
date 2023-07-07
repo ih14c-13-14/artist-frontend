@@ -15,13 +15,11 @@ export const PostCode = ({ postCode, address }: PostCodeProps) => {
   }, [postCode]);
 
   return (
-    <div style={{ display: 'flex', maxWidth: '100px' }}>
-      <StackChildren flexDirection="row">
-        <LocationOn sx={{ marginRight: '5px' }} />
-        <Typography isTruncated>
-          〒 {fixedPostCode} {address}
-        </Typography>
-      </StackChildren>
-    </div>
+    <Stack flexDirection="row" sx={{ maxWidth: '100px' }}>
+      <LocationOn sx={{ marginRight: '5px' }} />
+      <Typography isTruncated>
+        〒 {fixedPostCode} {address}
+      </Typography>
+    </Stack>
   );
 };
