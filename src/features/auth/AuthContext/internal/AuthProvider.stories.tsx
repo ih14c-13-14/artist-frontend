@@ -18,7 +18,15 @@ const Internal = () => {
   return (
     <div>
       <h1>{isLogin ? 'Logged in' : 'Logged out'}</h1>
-      {!isLogin && <Button onClick={signIn}>Login</Button>}
+      {!isLogin && (
+        <Button
+          onClick={() => {
+            signIn({ email: 'hoge', password: 'fuga' });
+          }}
+        >
+          Login
+        </Button>
+      )}
       {isLogin && <Button onClick={signOut}>Logout</Button>}
     </div>
   );

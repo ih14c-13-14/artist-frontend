@@ -16,7 +16,8 @@ const SignIn = () => {
     <FormPageSection type="h1" title="ログイン・新規会員登録">
       <FormPageSection type="h2" title="登録済みの方">
         {/* TODO: サインイン画面実装時に入れる */}
-        <form onSubmit={formOnSubmitHandler}>
+        {/* formデフォルトの画面遷移はさせない */}
+        <form onSubmit={formOnSubmitHandler} noValidate>
           <Stack gap="24px">
             <InputWrapper label="メールアドレス">
               <TextInput sx={{ width: '100%' }} />
