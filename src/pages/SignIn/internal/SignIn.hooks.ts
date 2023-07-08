@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useAuth } from '@/features/auth/AuthContext';
+import { useAuth } from '@/features/auth';
 import { useForm } from '@/hooks/useForm';
 import { getRoutes } from '@/routes/getRoutes';
 import validation, { resolver } from '@/utils/validation/validation';

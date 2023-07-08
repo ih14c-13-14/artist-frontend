@@ -16,7 +16,7 @@ import { SignUpConfirm } from '@/pages/SignUpConfirm';
 import { SignUpDone } from '@/pages/SignUpDone';
 import { getRoutes } from '@/routes/getRoutes';
 
-import { AuthProvider } from './features/auth/AuthContext';
+import { AuthProvider } from './features/auth';
 import { ErrorBoundary } from './features/errorHandling';
 
 function App() {
