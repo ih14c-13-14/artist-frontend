@@ -9,5 +9,8 @@
 		"clsx",
 		"ress",
 		"testid"
-	]
+	],
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
