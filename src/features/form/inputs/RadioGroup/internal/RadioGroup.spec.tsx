@@ -2,8 +2,8 @@ import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Controller } from 'react-hook-form';
 
-import { useForm } from '@/features/form/Helper';
-import validation, { resolver } from '@/features/form/validation/validation';
+import { useForm } from '@/hooks/useForm';
+import validation, { resolver } from '@/utils/validation/validation';
 
 import RadioGroup from './RadioGroup.component';
 
