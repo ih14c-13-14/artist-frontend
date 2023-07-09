@@ -10,7 +10,8 @@ import { useSignIn } from './SignIn.hooks';
 import styles from './SignIn.module.scss';
 
 const SignIn = () => {
-  const { formOnSubmitHandler } = useSignIn();
+  const { formOnSubmitHandler, handlePasswordForget, handleSignUp } =
+    useSignIn();
 
   return (
     <FormPageSection type="h1" title="ログイン・新規会員登録">
@@ -34,7 +35,7 @@ const SignIn = () => {
             <span>パスワードをお忘れの方は</span>
             <a
               className={styles.navigatePasswordResetAnchor}
-              onClick={() => {}}
+              onClick={handlePasswordForget}
             >
               こちら
             </a>
@@ -42,7 +43,9 @@ const SignIn = () => {
         </form>
       </FormPageSection>
       <FormPageSection type="h2" title="はじめての方">
-        <Button variant="OUTLINED">新規会員登録</Button>
+        <Button variant="OUTLINED" onClick={handleSignUp}>
+          新規会員登録
+        </Button>
       </FormPageSection>
     </FormPageSection>
   );
