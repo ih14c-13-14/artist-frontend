@@ -11,8 +11,6 @@ export type SignInArgs = NonNullable<
 
 export const useSignIn = () => {
   const signIn = useCallback(async ({ email, password }: SignInArgs) => {
-    console.log('email: ', email);
-    console.log('password: ', password);
     try {
       const response = await request({
         url: '/api/v1/auth/signin',
@@ -22,7 +20,6 @@ export const useSignIn = () => {
           password,
         },
       });
-      console.log('response: ', response);
       /**
        * 雑に埋めたもの
        */
@@ -30,6 +27,10 @@ export const useSignIn = () => {
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NTFDNUVCOC1FOUQ3LTQ4MjUtQTI2Qy0yRUZFNzY4NDk1NTMiLCJuYW1lIjoiQXJ0aXN0IiwiZXhwIjoxNTE2MjM5MDIyfQ.awtYQYEGdq1cpoIPnDg0zDZtLfRQt4nYmsr6Ab-3xlY';
 
       getAuthTokenStore().set(hardcodedToken);
+
+      return {
+        response,
+      };
     } catch (error) {
       // TODO: バリデーションエラー拾う
       console.error(error);

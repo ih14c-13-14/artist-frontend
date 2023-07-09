@@ -5,8 +5,6 @@ import type { JWTPayload } from './types';
  * @throws {InvalidJWTPayloadException} Payload が不正な場合に送出
  */
 function validatePayload(payload: unknown): asserts payload is JWTPayload {
-  console.log('validatePayload');
-  console.log(payload);
   if (
     typeof payload === 'object' &&
     payload !== null &&

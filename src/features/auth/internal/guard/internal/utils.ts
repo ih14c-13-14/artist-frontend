@@ -8,10 +8,7 @@ import {
 } from '../../jwt';
 
 export const isAuthenticated = (jwt: JWT | null, _now?: number): boolean => {
-  console.log('isAuthenticated');
-  console.log(jwt);
   if (isNil(jwt)) {
-    console.log('isNil');
     return false;
   }
 
@@ -21,7 +18,6 @@ export const isAuthenticated = (jwt: JWT | null, _now?: number): boolean => {
     // return (now ?? Date.now()) <= payload.exp * 1000;
     return 1516239022 <= payload.exp * 1000;
   } catch (e) {
-    console.log(e);
     if (
       e instanceof InvalidJWTException ||
       e instanceof InvalidJWTPayloadException
