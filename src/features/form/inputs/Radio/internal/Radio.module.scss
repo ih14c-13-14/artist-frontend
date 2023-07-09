@@ -1,0 +1,75 @@
+@import '@/_variables';
+
+.circle {
+  position: absolute;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  box-sizing: border-box;
+  border: $borderThin $colorBlack;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: '';
+    border-radius: 50%;
+    width: 9px;
+    height: 9px;
+    opacity: 0;
+  }
+}
+
+.circleContainer {
+  width: 13px;
+  height: 13px;
+}
+
+.container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[type='radio'] {
+  filter: alpha(opacity=0);
+
+  -moz-opacity: 0;
+  opacity: 0;
+  appearance: none;
+  position: absolute;
+
+  &:disabled {
+    + .circleContainer {
+      > .circle {
+        border: $borderThin $colorLightGray;
+        background: $colorLightGray;
+      }
+    }
+  }
+
+  &:checked {
+    + .circleContainer {
+      > .circle {
+        border: $borderThick $colorRed;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:disabled {
+      + .circleContainer {
+        > .circle {
+          border: $borderThin $colorLightGray;
+
+          &::after {
+            background: $colorGray;
+          }
+        }
+      }
+    }
+  }
+}

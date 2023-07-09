@@ -1,3 +1,4 @@
+import { ForwardedRef, Ref, forwardRef } from 'react';
 import type { DropdownIndicatorProps } from 'react-select';
 import Select, { components } from 'react-select';
 
@@ -21,16 +22,26 @@ const DropdownIndicator = <TValue extends unknown = string>(
   );
 };
 
+declare module 'react' {
+  function forwardRef<T, P = {}>(
+    render: (props: P, ref: ForwardedRef<T>) => JSX.Element | null
+  ): (props: P & RefAttributes<T>) => JSX.Element | null;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
-const SelectInput = <TValue extends unknown = string>({
-  width = '100%',
-  minHeight = '54px',
-  selectedValuePaddingLeft = '0px',
-  disabled,
-  label = SELECT_INPUT_DEFAULT_DISPLAY_LABELS.EMPTY,
-  dataTestid,
-  ...rest
-}: SelectInputProps<TValue>) => {
+const SelectInput = <TValue extends unknown = string>(
+  {
+    width = '100%',
+    minHeight = '54px',
+    selectedValuePaddingLeft = '0px',
+    disabled,
+    label = SELECT_INPUT_DEFAULT_DISPLAY_LABELS.EMPTY,
+    dataTestid,
+    ...rest
+  }: SelectInputProps<TValue>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ref?: Ref<any>
+) => {
   const { options, currentOption, handleSelect } = useHooks({ width, ...rest });
 
   const {
@@ -48,6 +59,7 @@ const SelectInput = <TValue extends unknown = string>({
   return (
     <div style={{ width, padding: 0 }} data-testid={dataTestid}>
       <Select
+        ref={ref}
         options={options}
         name={rest.name}
         onChange={selectedOption => handleSelect(selectedOption)}
@@ -114,4 +126,6 @@ const SelectInput = <TValue extends unknown = string>({
   );
 };
 
-export default SelectInput;
+const SelectInputWithForwardRef = forwardRef(SelectInput);
+
+export default SelectInputWithForwardRef;
