@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Control, Controller, UseFormRegister } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 
 import { TermsBody } from '@/features/business/signUp/TermsBody';
 import { Checkbox } from '@/features/form/inputs/Checkbox';
@@ -11,8 +11,8 @@ import { Button } from '@/features/ui/Button';
 import { FormPageSection } from '@/features/ui/FormPageSection';
 import { Stack } from '@/features/ui/Stack';
 
+import { SignUpFormProps } from './SignUpForm.types';
 import { Fields } from '../../SignUp.constants';
-import { SignUpFormType } from '../../SignUp.types';
 
 const SignUpForm = ({
   onBackToSignIn,
@@ -20,15 +20,7 @@ const SignUpForm = ({
   register,
   control,
   isValid,
-}: {
-  onBackToSignIn: () => void;
-  onConfirm: () => void;
-  register: UseFormRegister<SignUpFormType>;
-  control: Control<SignUpFormType, {}>;
-  isValid: boolean;
-  isTermsAgreed: boolean;
-  onTermsCheckboxChange: () => void;
-}) => {
+}: SignUpFormProps) => {
   const [_isTermsScrolled, setIsTermsScrolled] = useState(false);
 
   return (
