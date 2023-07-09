@@ -18,9 +18,6 @@ export const getRoutes = () => {
     signUp: {
       path: '/sign-up/',
     },
-    SignUpConfirm: {
-      path: '/sign-up/confirm/',
-    },
     signUpDone: {
       path: '/sign-up/done/',
     },
