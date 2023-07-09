@@ -1,5 +1,6 @@
 import { useContext, useEffect, useMemo } from 'react';
 
+import { getAuthTokenStore } from '../../../authTokenStore';
 import { JWT } from '../../../jwt';
 import { AuthContext } from '../AuthContext';
 
@@ -16,7 +17,7 @@ export function useGuard({ guardPredicate, onRejected }: UseGuardProps) {
     throw new Error('useGuard must be used within a AuthProvider');
   }
 
-  const { jwt } = authContext;
+  const jwt = getAuthTokenStore().get();
 
   const guardPassed = useMemo(() => guardPredicate(jwt), [guardPredicate, jwt]);
 
