@@ -5,9 +5,9 @@ export type SignInArgs = NonNullable<
 >['content']['application/json'];
 
 export type AuthContextType = {
-  token: string | null;
+  jwt: string | null;
   useSignIn: () => {
-    signIn: ({ email, password }: SignInArgs) => void;
+    signIn: ({ email, password }: SignInArgs) => Promise<void>;
   };
   signOut: () => void;
 };

@@ -20,9 +20,9 @@ export const useSignIn = () => {
 
   const { signIn } = useSignIn();
 
-  const formOnSubmitHandler = useCallback(() => {
+  const formOnSubmitHandler = useCallback(async () => {
     try {
-      signIn({ email: 'hoge', password: 'fuga' });
+      await signIn({ email: 'hoge', password: 'fuga' });
     } catch (e) {
       throw new LogicException('エラーハンドリングしましょう');
     }

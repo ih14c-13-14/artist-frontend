@@ -13,12 +13,21 @@ const AuthProviderStory: Meta<typeof AuthProvider> = {
 export default AuthProviderStory;
 
 const Internal = () => {
-  const { signIn, signOut } = useAuth();
-  const { isLogin } = useGuard();
+  const { useSignIn, signOut } = useAuth();
+  const { guardPassed } = useGuard({
+    onRejected: () => {
+      console.log('onRejected');
+    },
+    guardPredicate: jwt => {
+      return !!jwt;
+    },
+  });
+
+  const { signIn } = useSignIn();
   return (
     <div>
-      <h1>{isLogin ? 'Logged in' : 'Logged out'}</h1>
-      {!isLogin && (
+      <h1>{guardPassed ? 'Logged in' : 'Logged out'}</h1>
+      {!guardPassed && (
         <Button
           onClick={() => {
             signIn({ email: 'hoge', password: 'fuga' });
@@ -27,7 +36,7 @@ const Internal = () => {
           Login
         </Button>
       )}
-      {isLogin && <Button onClick={signOut}>Logout</Button>}
+      {guardPassed && <Button onClick={signOut}>Logout</Button>}
     </div>
   );
 };
