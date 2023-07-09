@@ -13,7 +13,7 @@ const AuthProviderStory: Meta<typeof AuthProvider> = {
 export default AuthProviderStory;
 
 const Internal = () => {
-  const { useSignIn, signOut } = useAuth();
+  const { useSignIn, useSignOut } = useAuth();
   const { guardPassed } = useGuard({
     onRejected: () => {
       console.log('onRejected');
@@ -24,6 +24,7 @@ const Internal = () => {
   });
 
   const { signIn } = useSignIn();
+  const { signOut } = useSignOut();
   return (
     <div>
       <h1>{guardPassed ? 'Logged in' : 'Logged out'}</h1>
