@@ -16,7 +16,7 @@ export type IconProps = {
   size?: number | string | undefined;
 } & Omit<BaseProps, 'width' | 'height'>;
 
-const Icon = ({ type, size = 24, ...rest }: IconProps) => {
+const Icon = ({ type, size = 32, ...rest }: IconProps) => {
   const IconComponent = icons[type];
   return <IconComponent width={size} height={size} {...rest} />;
 };
