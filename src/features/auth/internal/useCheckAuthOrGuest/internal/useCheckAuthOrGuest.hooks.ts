@@ -5,21 +5,21 @@ import { isAuthenticated } from '../../guard';
 import { useGuard } from '../../hooks/useGuard';
 
 const useCheckAuthOrGuest = ({ onAuth, onGuest }: UseCheckAuthOrGuestProps) => {
-  const { guardPassed: isLoggedin } = useGuard({
+  const { guardPassed: isLoggedIn } = useGuard({
     guardPredicate: isAuthenticated,
     onRejected: () => {},
   });
 
   useEffect(() => {
-    if (isLoggedin) {
+    if (isLoggedIn) {
       onAuth?.();
     } else {
       onGuest?.();
     }
-  }, [isLoggedin, onAuth, onGuest]);
+  }, [isLoggedIn, onAuth, onGuest]);
 
   return {
-    isLoggedin,
+    isLoggedIn,
   } as const;
 };
 
