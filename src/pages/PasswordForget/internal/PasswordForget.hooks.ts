@@ -9,11 +9,15 @@ export type MutateArgs = NonNullable<
   paths['/api/v1/users/password-reset']['post']['requestBody']
 >['content']['application/json'];
 
+export type FormType = {
+  email: string;
+};
+
 export const usePasswordForget = () => {
   const validationSchema = validation.object().shape({
     email: validation.string().email().required(),
   });
-  const { getValues, handleSubmit, control, register } = useForm({
+  const { getValues, handleSubmit, control, register } = useForm<FormType>({
     defaultValues: {},
     resolver: resolver(validationSchema),
   });

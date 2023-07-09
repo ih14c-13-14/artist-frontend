@@ -1,5 +1,14 @@
 import { ComponentPropsWithoutRef } from 'react';
 
+/** 選択肢 */
+export type Choice<T = string> = {
+  /** form に入る値 */
+  id: T;
+  /** 表示用ラベル */
+  name: string;
+};
+export type Choices<T = string> = ReadonlyArray<Choice<T>>;
+
 export type ChangeEventType = React.ChangeEvent<HTMLInputElement>;
 
 type InputLabelProps = {
