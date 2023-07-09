@@ -29,7 +29,7 @@ const SignUpForm = ({
   isTermsAgreed: boolean;
   onTermsCheckboxChange: () => void;
 }) => {
-  const [isTermsScrolled, setIsTermsScrolled] = useState(false);
+  const [_isTermsScrolled, setIsTermsScrolled] = useState(false);
 
   return (
     <FormPageSection type="h1" title="新規会員登録">
@@ -123,7 +123,8 @@ const SignUpForm = ({
         </InputWrapper>
         <Checkbox
           {...register(Fields.isTermsAgreed)}
-          disabled={!isTermsScrolled}
+          // TODO: 再レンダーで死ぬのでいつかなおす
+          // disabled={!isTermsScrolled}
           choiceLabel="注意事項・利用規約・プライバシーポリシーにご同意の上、確認画面へお進みください。"
         />
         <Stack direction="row">
