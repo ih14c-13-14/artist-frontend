@@ -1,6 +1,6 @@
 import type { AuthTokenStore, EventType, JWT, Listener } from './types';
 
-const BEARER_TOKEN_KEY = 'applicantToken';
+const BEARER_TOKEN_KEY = 'userToken';
 class AuthTokenStoreLocalStorage implements AuthTokenStore {
   private listeners: Record<EventType, ReadonlyArray<Listener>> = {
     change: [],

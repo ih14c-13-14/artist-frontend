@@ -16,44 +16,33 @@ import { SignUpConfirm } from '@/pages/SignUpConfirm';
 import { SignUpDone } from '@/pages/SignUpDone';
 import { getRoutes } from '@/routes/getRoutes';
 
-import { AuthProvider } from './features/auth';
+import { AuthGuard, AuthProvider } from './features/auth';
 import { ErrorBoundary } from './features/errorHandling';
 
 function App() {
-  const routes = getRoutes();
-
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <ErrorBoundary>
-          <Routes>
+      <AppWithAuth />
+    </AuthProvider>
+  );
+}
+
+const AppWithAuth = () => {
+  const routes = getRoutes();
+  // const { isLoggedin } = useCheckAuthOrGuest({});
+  return (
+    <BrowserRouter>
+      <ErrorBoundary>
+        <Routes>
+          <Route path="/" element={<AuthGuard />}>
             <Route element={<MapLayout />}>
               <Route path={routes.mapShow.path} element={<MapShow />} />
             </Route>
-            <Route element={<Layout hasHeader={true} hasFooter={true} />}>
+            <Route element={<Layout hasFooter={true} />}>
               <Route path={routes.serach.path} element={<Search />} />
               <Route path={routes.qrRead.path} element={<QrRead />} />
             </Route>
-            <Route element={<Layout hasHeader={true} />}>
-              <Route path={routes.signIn.path} element={<SignIn />} />
-              <Route path={routes.signUp.path} element={<SignUp />} />
-              <Route
-                path={routes.SignUpConfirm.path}
-                element={<SignUpConfirm />}
-              />
-              <Route path={routes.signUpDone.path} element={<SignUpDone />} />
-              <Route
-                path={routes.passwordForget.path}
-                element={<PasswordForget />}
-              />
-              <Route
-                path={routes.passwordReset.path}
-                element={<PasswordReset />}
-              />
-              <Route
-                path={routes.passwordResetDone.path}
-                element={<PasswordResetDone />}
-              />
+            <Route element={<Layout />}>
               <Route
                 path={routes.passwordChange.path}
                 element={<PasswordChange />}
@@ -64,11 +53,33 @@ function App() {
               />
               <Route path="/*" element={<FallbackDisplay />} />
             </Route>
-          </Routes>
-        </ErrorBoundary>
-      </BrowserRouter>
-    </AuthProvider>
+          </Route>
+          <Route element={<Layout />}>
+            <Route path={routes.signIn.path} element={<SignIn />} />
+            <Route path={routes.signUp.path} element={<SignUp />} />
+            <Route
+              path={routes.SignUpConfirm.path}
+              element={<SignUpConfirm />}
+            />
+            <Route path={routes.signUpDone.path} element={<SignUpDone />} />
+            <Route
+              path={routes.passwordForget.path}
+              element={<PasswordForget />}
+            />
+            <Route
+              path={routes.passwordReset.path}
+              element={<PasswordReset />}
+            />
+            <Route
+              path={routes.passwordResetDone.path}
+              element={<PasswordResetDone />}
+            />
+            <Route path="/*" element={<FallbackDisplay />} />
+          </Route>
+        </Routes>
+      </ErrorBoundary>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

@@ -1,27 +1,61 @@
-import { useState, ReactNode } from 'react';
+import { ReactNode, useCallback } from 'react';
+
+import { request } from '@/utils/axios';
 
 import { AuthContext } from './AuthContext';
-import { AuthContextType } from './AuthContext.types';
+import { AuthContextType, SignInArgs } from './AuthContext.types';
+import { getAuthTokenStore } from '../../authTokenStore';
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [token, setToken] = useState<string | null>(null);
+  const useSignIn = () => {
+    const signIn = useCallback(async ({ email, password }: SignInArgs) => {
+      console.log('email: ', email);
+      console.log('password: ', password);
+      try {
+        const response = await request({
+          url: '/api/v1/auth/signin',
+          method: 'post',
+          data: {
+            email,
+            password,
+          },
+        });
+        console.log('response: ', response);
+        /**
+         * 雑に埋めたもの
+         */
+        const hardcodedToken =
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NTFDNUVCOC1FOUQ3LTQ4MjUtQTI2Qy0yRUZFNzY4NDk1NTMiLCJuYW1lIjoiQXJ0aXN0IiwiZXhwIjoxNTE2MjM5MDIyfQ.awtYQYEGdq1cpoIPnDg0zDZtLfRQt4nYmsr6Ab-3xlY';
 
-  const signIn = ({ email, password }: { email: string; password: string }) => {
-    console.log('AuthProvider.signIn');
-    console.log('email: ', email);
-    console.log('password: ', password);
-    const hardcodedToken = 'your-hardcoded-jwt-token';
-    setToken(hardcodedToken);
+        getAuthTokenStore().set(hardcodedToken);
+      } catch (error) {
+        // TODO: バリデーションエラー拾う
+        console.error(error);
+      }
+    }, []);
+    return { signIn };
   };
 
-  const signOut = () => {
-    setToken(null);
+  const useSignOut = () => {
+    const signOut = async () => {
+      try {
+        await request({
+          url: '/api/v1/auth/signout',
+          method: 'delete',
+        });
+      } catch (error) {
+        // TODO: バリデーションエラー拾う
+        console.error(error);
+      }
+      getAuthTokenStore().flush();
+    };
+
+    return { signOut };
   };
 
   const authValue: AuthContextType = {
-    token,
-    signIn,
-    signOut,
+    useSignIn,
+    useSignOut,
   };
 
   return (
