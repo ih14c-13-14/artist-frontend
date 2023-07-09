@@ -10,6 +10,7 @@
   "labels": ["renovate"],
   "rangeStrategy": "bump",
   "reviewers": ["na2na-p"],
+  "ignoreDeps": ["@hookform/resolvers"],
   "postUpdateOptions": ["yarnDedupeHighest"],
   "packageRules": [
     {
