@@ -12,6 +12,7 @@ export const Fields = {
   age_group: 'age_group',
   gender: 'gender',
   prefecture: 'prefecture',
+  isTermsAgreed: 'isTermsAgreed',
 } satisfies {
   [key in keyof SignUpFormType]: key;
 };

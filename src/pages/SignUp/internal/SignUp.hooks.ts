@@ -10,6 +10,12 @@ export const useSignUp = () => {
     (typeof PAGE_TYPE)[keyof typeof PAGE_TYPE]
   >(PAGE_TYPE.INPUT);
 
+  const [isTermsAgreed, setIsTermsAgreed] = useState(false);
+
+  const onTermsCheckboxChange = useCallback(() => {
+    setIsTermsAgreed(prev => !prev);
+  }, []);
+
   const navigate = useNavigate();
   const routes = getRoutes();
 
@@ -30,5 +36,7 @@ export const useSignUp = () => {
     onBackToSignIn,
     onConfirm,
     onBackToInput,
+    isTermsAgreed,
+    onTermsCheckboxChange,
   };
 };

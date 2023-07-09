@@ -9,8 +9,15 @@ import { SignUpForm } from './SignUpForm';
 import { useSignUpForm } from './hooks/useSignUpForm';
 
 const SignUp = () => {
-  const { pageType, onBackToSignIn, onConfirm, onBackToInput } = useSignUp();
-  const { register, control, handleSubmit } = useSignUpForm();
+  const {
+    pageType,
+    onBackToSignIn,
+    onConfirm,
+    onBackToInput,
+    isTermsAgreed,
+    onTermsCheckboxChange,
+  } = useSignUp();
+  const { register, control, handleSubmit, isValid } = useSignUpForm();
 
   const Page = memo(() => {
     switch (pageType) {
@@ -21,6 +28,9 @@ const SignUp = () => {
             onConfirm={onConfirm}
             register={register}
             control={control}
+            isValid={isValid}
+            isTermsAgreed={isTermsAgreed}
+            onTermsCheckboxChange={onTermsCheckboxChange}
           />
         );
       case PAGE_TYPE.CONFIRM:

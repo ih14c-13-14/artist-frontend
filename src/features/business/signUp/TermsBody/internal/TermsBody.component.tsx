@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { TermsAgreement } from './TermsBody.constants';
 import styles from './TermsBody.module.scss';
 import { useDetectScrolledToBottom } from './hooks/useDetectScrolledToBottom';
@@ -6,7 +8,7 @@ export type TermsBodyProps = {
   setIsTermsScrolled: (isTermsScrolled: boolean) => void;
 };
 
-export const TermsBody = ({ setIsTermsScrolled }: TermsBodyProps) => {
+export const TermsBody = memo(({ setIsTermsScrolled }: TermsBodyProps) => {
   const { inViewRef } = useDetectScrolledToBottom({
     setIsScrolledToBottom: setIsTermsScrolled,
   });
@@ -23,6 +25,6 @@ export const TermsBody = ({ setIsTermsScrolled }: TermsBodyProps) => {
       <div ref={inViewRef} />
     </div>
   );
-};
+});
 
 export default TermsBody;

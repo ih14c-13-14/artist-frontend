@@ -13,12 +13,18 @@ const schema = validation.object().shape({
   age_group: validation.string().required(),
   gender: validation.string().required(),
   prefecture: validation.string().required(),
+  isTermsAgreed: validation.boolean().isTrue(),
 } satisfies {
   [key in keyof SignUpFormType]: unknown;
 });
 
 export const useSignUpForm = () => {
-  const { register, control, handleSubmit } = useForm<SignUpFormType>({
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm<SignUpFormType>({
     defaultValues: {},
     resolver: resolver(schema),
   });
@@ -26,6 +32,7 @@ export const useSignUpForm = () => {
   return {
     register,
     control,
+    isValid,
     handleSubmit: handleSubmit(() => {}),
   };
 };
