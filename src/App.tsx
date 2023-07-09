@@ -12,7 +12,6 @@ import { QrRead } from '@/pages/QrRead';
 import { Search } from '@/pages/Search';
 import { SignIn } from '@/pages/SignIn';
 import { SignUp } from '@/pages/SignUp';
-import { SignUpConfirm } from '@/pages/SignUpConfirm';
 import { SignUpDone } from '@/pages/SignUpDone';
 import { getRoutes } from '@/routes/getRoutes';
 
@@ -50,10 +49,6 @@ function App() {
             <Route element={<Layout />}>
               <Route path={routes.signIn.path} element={<SignIn />} />
               <Route path={routes.signUp.path} element={<SignUp />} />
-              <Route
-                path={routes.SignUpConfirm.path}
-                element={<SignUpConfirm />}
-              />
               <Route path={routes.signUpDone.path} element={<SignUpDone />} />
               <Route
                 path={routes.passwordForget.path}
