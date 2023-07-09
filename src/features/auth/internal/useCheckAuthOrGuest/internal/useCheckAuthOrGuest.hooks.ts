@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
 import type { UseCheckAuthOrGuestProps } from './useCheckAuthOrGuest.types';
-import { useGuard } from '../../AuthContext';
 import { isAuthenticated } from '../../guard';
+import { useGuard } from '../../hooks/useGuard';
 
 const useCheckAuthOrGuest = ({ onAuth, onGuest }: UseCheckAuthOrGuestProps) => {
   const { guardPassed: isLoggedin } = useGuard({

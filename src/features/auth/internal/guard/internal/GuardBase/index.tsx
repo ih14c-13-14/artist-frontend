@@ -1,8 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import { useGuard } from '@/features/auth';
-
-import { UseGuardProps } from '../../../AuthContext';
+import { UseGuardProps, useGuard } from '../../../hooks/useGuard';
 
 /**
  * 認証関連のガード

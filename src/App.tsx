@@ -16,18 +16,10 @@ import { SignUpConfirm } from '@/pages/SignUpConfirm';
 import { SignUpDone } from '@/pages/SignUpDone';
 import { getRoutes } from '@/routes/getRoutes';
 
-import { AuthGuard, AuthProvider } from './features/auth';
+import { AuthGuard } from './features/auth';
 import { ErrorBoundary } from './features/errorHandling';
 
 function App() {
-  return (
-    <AuthProvider>
-      <AppWithAuth />
-    </AuthProvider>
-  );
-}
-
-const AppWithAuth = () => {
   const routes = getRoutes();
   // const { isLoggedin } = useCheckAuthOrGuest({});
   return (
@@ -80,6 +72,6 @@ const AppWithAuth = () => {
       </ErrorBoundary>
     </BrowserRouter>
   );
-};
+}
 
 export default App;

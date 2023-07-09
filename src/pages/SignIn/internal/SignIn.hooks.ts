@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { LogicException } from '@/error';
-import { useAuth } from '@/features/auth';
+import { useSignIn as useSignInMutate } from '@/features/auth';
 import { useForm } from '@/hooks/useForm';
 import { getRoutes } from '@/routes/getRoutes';
 import validation, { resolver } from '@/utils/validation/validation';
@@ -10,7 +10,6 @@ import validation, { resolver } from '@/utils/validation/validation';
 const validationSchema = validation.object().shape({});
 
 export const useSignIn = () => {
-  const { useSignIn } = useAuth();
   const navigate = useNavigate();
   const routes = getRoutes();
   const { handleSubmit } = useForm({
@@ -18,7 +17,7 @@ export const useSignIn = () => {
     resolver: resolver(validationSchema),
   });
 
-  const { signIn } = useSignIn();
+  const { signIn } = useSignInMutate();
 
   const formOnSubmitHandler = useCallback(async () => {
     try {
