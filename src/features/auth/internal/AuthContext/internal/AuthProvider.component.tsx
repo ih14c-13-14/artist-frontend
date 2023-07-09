@@ -1,17 +1,36 @@
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, useCallback } from 'react';
+
+import { request } from '@/utils/axios';
 
 import { AuthContext } from './AuthContext';
-import { AuthContextType } from './AuthContext.types';
+import { AuthContextType, SignInArgs } from './AuthContext.types';
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
 
-  const signIn = ({ email, password }: { email: string; password: string }) => {
-    console.log('AuthProvider.signIn');
-    console.log('email: ', email);
-    console.log('password: ', password);
-    const hardcodedToken = 'your-hardcoded-jwt-token';
-    setToken(hardcodedToken);
+  const useSignIn = () => {
+    const signIn = useCallback(async ({ email, password }: SignInArgs) => {
+      console.log('email: ', email);
+      console.log('password: ', password);
+      try {
+        const response = await request({
+          url: '/api/v1/auth/signin',
+          method: 'post',
+          data: {
+            email,
+            password,
+          },
+        });
+        console.log('response: ', response);
+        const hardcodedToken = 'your-hardcoded-jwt-token';
+
+        setToken(hardcodedToken);
+      } catch (error) {
+        // TODO: バリデーションエラー拾う
+        console.error(error);
+      }
+    }, []);
+    return { signIn };
   };
 
   const signOut = () => {
@@ -20,7 +39,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const authValue: AuthContextType = {
     token,
-    signIn,
+    useSignIn,
     signOut,
   };
 
