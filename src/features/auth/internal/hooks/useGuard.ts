@@ -1,8 +1,7 @@
-import { useContext, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
-import { getAuthTokenStore } from '../../../authTokenStore';
-import { JWT } from '../../../jwt';
-import { AuthContext } from '../AuthContext';
+import { getAuthTokenStore } from '../authTokenStore';
+import { JWT } from '../jwt';
 
 export type UseGuardProps = {
   /** true を返すときだけ表示を許可する */
@@ -12,11 +11,6 @@ export type UseGuardProps = {
 };
 
 export function useGuard({ guardPredicate, onRejected }: UseGuardProps) {
-  const authContext = useContext(AuthContext);
-  if (authContext === undefined) {
-    throw new Error('useGuard must be used within a AuthProvider');
-  }
-
   const jwt = getAuthTokenStore().get();
 
   const guardPassed = useMemo(() => guardPredicate(jwt), [guardPredicate, jwt]);

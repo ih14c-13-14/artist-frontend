@@ -16,20 +16,12 @@ import { SignUpConfirm } from '@/pages/SignUpConfirm';
 import { SignUpDone } from '@/pages/SignUpDone';
 import { getRoutes } from '@/routes/getRoutes';
 
-import { AuthGuard, AuthProvider } from './features/auth';
+import { AuthGuard, GuestGuard, useCheckAuthOrGuest } from './features/auth';
 import { ErrorBoundary } from './features/errorHandling';
 
 function App() {
-  return (
-    <AuthProvider>
-      <AppWithAuth />
-    </AuthProvider>
-  );
-}
-
-const AppWithAuth = () => {
   const routes = getRoutes();
-  // const { isLoggedin } = useCheckAuthOrGuest({});
+  const { isLoggedIn: _isLoggedIn } = useCheckAuthOrGuest({});
   return (
     <BrowserRouter>
       <ErrorBoundary>
@@ -54,32 +46,34 @@ const AppWithAuth = () => {
               <Route path="/*" element={<FallbackDisplay />} />
             </Route>
           </Route>
-          <Route element={<Layout />}>
-            <Route path={routes.signIn.path} element={<SignIn />} />
-            <Route path={routes.signUp.path} element={<SignUp />} />
-            <Route
-              path={routes.SignUpConfirm.path}
-              element={<SignUpConfirm />}
-            />
-            <Route path={routes.signUpDone.path} element={<SignUpDone />} />
-            <Route
-              path={routes.passwordForget.path}
-              element={<PasswordForget />}
-            />
-            <Route
-              path={routes.passwordReset.path}
-              element={<PasswordReset />}
-            />
-            <Route
-              path={routes.passwordResetDone.path}
-              element={<PasswordResetDone />}
-            />
-            <Route path="/*" element={<FallbackDisplay />} />
+          <Route path="/" element={<GuestGuard />}>
+            <Route element={<Layout />}>
+              <Route path={routes.signIn.path} element={<SignIn />} />
+              <Route path={routes.signUp.path} element={<SignUp />} />
+              <Route
+                path={routes.SignUpConfirm.path}
+                element={<SignUpConfirm />}
+              />
+              <Route path={routes.signUpDone.path} element={<SignUpDone />} />
+              <Route
+                path={routes.passwordForget.path}
+                element={<PasswordForget />}
+              />
+              <Route
+                path={routes.passwordReset.path}
+                element={<PasswordReset />}
+              />
+              <Route
+                path={routes.passwordResetDone.path}
+                element={<PasswordResetDone />}
+              />
+              <Route path="/*" element={<FallbackDisplay />} />
+            </Route>
           </Route>
         </Routes>
       </ErrorBoundary>
     </BrowserRouter>
   );
-};
+}
 
 export default App;

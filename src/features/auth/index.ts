@@ -1,6 +1,8 @@
-export { useAuth, useGuard, AuthProvider } from './internal/AuthContext';
 export { AuthGuard, GuestGuard, isAuthenticated } from './internal/guard';
 export {
   useCheckAuthOrGuest,
   type UseCheckAuthOrGuestProps,
 } from './internal/useCheckAuthOrGuest';
+export { useGuard } from './internal/hooks/useGuard';
+export { useSignIn } from './internal/hooks/useSignIn';
+export { useSignOut } from './internal/hooks/useSignOut';
