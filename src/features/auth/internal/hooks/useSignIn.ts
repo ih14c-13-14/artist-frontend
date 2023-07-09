@@ -21,10 +21,10 @@ export const useSignIn = () => {
         },
       });
       /**
-       * 雑に埋めたもの
+       * バックエンドの発行したもの
        */
       const hardcodedToken =
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NTFDNUVCOC1FOUQ3LTQ4MjUtQTI2Qy0yRUZFNzY4NDk1NTMiLCJuYW1lIjoiQXJ0aXN0IiwiZXhwIjoxNTE2MjM5MDIyfQ.awtYQYEGdq1cpoIPnDg0zDZtLfRQt4nYmsr6Ab-3xlY';
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJzdWIiOiIwMTg5M2IyNy0wMzc3LTcwMDAtOTI0Yy1lNjVlNzlkYmYyNjgiLCJpYXQiOjE2ODg5MTU4MzQsImV4cCI6MTY4ODkxNTgzN30.m_h_4Kt2p09uhSBTbrebtyD5uT8ogXNTMB9zyyd8-7Y';
 
       getAuthTokenStore().set(hardcodedToken);
 
