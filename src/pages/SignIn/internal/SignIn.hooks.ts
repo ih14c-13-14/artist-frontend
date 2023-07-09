@@ -28,7 +28,17 @@ export const useSignIn = () => {
     navigate(routes.mapShow.path);
   }, [navigate, routes.mapShow.path, signIn]);
 
+  const handlePasswordForget = useCallback(() => {
+    navigate(routes.passwordForget.path);
+  }, [navigate, routes.passwordForget.path]);
+
+  const handleSignUp = useCallback(() => {
+    navigate(routes.signUp.path);
+  }, [navigate, routes.signUp.path]);
+
   return {
     formOnSubmitHandler: handleSubmit(formOnSubmitHandler),
-  };
+    handlePasswordForget,
+    handleSignUp,
+  } as const;
 };
