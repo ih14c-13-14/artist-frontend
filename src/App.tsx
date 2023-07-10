@@ -4,7 +4,6 @@ import { Layout, MapLayout } from '@/features/Layout';
 import { FallbackDisplay } from '@/features/errorHandling';
 import { MapShow } from '@/pages/MapShow';
 import { PasswordChange } from '@/pages/PasswordChange';
-import { PasswordChangeDone } from '@/pages/PasswordChangeDone';
 import { PasswordForget } from '@/pages/PasswordForget';
 import { PasswordReset } from '@/pages/PasswordReset';
 import { PasswordResetDone } from '@/pages/PasswordResetDone';
@@ -17,6 +16,7 @@ import { getRoutes } from '@/routes/getRoutes';
 
 import { AuthGuard, GuestGuard, useCheckAuthOrGuest } from './features/auth';
 import { ErrorBoundary } from './features/errorHandling';
+import { Settings } from './pages/Settings';
 
 function App() {
   const routes = getRoutes();
@@ -39,13 +39,10 @@ function App() {
                 element={<SignUpCompleted />}
               />
               <Route
-                path={routes.passwordChange.path}
+                path={routes.changePassword.path}
                 element={<PasswordChange />}
               />
-              <Route
-                path={routes.passwordChangeDone.path}
-                element={<PasswordChangeDone />}
-              />
+              <Route path={routes.settings.path} element={<Settings />} />
               <Route path="/*" element={<FallbackDisplay />} />
             </Route>
           </Route>
