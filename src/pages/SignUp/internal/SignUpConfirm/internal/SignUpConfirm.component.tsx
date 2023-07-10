@@ -4,6 +4,7 @@ import { FormPageSection } from '@/features/ui/FormPageSection';
 import { Stack } from '@/features/ui/Stack';
 
 import { H1_DESCRIPTION_TOP } from './SignUpConfirm.constants';
+import styles from './SignUpConfirm.module.scss';
 import { SignUpConfirmProps } from './SignUpConfirm.types';
 
 const SignUpConfirm = ({
@@ -21,19 +22,19 @@ const SignUpConfirm = ({
       <Stack>
         <Divider />
         <Stack divider={<Divider />} gap="12px">
-          <div>
+          <div className={styles.exampleContainer}>
             <p>メールアドレス</p>
             <p>{email}</p>
           </div>
-          <div>
+          <div className={styles.exampleContainer}>
             <p>年齢層</p>
             <p>{age_group}</p>
           </div>
-          <div>
+          <div className={styles.exampleContainer}>
             <p>性別</p>
             <p>{gender}</p>
           </div>
-          <div>
+          <div className={styles.exampleContainer}>
             <p>都道府県</p>
             <p>{prefecture}</p>
           </div>
