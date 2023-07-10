@@ -30,7 +30,7 @@ const InternalRadioGroup = <TValue extends unknown = string>(
   return (
     <>
       <div style={{ width: '100%' }}>
-        <Stack gap="30px" direction="row" flexWrap="wrap">
+        <Stack gap="24px" direction="row" flexWrap="wrap">
           {props.choices.map(({ id, name }) => (
             <Radio
               key={`${id}`}

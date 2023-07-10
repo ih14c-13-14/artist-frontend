@@ -29,6 +29,7 @@ const SignUpForm = ({
         <InputWrapper label="メールアドレス">
           <TextInput sx={{ width: '100%' }} {...register(Fields.email)} />
         </InputWrapper>
+        {/* TODO: InputWrapperのBottomDescription新設 */}
         <InputWrapper label="パスワード">
           <TextInput
             sx={{ width: '100%' }}
