@@ -20,6 +20,7 @@ const SignUpForm = ({
   register,
   control,
   isValid,
+  formChoices,
 }: SignUpFormProps) => {
   const [_isTermsScrolled, setIsTermsScrolled] = useState(false);
 
@@ -49,19 +50,7 @@ const SignUpForm = ({
             name={Fields.age_group}
             control={control}
             render={({ field }) => (
-              <SelectInput
-                {...field}
-                choices={[
-                  {
-                    id: 10,
-                    name: '10代',
-                  },
-                  {
-                    id: 20,
-                    name: '20代',
-                  },
-                ]}
-              />
+              <SelectInput {...field} choices={formChoices.age_group} />
             )}
           />
         </InputWrapper>
@@ -70,23 +59,7 @@ const SignUpForm = ({
             name={Fields.gender}
             control={control}
             render={({ field }) => (
-              <RadioGroup
-                {...field}
-                choices={[
-                  {
-                    id: 1,
-                    name: '男性',
-                  },
-                  {
-                    id: 2,
-                    name: '女性',
-                  },
-                  {
-                    id: 3,
-                    name: 'その他',
-                  },
-                ]}
-              />
+              <RadioGroup {...field} choices={formChoices.gender} />
             )}
           />
         </InputWrapper>
@@ -95,19 +68,7 @@ const SignUpForm = ({
             name={Fields.prefecture}
             control={control}
             render={({ field }) => (
-              <SelectInput
-                {...field}
-                choices={[
-                  {
-                    id: 10,
-                    name: '群馬県',
-                  },
-                  {
-                    id: 20,
-                    name: '長野県',
-                  },
-                ]}
-              />
+              <SelectInput {...field} choices={formChoices.prefecture} />
             )}
           />
         </InputWrapper>
