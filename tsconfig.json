@@ -31,7 +31,8 @@
 		"types": [
 			"node",
 			"vitest/importMeta",
-			"vitest/globals"
+			"vitest/globals",
+			"vite-plugin-svgr/client"
 		],
 		"plugins": [
 			{

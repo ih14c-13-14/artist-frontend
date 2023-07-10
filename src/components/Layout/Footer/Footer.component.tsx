@@ -1,19 +1,64 @@
-import { LocationOn, ManageSearch, CropFree } from '@mui/icons-material';
+import clsx from 'clsx';
+import { useState } from 'react';
 
-import { IconWithLabel } from '../../commons/IconWithLabel/IconWithLabel.component';
-import { StackChildren } from '../../commons/Styling/StackChildren/StackChildren';
+import { Icon } from '@/features/ui/Icon';
+import { Stack } from '@/features/ui/Stack';
+
+import styles from './Footer.module.scss';
+
+type FooterSelection = 'Map' | 'Qr' | 'Search';
+
+const FooterIcons = ({
+  isSelected,
+  setSelected,
+  type,
+}: {
+  isSelected: boolean;
+  setSelected: (type: FooterSelection) => void;
+  type: FooterSelection;
+}) => {
+  return (
+    <div
+      className={styles.buttonContainer}
+      onClick={() => {
+        setSelected(type);
+      }}
+    >
+      <Stack width="100%" alignItems="center" gap="0">
+        <Icon type={type} fill={isSelected ? '#e60010' : '#333'} />
+        <p
+          className={clsx(
+            styles.label,
+            isSelected ? styles.selected : undefined
+          )}
+        >
+          マップ
+        </p>
+      </Stack>
+    </div>
+  );
+};
 
 export const Footer = () => {
+  const [selected, setSelected] = useState<FooterSelection>('Map');
+
   return (
-    <StackChildren flexDirection="row">
-      <IconWithLabel
-        icon={LocationOn}
-        label={'マップ'}
-        fullWidth
-        color="error"
+    <Stack direction="row">
+      <FooterIcons
+        isSelected={selected === 'Map'}
+        setSelected={setSelected}
+        type="Map"
       />
-      <IconWithLabel icon={ManageSearch} label={'探す'} fullWidth />
-      <IconWithLabel icon={CropFree} label={'QRリーダー'} fullWidth />
-    </StackChildren>
+      <FooterIcons
+        isSelected={selected === 'Qr'}
+        setSelected={setSelected}
+        type="Qr"
+      />
+      <FooterIcons
+        isSelected={selected === 'Search'}
+        setSelected={setSelected}
+        type="Search"
+      />
+    </Stack>
   );
 };

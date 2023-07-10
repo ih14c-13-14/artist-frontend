@@ -12,36 +12,44 @@ import { QrRead } from '@/pages/QrRead';
 import { Search } from '@/pages/Search';
 import { SignIn } from '@/pages/SignIn';
 import { SignUp } from '@/pages/SignUp';
-import { SignUpConfirm } from '@/pages/SignUpConfirm';
 import { SignUpDone } from '@/pages/SignUpDone';
 import { getRoutes } from '@/routes/getRoutes';
 
-import { AuthProvider } from './features/auth';
+import { AuthGuard, GuestGuard, useCheckAuthOrGuest } from './features/auth';
 import { ErrorBoundary } from './features/errorHandling';
 
 function App() {
   const routes = getRoutes();
-
+  const { isLoggedIn: _isLoggedIn } = useCheckAuthOrGuest({});
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <ErrorBoundary>
-          <Routes>
+    <BrowserRouter>
+      <ErrorBoundary>
+        <Routes>
+          <Route path="/" element={<AuthGuard />}>
             <Route element={<MapLayout />}>
               <Route path={routes.mapShow.path} element={<MapShow />} />
             </Route>
-            <Route element={<Layout hasHeader={true} hasFooter={true} />}>
+            <Route element={<Layout hasFooter={true} />}>
               <Route path={routes.serach.path} element={<Search />} />
               <Route path={routes.qrRead.path} element={<QrRead />} />
             </Route>
-            <Route element={<Layout hasHeader={true} />}>
+            <Route element={<Layout />}>
+              <Route path={routes.signUpDone.path} element={<SignUpDone />} />
+              <Route
+                path={routes.passwordChange.path}
+                element={<PasswordChange />}
+              />
+              <Route
+                path={routes.passwordChangeDone.path}
+                element={<PasswordChangeDone />}
+              />
+              <Route path="/*" element={<FallbackDisplay />} />
+            </Route>
+          </Route>
+          <Route path="/" element={<GuestGuard />}>
+            <Route element={<Layout />}>
               <Route path={routes.signIn.path} element={<SignIn />} />
               <Route path={routes.signUp.path} element={<SignUp />} />
-              <Route
-                path={routes.SignUpConfirm.path}
-                element={<SignUpConfirm />}
-              />
-              <Route path={routes.signUpDone.path} element={<SignUpDone />} />
               <Route
                 path={routes.passwordForget.path}
                 element={<PasswordForget />}
@@ -54,20 +62,12 @@ function App() {
                 path={routes.passwordResetDone.path}
                 element={<PasswordResetDone />}
               />
-              <Route
-                path={routes.passwordChange.path}
-                element={<PasswordChange />}
-              />
-              <Route
-                path={routes.passwordChangeDone.path}
-                element={<PasswordChangeDone />}
-              />
               <Route path="/*" element={<FallbackDisplay />} />
             </Route>
-          </Routes>
-        </ErrorBoundary>
-      </BrowserRouter>
-    </AuthProvider>
+          </Route>
+        </Routes>
+      </ErrorBoundary>
+    </BrowserRouter>
   );
 }
 

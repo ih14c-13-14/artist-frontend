@@ -30,7 +30,7 @@ export const Default = () => {
 
   const onChange = (
     event: React.SyntheticEvent<Element, Event>,
-    value: any
+    value: number
   ) => {
     setActiveTab(value);
   };

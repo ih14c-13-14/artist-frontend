@@ -3,6 +3,7 @@
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
+import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,6 +14,7 @@ export default defineConfig({
       // TODO: https://github.com/ih14c-13-14/schema/issues/10
       apiBaseUrl: process.env.API_BASE_URL ?? 'http://127.0.0.1:4010',
     }),
+    svgr(),
   ],
   define: {
     'import.meta.vitest': 'undefined',

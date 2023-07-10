@@ -8,6 +8,4 @@ const DividerStory: Meta<typeof Divider> = {
 
 export default DividerStory;
 
-export const Default = () => (
-  <Divider sx={{ border: '3px solid', marginTop: '10px' }} />
-);
+export const Default = () => <Divider />;

@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useAuth } from '@/features/auth';
+import { LogicException } from '@/error';
+import { useSignIn as useSignInMutate } from '@/features/auth';
 import { useForm } from '@/hooks/useForm';
 import { getRoutes } from '@/routes/getRoutes';
 import validation, { resolver } from '@/utils/validation/validation';
@@ -9,7 +10,6 @@ import validation, { resolver } from '@/utils/validation/validation';
 const validationSchema = validation.object().shape({});
 
 export const useSignIn = () => {
-  const { signIn } = useAuth();
   const navigate = useNavigate();
   const routes = getRoutes();
   const { handleSubmit } = useForm({
@@ -17,12 +17,28 @@ export const useSignIn = () => {
     resolver: resolver(validationSchema),
   });
 
-  const formOnSubmitHandler = useCallback(() => {
-    signIn({ email: 'hoge', password: 'fuga' });
+  const { signIn } = useSignInMutate();
+
+  const formOnSubmitHandler = useCallback(async () => {
+    try {
+      await signIn({ email: 'hoge', password: 'fuga' });
+    } catch (e) {
+      throw new LogicException('エラーハンドリングしましょう');
+    }
     navigate(routes.mapShow.path);
   }, [navigate, routes.mapShow.path, signIn]);
 
+  const handlePasswordForget = useCallback(() => {
+    navigate(routes.passwordForget.path);
+  }, [navigate, routes.passwordForget.path]);
+
+  const handleSignUp = useCallback(() => {
+    navigate(routes.signUp.path);
+  }, [navigate, routes.signUp.path]);
+
   return {
     formOnSubmitHandler: handleSubmit(formOnSubmitHandler),
-  };
+    handlePasswordForget,
+    handleSignUp,
+  } as const;
 };
