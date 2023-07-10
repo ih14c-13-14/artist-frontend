@@ -18,8 +18,8 @@ export const getRoutes = () => {
     signUp: {
       path: '/sign-up/',
     },
-    signUpDone: {
-      path: '/sign-up/done/',
+    signUpCompleted: {
+      path: '/sign-up/completed/',
     },
     passwordForget: {
       path: '/password/forget/',

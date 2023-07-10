@@ -12,7 +12,7 @@ import { QrRead } from '@/pages/QrRead';
 import { Search } from '@/pages/Search';
 import { SignIn } from '@/pages/SignIn';
 import { SignUp } from '@/pages/SignUp';
-import { SignUpDone } from '@/pages/SignUpDone';
+import { SignUpCompleted } from '@/pages/SignUpCompleted';
 import { getRoutes } from '@/routes/getRoutes';
 
 import { AuthGuard, GuestGuard, useCheckAuthOrGuest } from './features/auth';
@@ -34,7 +34,10 @@ function App() {
               <Route path={routes.qrRead.path} element={<QrRead />} />
             </Route>
             <Route element={<Layout />}>
-              <Route path={routes.signUpDone.path} element={<SignUpDone />} />
+              <Route
+                path={routes.signUpCompleted.path}
+                element={<SignUpCompleted />}
+              />
               <Route
                 path={routes.passwordChange.path}
                 element={<PasswordChange />}

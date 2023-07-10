@@ -3,6 +3,7 @@ import { UseFormGetValues } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import { getRoutes } from '@/routes/getRoutes';
+import { DirectAccessState } from '@/routes/utils/types';
 
 import { PAGE_TYPE } from './SignUp.constants';
 import { SignUpFormType } from './SignUp.types';
@@ -48,8 +49,12 @@ export const useSignUp = ({
       gender: values.gender,
       prefecture: values.prefecture,
     } as const satisfies SignUpArgs);
-    navigate(routes.mapShow.path);
-  }, [getValues, navigate, routes.mapShow.path, signUp]);
+    navigate(routes.signUpCompleted.path, {
+      state: {
+        isDirectAccess: true,
+      } satisfies DirectAccessState,
+    });
+  }, [getValues, navigate, routes.signUpCompleted.path, signUp]);
 
   return {
     pageType,
