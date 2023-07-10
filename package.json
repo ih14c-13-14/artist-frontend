@@ -85,7 +85,7 @@
     "eslint-plugin-storybook": "^0.6.12",
     "jose": "^4.14.4",
     "jsdom": "^22.1.0",
-    "openapi-typescript": "^6.3.2",
+    "openapi-typescript": "^6.3.3",
     "prettier": "^3.0.0",
     "prop-types": "^15.8.1",
     "sass": "^1.63.6",
