@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { Icon } from '@/features/ui/Icon';
 import { Stack } from '@/features/ui/Stack';
@@ -17,6 +17,16 @@ const FooterIcons = ({
   setSelected: (type: FooterSelection) => void;
   type: FooterSelection;
 }) => {
+  const title = useMemo(() => {
+    switch (type) {
+      case 'Map':
+        return 'マップ';
+      case 'Qr':
+        return 'QRリーダ';
+      case 'Search':
+        return 'さがす';
+    }
+  }, [type]);
   return (
     <div
       className={styles.buttonContainer}
@@ -32,7 +42,7 @@ const FooterIcons = ({
             isSelected ? styles.selected : undefined
           )}
         >
-          マップ
+          {title}
         </p>
       </Stack>
     </div>
