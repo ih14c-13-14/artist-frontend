@@ -4,7 +4,6 @@ import { SignProps } from './SignIcon.type';
 
 export const SignIcon = ({
   icon,
-  label,
   variant = 'text',
   disabled,
   color = 'inherit',

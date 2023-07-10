@@ -17,11 +17,9 @@ const Template: StoryFn<typeof SignIcon> = args => {
 export const NotSigned = Template.bind({});
 NotSigned.args = {
   icon: Logout,
-  label: 'ログアウト',
 };
 
 export const Signed = Template.bind({});
 Signed.args = {
   icon: Login,
-  label: 'ログイン',
 };
