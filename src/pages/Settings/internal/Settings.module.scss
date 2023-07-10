@@ -1,0 +1,25 @@
+@import '@/_variables';
+
+.dataContainer {
+  width: 100%;
+}
+
+.data {
+  color: $colorBlack;
+  font-size: $fontSizeNormal;
+  font-style: normal;
+  font-weight: $fontWeightNormal;
+  line-height: normal;
+}
+
+.anchor {
+  height: inherit;
+  color: $colorRed;
+  font-size: $fontSizeNormal;
+  font-style: normal;
+  font-weight: $fontWeightNormal;
+  line-height: normal;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: underline;
+}

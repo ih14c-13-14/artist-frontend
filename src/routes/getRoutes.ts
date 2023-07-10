@@ -30,11 +30,20 @@ export const getRoutes = () => {
     passwordResetDone: {
       path: '/password/reset/done/',
     },
-    passwordChange: {
-      path: '/password/change/',
+    settings: {
+      path: '/settings/',
     },
-    passwordChangeDone: {
-      path: '/password/change/done/',
+    settingsUpdate: {
+      path: '/settings/misc/',
+    },
+    changeEmail: {
+      path: '/settings/change-email/',
+    },
+    changePassword: {
+      path: '/settings/change-password/',
+    },
+    changeMisc: {
+      path: '/settings/change-misc/',
     },
   } as const satisfies {
     [key: string]: {
