@@ -6,7 +6,7 @@ import { getRoutes } from '@/routes/getRoutes';
 
 import { PAGE_TYPE } from './SignUp.constants';
 import { SignUpFormType } from './SignUp.types';
-import { useSignUpMutation } from './hooks/useSignUpMutation';
+import { SignUpArgs, useSignUpMutation } from './hooks/useSignUpMutation';
 
 export const useSignUp = ({
   getValues,
@@ -41,7 +41,13 @@ export const useSignUp = ({
   const { signUp } = useSignUpMutation();
   const onSubmit = useCallback(async () => {
     const values = getValues();
-    await signUp(values);
+    await signUp({
+      email: values.email,
+      password: values.password,
+      age_group: values.age_group,
+      gender: values.gender,
+      prefecture: values.prefecture,
+    } as const satisfies SignUpArgs);
     navigate(routes.mapShow.path);
   }, [getValues, navigate, routes.mapShow.path, signUp]);
 
