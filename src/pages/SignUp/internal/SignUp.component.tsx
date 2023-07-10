@@ -19,7 +19,7 @@ const SignUp = () => {
     isTermsAgreed,
     onTermsCheckboxChange,
     onSubmit,
-  } = useSignUp();
+  } = useSignUp({ getValues });
 
   const Page = memo(() => {
     switch (pageType) {
