@@ -43,7 +43,7 @@ export const Footer = () => {
   const [selected, setSelected] = useState<FooterSelection>('Map');
 
   return (
-    <Stack direction="row">
+    <Stack direction="row" height="64px" alignItems="center">
       <FooterIcons
         isSelected={selected === 'Map'}
         setSelected={setSelected}

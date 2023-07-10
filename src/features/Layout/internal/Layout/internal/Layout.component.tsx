@@ -10,11 +10,13 @@ import { LayoutProps } from './Layout.types';
 const Layout = ({ hasFooter = false }: LayoutProps) => {
   return (
     <ErrorBoundary>
-      <Header />
-      <div className={styles.mainContentContainer}>
-        <Outlet />
+      <div className={styles.layoutContainer}>
+        <Header />
+        <div className={styles.mainContentContainer}>
+          <Outlet />
+        </div>
+        {hasFooter && <Footer />}
       </div>
-      {hasFooter && <Footer />}
     </ErrorBoundary>
   );
 };
