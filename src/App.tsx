@@ -30,7 +30,7 @@ function App() {
               <Route path={routes.mapShow.path} element={<MapShow />} />
             </Route>
             <Route element={<Layout hasFooter={true} />}>
-              <Route path={routes.serach.path} element={<Search />} />
+              <Route path={routes.search.path} element={<Search />} />
               <Route path={routes.qrRead.path} element={<QrRead />} />
             </Route>
             <Route element={<Layout />}>

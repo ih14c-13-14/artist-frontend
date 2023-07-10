@@ -6,3 +6,4 @@ export {
 export { useGuard } from './internal/hooks/useGuard';
 export { useSignIn } from './internal/hooks/useSignIn';
 export { useSignOut } from './internal/hooks/useSignOut';
+export { getAuthTokenStore } from './internal/authTokenStore';

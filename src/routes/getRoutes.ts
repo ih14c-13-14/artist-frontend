@@ -6,7 +6,7 @@ export const getRoutes = () => {
     mapShow: {
       path: '/map/show/',
     },
-    serach: {
+    search: {
       path: '/search/',
     },
     qrRead: {
