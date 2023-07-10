@@ -1,22 +1,23 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Layout, MapLayout } from '@/features/Layout';
+import { AuthGuard, GuestGuard, useCheckAuthOrGuest } from '@/features/auth';
 import { FallbackDisplay } from '@/features/errorHandling';
+import { ErrorBoundary } from '@/features/errorHandling';
+import { ChangeEmail } from '@/pages/ChangeEmail';
+import { ChangeMisc } from '@/pages/ChangeMisc';
+import { ChangePassword } from '@/pages/ChangePassword';
 import { MapShow } from '@/pages/MapShow';
-import { PasswordChange } from '@/pages/PasswordChange';
 import { PasswordForget } from '@/pages/PasswordForget';
 import { PasswordReset } from '@/pages/PasswordReset';
 import { PasswordResetDone } from '@/pages/PasswordResetDone';
 import { QrRead } from '@/pages/QrRead';
 import { Search } from '@/pages/Search';
+import { Settings } from '@/pages/Settings';
 import { SignIn } from '@/pages/SignIn';
 import { SignUp } from '@/pages/SignUp';
 import { SignUpCompleted } from '@/pages/SignUpCompleted';
 import { getRoutes } from '@/routes/getRoutes';
-
-import { AuthGuard, GuestGuard, useCheckAuthOrGuest } from './features/auth';
-import { ErrorBoundary } from './features/errorHandling';
-import { Settings } from './pages/Settings';
 
 function App() {
   const routes = getRoutes();
@@ -38,11 +39,13 @@ function App() {
                 path={routes.signUpCompleted.path}
                 element={<SignUpCompleted />}
               />
+              <Route path={routes.settings.path} element={<Settings />} />
+              <Route path={routes.changeEmail.path} element={<ChangeEmail />} />
+              <Route path={routes.changeMisc.path} element={<ChangeMisc />} />
               <Route
                 path={routes.changePassword.path}
-                element={<PasswordChange />}
+                element={<ChangePassword />}
               />
-              <Route path={routes.settings.path} element={<Settings />} />
               <Route path="/*" element={<FallbackDisplay />} />
             </Route>
           </Route>

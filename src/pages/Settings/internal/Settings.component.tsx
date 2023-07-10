@@ -3,9 +3,16 @@ import { Divider } from '@/features/ui/Divider';
 import { FormPageSection } from '@/features/ui/FormPageSection';
 import { Stack } from '@/features/ui/Stack';
 
+import { useSettings } from './Settings.hooks';
 import styles from './Settings.module.scss';
 
+/**
+ * TODO: APIスキーマ策定後データフェッチ作る
+ */
 const Settings = () => {
+  const { onMiscChangeClicked, onEmailChangeClicked, onPasswordChangeClicked } =
+    useSettings();
+
   return (
     <FormPageSection
       type="h1"
@@ -23,7 +30,9 @@ const Settings = () => {
                 <div className={styles.data}>男性</div>
                 <div className={styles.data}>神奈川県</div>
               </div>
-              <a className={styles.anchor}>変更する</a>
+              <a className={styles.anchor} onClick={onMiscChangeClicked}>
+                変更する
+              </a>
             </Stack>
             <Divider />
           </Stack>
@@ -34,7 +43,9 @@ const Settings = () => {
             <div className={styles.dataContainer}>
               <div className={styles.data}>mail@example.com</div>
             </div>
-            <a className={styles.anchor}>変更する</a>
+            <a className={styles.anchor} onClick={onEmailChangeClicked}>
+              変更する
+            </a>
           </Stack>
           <Divider />
         </InputWrapper>
@@ -44,7 +55,9 @@ const Settings = () => {
             <div className={styles.dataContainer}>
               <div className={styles.data}>************</div>
             </div>
-            <a className={styles.anchor}>変更する</a>
+            <a className={styles.anchor} onClick={onPasswordChangeClicked}>
+              変更する
+            </a>
           </Stack>
           <Divider />
         </InputWrapper>

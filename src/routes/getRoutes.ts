@@ -42,6 +42,9 @@ export const getRoutes = () => {
     changePassword: {
       path: '/settings/change-password/',
     },
+    changeMisc: {
+      path: '/settings/change-misc/',
+    },
   } as const satisfies {
     [key: string]: {
       path: string;
