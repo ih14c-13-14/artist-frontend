@@ -1,14 +1,16 @@
 import { memo } from 'react';
 
-import { Button } from '@/features/ui/Button';
 import assertNever from '@/utils/assertNever';
 
 import { PAGE_TYPE } from './SignUp.constants';
 import { useSignUp } from './SignUp.hooks';
+import { SignUpConfirm } from './SignUpConfirm';
 import { SignUpForm } from './SignUpForm';
 import { useSignUpForm } from './hooks/useSignUpForm';
 
 const SignUp = () => {
+  const { formChoices, register, control, handleSubmit, isValid, getValues } =
+    useSignUpForm();
   const {
     pageType,
     onBackToSignIn,
@@ -16,8 +18,8 @@ const SignUp = () => {
     onBackToInput,
     isTermsAgreed,
     onTermsCheckboxChange,
+    onSubmit,
   } = useSignUp();
-  const { register, control, handleSubmit, isValid } = useSignUpForm();
 
   const Page = memo(() => {
     switch (pageType) {
@@ -31,14 +33,16 @@ const SignUp = () => {
             isValid={isValid}
             isTermsAgreed={isTermsAgreed}
             onTermsCheckboxChange={onTermsCheckboxChange}
+            formChoices={formChoices}
           />
         );
       case PAGE_TYPE.CONFIRM:
         return (
-          <div>
-            <h1>CONFIRM</h1>
-            <Button onClick={onBackToInput}>戻る</Button>
-          </div>
+          <SignUpConfirm
+            onBackToInput={onBackToInput}
+            onSubmit={onSubmit}
+            getValues={getValues}
+          />
         );
       default:
         assertNever(pageType);

@@ -34,6 +34,7 @@ function App() {
               <Route path={routes.qrRead.path} element={<QrRead />} />
             </Route>
             <Route element={<Layout />}>
+              <Route path={routes.signUpDone.path} element={<SignUpDone />} />
               <Route
                 path={routes.passwordChange.path}
                 element={<PasswordChange />}
@@ -49,7 +50,6 @@ function App() {
             <Route element={<Layout />}>
               <Route path={routes.signIn.path} element={<SignIn />} />
               <Route path={routes.signUp.path} element={<SignUp />} />
-              <Route path={routes.signUpDone.path} element={<SignUpDone />} />
               <Route
                 path={routes.passwordForget.path}
                 element={<PasswordForget />}

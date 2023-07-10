@@ -31,6 +31,8 @@ export const useSignUp = () => {
     setPageType(PAGE_TYPE.INPUT);
   }, []);
 
+  const onSubmit = useCallback(() => {}, []);
+
   return {
     pageType,
     onBackToSignIn,
@@ -38,5 +40,6 @@ export const useSignUp = () => {
     onBackToInput,
     isTermsAgreed,
     onTermsCheckboxChange,
+    onSubmit,
   };
 };
