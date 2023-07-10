@@ -5,18 +5,19 @@ import {
   InvalidJWTPayloadException,
   type JWT,
   parse,
+  JWTExpiredException,
 } from '../../jwt';
 
-export const isAuthenticated = (jwt: JWT | null, _now?: number): boolean => {
+export const isAuthenticated = (jwt: JWT | null, now?: number): boolean => {
   if (isNil(jwt)) {
     return false;
   }
 
   try {
     const payload = parse(jwt);
-    // TODO: バックエンドと繋ぎこんだら直す
-    // return (now ?? Date.now()) <= payload.exp * 1000;
-    return 1516239022 <= payload.exp * 1000;
+    const isTokenExpired = payload.exp * 1000 < (now ?? Date.now());
+    if (isTokenExpired) throw new JWTExpiredException();
+    return !isTokenExpired;
   } catch (e) {
     if (
       e instanceof InvalidJWTException ||

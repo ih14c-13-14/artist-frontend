@@ -1,7 +1,9 @@
 import { useCallback } from 'react';
 
+import { LogicException, NoFetchedDataException } from '@/error';
 import { paths } from '@/generated/schema';
 import { request } from '@/utils/axios';
+import isNil from '@/utils/isNil';
 
 import { getAuthTokenStore } from '../authTokenStore';
 
@@ -20,13 +22,15 @@ export const useSignIn = () => {
           password,
         },
       });
-      /**
-       * バックエンドの発行したもの
-       */
-      const hardcodedToken =
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJzdWIiOiIwMTg5M2IyNy0wMzc3LTcwMDAtOTI0Yy1lNjVlNzlkYmYyNjgiLCJpYXQiOjE2ODg5MTU4MzQsImV4cCI6MTY4ODkxNTgzN30.m_h_4Kt2p09uhSBTbrebtyD5uT8ogXNTMB9zyyd8-7Y';
+      // 200以外のステータスコードはここでハンドリング
+      if (response.status !== 200) {
+        throw new LogicException('エラーハンドリングしましょう');
+      }
 
-      getAuthTokenStore().set(hardcodedToken);
+      if (isNil(response.data) || isNil(response.data.access_token)) {
+        throw new NoFetchedDataException();
+      }
+      getAuthTokenStore().set(response.data.access_token);
 
       return {
         response,
