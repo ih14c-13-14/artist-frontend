@@ -1,8 +1,10 @@
-import { MuiDivider } from '@/features/ui/library';
-import type { MuiDividerProps } from '@/features/ui/library';
+import clsx from 'clsx';
 
-const Divider = (props: MuiDividerProps) => {
-  return <MuiDivider {...props} />;
+import styles from './Divider.module.scss';
+import { DividerProps } from './Divider.types';
+
+const Divider = ({ className }: DividerProps) => {
+  return <hr className={clsx(styles.divider, className)} />;
 };
 
 export default Divider;
