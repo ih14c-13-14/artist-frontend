@@ -8,6 +8,6 @@ const MenuStory: ComponentMeta<typeof Menubar> = {
 
 export default MenuStory;
 
-export const Bar =  () => {
+export const Bar = () => {
   return <Menubar />;
 };

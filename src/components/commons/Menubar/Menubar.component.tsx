@@ -11,7 +11,6 @@ export const Menubar = ({
   color = 'inherit',
   ...rest
 }: MenubarProps) => {
-
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -30,6 +29,5 @@ export const Menubar = ({
       {isClicked ? <Close /> : <Dehaze />}
       {/* <Typography>メニュー</Typography> */}
     </MuiButton>
-
   );
 };
