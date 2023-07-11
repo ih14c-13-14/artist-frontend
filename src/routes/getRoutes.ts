@@ -39,6 +39,9 @@ export const getRoutes = () => {
     changeEmail: {
       path: '/settings/change-email/',
     },
+    changeEmailSubmitted: {
+      path: '/settings/change-email/submitted/',
+    },
     changePassword: {
       path: '/settings/change-password/',
     },
