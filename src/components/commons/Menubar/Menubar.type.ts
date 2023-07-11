@@ -4,7 +4,6 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 
 export type MenubarProps = MuiButtonProps & {
-  label: string;
   onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
   icon: OverridableComponent<SvgIconTypeMap>;
 };

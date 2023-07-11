@@ -1,7 +1,6 @@
-import CloseIcon from '@mui/icons-material/Close';
-import DehazeIcon from '@mui/icons-material/Dehaze';
+import { Close, Dehaze } from '@mui/icons-material';
 import { default as MuiButton } from '@mui/material/Button';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { MenubarProps } from './Menubar.type';
 
@@ -28,7 +27,7 @@ export const Menubar = ({
       onClick={handleClick}
       {...rest}
     >
-      {isClicked ? <CloseIcon /> : <DehazeIcon />}
+      {isClicked ? <Close /> : <Dehaze />}
     </MuiButton>
   );
 };

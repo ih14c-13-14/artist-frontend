@@ -1,4 +1,4 @@
-import { Close, Dehaze } from '@mui/icons-material';
+import { Dehaze } from '@mui/icons-material';
 
 import { ComponentMeta, StoryFn } from '@/utils/storybook';
 
@@ -17,9 +17,4 @@ const Template: StoryFn<typeof Menubar> = args => {
 export const Bar = Template.bind({});
 Bar.args = {
   icon: Dehaze,
-};
-
-export const Closed = Template.bind({});
-Closed.args = {
-  icon: Close,
 };
