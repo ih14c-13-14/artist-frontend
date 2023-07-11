@@ -1,7 +1,8 @@
 /// <reference types="vitest" />
 
 import react from '@vitejs/plugin-react-swc';
-import { defineConfig, splitVendorChunkPlugin } from 'vite';
+import { visualizer } from 'rollup-plugin-visualizer';
+import { defineConfig } from 'vite';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import svgr from 'vite-plugin-svgr';
 
@@ -9,11 +10,11 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
   plugins: [
     react(),
-    splitVendorChunkPlugin(),
     ViteEjsPlugin({
       // TODO: https://github.com/ih14c-13-14/schema/issues/10
       apiBaseUrl: process.env.API_BASE_URL ?? 'http://127.0.0.1:4010',
     }),
+    visualizer(),
     svgr(),
   ],
   define: {
@@ -36,6 +37,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: ['@google/model-viewer'],
+      output: {
+        manualChunks: {
+          mui: ['@mui/material'],
+          feather: ['react-feather'],
+        },
+      },
     },
   },
   resolve: {
