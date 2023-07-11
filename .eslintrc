@@ -37,18 +37,8 @@
 				"patterns": [
 					{
 						"group": [
-							"./*/**/internal/**/*"
-						],
-						"message": "Do not import internal modules."
-					},
-					{
-						"group": [
-							"@/**/internal/**/*"
-						],
-						"message": "Do not import internal modules."
-					},
-					{
-						"group": [
+							"@/**/internal/**/*",
+							"./*/**/internal/**/*",
 							"../**/internal/**/*"
 						],
 						"message": "Do not import internal modules."
