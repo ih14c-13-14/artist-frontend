@@ -7,12 +7,6 @@ const GoogleMapStory: Meta<typeof GoogleMap> = {
   args: {
     q: '34.659096,165.622182',
   },
-  parameters: {
-    screenshot: {
-      // 安定しないため skip
-      skip: true,
-    },
-  },
 };
 
 export default GoogleMapStory;
