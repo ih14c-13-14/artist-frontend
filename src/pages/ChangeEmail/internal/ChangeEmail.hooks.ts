@@ -3,6 +3,7 @@ import { UseFormGetValues, UseFormHandleSubmit } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import { getRoutes } from '@/routes/getRoutes';
+import { DirectAccessState } from '@/routes/utils/types';
 
 import { ChangeEmailFormType } from './ChangeEmail.types';
 import { useChangeEmailMutation } from './hooks/useChangeEmailMutation';
@@ -24,9 +25,12 @@ export const useChangeEmail = ({
     const { email } = getValues();
     await mutate({ email } as const);
 
-    // TODO: どこに遷移するか考える
-    navigate(routes.mapShow.path);
-  }, [getValues, mutate, navigate, routes.mapShow.path]);
+    navigate(routes.changeEmailSubmitted.path, {
+      state: {
+        isDirectAccess: true,
+      } satisfies DirectAccessState,
+    });
+  }, [getValues, mutate, navigate, routes.changeEmailSubmitted.path]);
 
   return {
     onSubmit: handleSubmit(onSubmit),

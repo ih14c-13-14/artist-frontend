@@ -5,6 +5,7 @@ import { AuthGuard, GuestGuard, useCheckAuthOrGuest } from '@/features/auth';
 import { FallbackDisplay } from '@/features/errorHandling';
 import { ErrorBoundary } from '@/features/errorHandling';
 import { ChangeEmail } from '@/pages/ChangeEmail';
+import { ChangeEmailSubmitted } from '@/pages/ChangeEmailCompleted';
 import { ChangeMisc } from '@/pages/ChangeMisc';
 import { ChangePassword } from '@/pages/ChangePassword';
 import { MapShow } from '@/pages/MapShow';
@@ -45,6 +46,10 @@ function App() {
               <Route
                 path={routes.changePassword.path}
                 element={<ChangePassword />}
+              />
+              <Route
+                path={routes.changeEmailSubmitted.path}
+                element={<ChangeEmailSubmitted />}
               />
               <Route path="/*" element={<FallbackDisplay />} />
             </Route>

@@ -1,3 +1,3 @@
 export type DirectAccessState = {
-  isDirectAccess: boolean;
+  isDirectAccess?: boolean;
 };

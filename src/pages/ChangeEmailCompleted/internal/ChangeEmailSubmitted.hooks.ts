@@ -5,7 +5,7 @@ import { getRoutes } from '@/routes/getRoutes';
 import { DirectAccessState } from '@/routes/utils/types';
 import isNil from '@/utils/isNil';
 
-export const useSignUpCompleted = () => {
+export const useChangeEmailSubmitted = () => {
   const routes = getRoutes();
   const navigate = useNavigate();
   const location = useLocation();
