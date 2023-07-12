@@ -21,19 +21,19 @@ const SignUpConfirm = ({
     >
       <Stack>
         <Stack divider={<Divider />} gap="12px">
-          <div className={styles.exampleContainer}>
+          <div className={styles.signUpItemContainer}>
             <p className={styles.signUpConfirmLabel}>メールアドレス</p>
             <p className={styles.signUpConfirmValue}>{email}</p>
           </div>
-          <div className={styles.exampleContainer}>
+          <div className={styles.signUpItemContainer}>
             <p className={styles.signUpConfirmLabel}>年齢層</p>
             <p className={styles.signUpConfirmValue}>{age_group}</p>
           </div>
-          <div className={styles.exampleContainer}>
+          <div className={styles.signUpItemContainer}>
             <p className={styles.signUpConfirmLabel}>性別</p>
             <p className={styles.signUpConfirmValue}>{gender}</p>
           </div>
-          <div className={styles.exampleContainer}>
+          <div className={styles.signUpItemContainer}>
             <p className={styles.signUpConfirmLabel}>都道府県</p>
             <p className={styles.signUpConfirmValue}>{prefecture}</p>
           </div>
