@@ -10,7 +10,7 @@ import { useSignIn } from './SignIn.hooks';
 import styles from './SignIn.module.scss';
 
 const SignIn = () => {
-  const { formOnSubmitHandler, handlePasswordForget, handleSignUp } =
+  const { formOnSubmitHandler, handlePasswordForget, handleSignUp, register } =
     useSignIn();
 
   return (
@@ -20,13 +20,18 @@ const SignIn = () => {
         <form onSubmit={formOnSubmitHandler} noValidate>
           <Stack gap="24px">
             <InputWrapper label="メールアドレス">
-              <TextInput sx={{ width: '100%' }} />
+              <TextInput {...register('email')} sx={{ width: '100%' }} />
             </InputWrapper>
             <InputWrapper label="パスワード">
-              <TextInput sx={{ width: '100%' }} />
+              <TextInput
+                {...register('password')}
+                type="password"
+                sx={{ width: '100%' }}
+              />
             </InputWrapper>
           </Stack>
           <Spacer size="16px" />
+          {/* TODO: やるか不明、とりあえずおくだけ */}
           <Checkbox choiceLabel="次回から自動ログインにする" />
           <Spacer size="24px" />
           <Button type="submit">ログイン</Button>
