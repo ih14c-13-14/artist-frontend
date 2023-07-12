@@ -2,7 +2,7 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 import { ComponentMeta } from '@/utils/storybook';
 
-import { Footer } from './Footer.component';
+import Footer from './Footer.component';
 
 const FooterStory: ComponentMeta<typeof Footer> = {
   component: Footer,
