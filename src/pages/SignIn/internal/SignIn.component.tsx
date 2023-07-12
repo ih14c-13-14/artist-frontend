@@ -23,10 +23,15 @@ const SignIn = () => {
               <TextInput {...register('email')} sx={{ width: '100%' }} />
             </InputWrapper>
             <InputWrapper label="パスワード">
-              <TextInput {...register('password')} sx={{ width: '100%' }} />
+              <TextInput
+                {...register('password')}
+                type="password"
+                sx={{ width: '100%' }}
+              />
             </InputWrapper>
           </Stack>
           <Spacer size="16px" />
+          {/* TODO: やるか不明、とりあえずおくだけ */}
           <Checkbox choiceLabel="次回から自動ログインにする" />
           <Spacer size="24px" />
           <Button type="submit">ログイン</Button>
