@@ -7,12 +7,19 @@ import { useForm } from '@/hooks/useForm';
 import { getRoutes } from '@/routes/getRoutes';
 import validation, { resolver } from '@/utils/validation/validation';
 
-const validationSchema = validation.object().shape({});
+import { SignInFormType } from './SignIn.types';
+
+const validationSchema = validation.object().shape({
+  email: validation.string().email().required(),
+  password: validation.string().password().required(),
+} satisfies {
+  [key in keyof SignInFormType]: unknown;
+});
 
 export const useSignIn = () => {
   const navigate = useNavigate();
   const routes = getRoutes();
-  const { handleSubmit } = useForm({
+  const { register, getValues, handleSubmit } = useForm<SignInFormType>({
     defaultValues: {},
     resolver: resolver(validationSchema),
   });
@@ -21,12 +28,13 @@ export const useSignIn = () => {
 
   const formOnSubmitHandler = useCallback(async () => {
     try {
-      await signIn({ email: 'hoge', password: 'fuga' });
+      const { email, password } = getValues();
+      await signIn({ email, password });
     } catch (e) {
       throw new LogicException('エラーハンドリングしましょう');
     }
     navigate(routes.mapShow.path);
-  }, [navigate, routes.mapShow.path, signIn]);
+  }, [getValues, navigate, routes.mapShow.path, signIn]);
 
   const handlePasswordForget = useCallback(() => {
     navigate(routes.passwordForget.path);
@@ -40,5 +48,6 @@ export const useSignIn = () => {
     formOnSubmitHandler: handleSubmit(formOnSubmitHandler),
     handlePasswordForget,
     handleSignUp,
+    register,
   } as const;
 };
