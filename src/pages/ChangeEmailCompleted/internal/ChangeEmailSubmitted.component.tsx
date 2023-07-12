@@ -1,4 +1,4 @@
-import { Button } from '@/features/ui/Button';
+import { BackToTopButton } from '@/features/navigate/BackToTopButton';
 import { FormPageSection } from '@/features/ui/FormPageSection';
 import { Stack } from '@/features/ui/Stack';
 
@@ -8,7 +8,7 @@ import styles from './ChangeEmailSubmitted.module.scss';
 const DEV_EMAIL = 'mail@example.com';
 
 const ChangeEmailSubmitted = () => {
-  const { onButtonClick } = useChangeEmailSubmitted();
+  useChangeEmailSubmitted();
 
   return (
     <FormPageSection type="h1" title="メールアドレス変更手続き開始">
@@ -16,7 +16,7 @@ const ChangeEmailSubmitted = () => {
         <p className={styles.description}>
           {`新たに設定されたメールアドレスへ、確認メールを送信しました。届いていない場合は、迷惑メールを確認していただくか、${DEV_EMAIL}からの受信設定を許可にしてください。`}
         </p>
-        <Button onClick={onButtonClick}>トップへ戻る</Button>
+        <BackToTopButton />
       </Stack>
     </FormPageSection>
   );

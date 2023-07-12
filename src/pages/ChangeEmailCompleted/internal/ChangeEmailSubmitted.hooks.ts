@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { getRoutes } from '@/routes/getRoutes';
@@ -18,10 +17,4 @@ export const useChangeEmailSubmitted = () => {
   ) {
     navigate(routes.mapShow.path);
   }
-
-  const onButtonClick = useCallback(() => {
-    navigate(routes.mapShow.path);
-  }, [navigate, routes.mapShow.path]);
-
-  return { onButtonClick };
 };
