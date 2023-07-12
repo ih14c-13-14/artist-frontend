@@ -22,20 +22,20 @@ const SignUpConfirm = ({
       <Stack>
         <Stack divider={<Divider />} gap="12px">
           <div className={styles.exampleContainer}>
-            <p className={styles.signup_confirm__label}>メールアドレス</p>
-            <p className={styles.signup_confirm__value}>{email}</p>
+            <p className={styles.signUpConfirmLabel}>メールアドレス</p>
+            <p className={styles.signUpConfirmValue}>{email}</p>
           </div>
           <div className={styles.exampleContainer}>
-            <p className={styles.signup_confirm__label}>年齢層</p>
-            <p className={styles.signup_confirm__value}>{age_group}</p>
+            <p className={styles.signUpConfirmLabel}>年齢層</p>
+            <p className={styles.signUpConfirmValue}>{age_group}</p>
           </div>
           <div className={styles.exampleContainer}>
-            <p className={styles.signup_confirm__label}>性別</p>
-            <p className={styles.signup_confirm__value}>{gender}</p>
+            <p className={styles.signUpConfirmLabel}>性別</p>
+            <p className={styles.signUpConfirmValue}>{gender}</p>
           </div>
           <div className={styles.exampleContainer}>
-            <p className={styles.signup_confirm__label}>都道府県</p>
-            <p className={styles.signup_confirm__value}>{prefecture}</p>
+            <p className={styles.signUpConfirmLabel}>都道府県</p>
+            <p className={styles.signUpConfirmValue}>{prefecture}</p>
           </div>
         </Stack>
         <Divider />
