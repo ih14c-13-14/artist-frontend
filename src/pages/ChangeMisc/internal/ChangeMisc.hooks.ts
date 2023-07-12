@@ -3,6 +3,7 @@ import { UseFormGetValues } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import { getRoutes } from '@/routes/getRoutes';
+import { DirectAccessState } from '@/routes/utils/types';
 
 import { PAGE_TYPE } from './ChangeMisc.constants';
 import { ChangeMiscFormType } from './ChangeMisc.types';
@@ -30,15 +31,13 @@ export const useChangeMisc = ({
   }, []);
 
   const onSubmit = useCallback(async () => {
-    console.log(getValues());
     mutate.mutate(getValues());
-    // TODO: 完了画面作成時に直す
-    // navigate(routes.mapShow.path, {
-    //   state: {
-    //     isDirectAccess: true,
-    //   } satisfies DirectAccessState,
-    // });
-  }, [getValues, navigate, routes.mapShow.path]);
+    navigate(routes.changeMiscCompleted.path, {
+      state: {
+        isDirectAccess: true,
+      } satisfies DirectAccessState,
+    });
+  }, [getValues, mutate, navigate, routes.changeMiscCompleted.path]);
 
   return {
     pageType,
