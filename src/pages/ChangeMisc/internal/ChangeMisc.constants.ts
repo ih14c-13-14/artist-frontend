@@ -6,9 +6,9 @@ export const PAGE_TYPE = {
 } as const;
 
 export const Fields = {
-  'age-group': 'age-group',
+  age_group: 'age_group',
   gender: 'gender',
-  prefectures: 'prefectures',
+  prefecture: 'prefecture',
 } satisfies {
   [key in keyof ChangeMiscFormType]: key;
 };
