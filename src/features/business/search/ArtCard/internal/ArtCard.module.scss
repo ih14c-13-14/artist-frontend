@@ -1,0 +1,43 @@
+@import '@/_variables';
+
+.cardContainer {
+  white-space: nowrap;
+  min-width: $applicationMinWidth;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.image {
+  border-radius: $borderRadiusNormal;
+  object-fit: cover;
+}
+
+.title {
+  color: $colorBlack;
+  font-size: $fontSizeLarge;
+  font-style: normal;
+  font-weight: $fontWeightBold;
+  line-height: normal;
+}
+
+.artistName {
+  color: $colorBlack;
+  font-size: $fontSizeSmall;
+  font-style: normal;
+  font-weight: $fontWeightNormal;
+  line-height: normal;
+}
+
+.address {
+  color: $colorBlack;
+  font-size: $fontSizeSmall;
+  font-style: normal;
+  font-weight: $fontWeightNormal;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
