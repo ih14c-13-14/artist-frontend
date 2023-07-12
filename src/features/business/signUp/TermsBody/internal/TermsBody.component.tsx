@@ -15,12 +15,12 @@ export const TermsBody = memo(({ setIsTermsScrolled }: TermsBodyProps) => {
 
   return (
     <div className={styles.container}>
-      <p
+      <div
         dangerouslySetInnerHTML={{
           __html: TermsAgreement,
         }}
         className={styles.termsBody}
-      ></p>
+      />
       {/* NOTE: 最下部までスクロールされたか検知するための要素 */}
       <div ref={inViewRef} />
     </div>
