@@ -1,16 +1,24 @@
+export type Path = `/${string}/`;
+
 export const getRoutes = () => {
   return {
-    index: {
-      path: '/',
-    },
     mapShow: {
       path: '/map/show/',
+    },
+    detailFromMap: {
+      path: ({ workId = ':work_id' }) => `/map/${workId}/`,
     },
     search: {
       path: '/search/',
     },
+    detailFromSearch: {
+      path: ({ workId = ':work_id' }) => `/search/${workId}/`,
+    },
     qrRead: {
       path: '/qr/read/',
+    },
+    detailFromQr: {
+      path: ({ workId = ':work_id' }) => `/qr/${workId}/`,
     },
     signIn: {
       path: '/sign-in/',
@@ -48,9 +56,8 @@ export const getRoutes = () => {
     changeMisc: {
       path: '/settings/change-misc/',
     },
-  } as const satisfies {
-    [key: string]: {
-      path: string;
-    };
-  };
+  } as const satisfies Record<
+    string,
+    { path: Path | ((args: Record<string, string>) => Path) }
+  >;
 };
