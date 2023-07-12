@@ -1,23 +1,13 @@
 import { useCallback } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
+import { useInvalidDirectAccess } from '@/features/navigate/hooks/useInvalidDirectAccess';
 import { getRoutes } from '@/routes/getRoutes';
-import { DirectAccessState } from '@/routes/utils/types';
-import isNil from '@/utils/isNil';
 
 export const useSignUpCompleted = () => {
+  useInvalidDirectAccess();
   const routes = getRoutes();
   const navigate = useNavigate();
-  const location = useLocation();
-  const locationState = location.state as DirectAccessState;
-
-  if (
-    isNil(locationState) ||
-    isNil(locationState.isDirectAccess) ||
-    !locationState.isDirectAccess
-  ) {
-    navigate(routes.mapShow.path);
-  }
 
   const onButtonClick = useCallback(() => {
     navigate(routes.mapShow.path);

@@ -1,14 +1,14 @@
 import { BackToTopButton } from '@/features/navigate/BackToTopButton';
+import { useInvalidDirectAccess } from '@/features/navigate/hooks/useInvalidDirectAccess';
 import { FormPageSection } from '@/features/ui/FormPageSection';
 import { Stack } from '@/features/ui/Stack';
 
-import { useChangeEmailSubmitted } from './ChangeEmailSubmitted.hooks';
 import styles from './ChangeEmailSubmitted.module.scss';
 
 const DEV_EMAIL = 'mail@example.com';
 
 const ChangeEmailSubmitted = () => {
-  useChangeEmailSubmitted();
+  useInvalidDirectAccess();
 
   return (
     <FormPageSection type="h1" title="メールアドレス変更手続き開始">
