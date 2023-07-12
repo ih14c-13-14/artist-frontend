@@ -1,7 +1,6 @@
 @import '@/_variables';
 
 .cardContainer {
-  // 全体で横幅が足りなくなった場合には...にする
   white-space: nowrap;
   min-width: $applicationMinWidth;
   height: 100%;
