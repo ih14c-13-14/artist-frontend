@@ -5,14 +5,9 @@ export type ChangeMiscFormType = NonNullable<
 >['content']['application/json'];
 
 export type ChangeMiscFormChoices = Omit<
-  NonNullable<
-    paths['/api/v1/users/others-change-page/choices']['get']
-  >['responses']['200']['content']['application/json'],
+  paths['/api/v1/users/others-change-page/choices']['get']['responses']['200']['content']['application/json'],
   'currentValues'
 >;
 
-export type UserCurrentSettings = NonNullable<
-  NonNullable<
-    paths['/api/v1/users/others-change-page/choices']['get']
-  >['responses']['200']['content']['application/json']['currentValues']
->;
+export type UserCurrentSettings =
+  paths['/api/v1/users/others-change-page/choices']['get']['responses']['200']['content']['application/json']['currentValues'];
