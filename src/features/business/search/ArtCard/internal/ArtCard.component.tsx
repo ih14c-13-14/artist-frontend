@@ -6,7 +6,8 @@ import { Stack } from '@/features/ui/Stack';
 import styles from './ArtCard.module.scss';
 import { ArtCard } from './ArtCard.types';
 
-const ArtCard = ({ artSummary }: ArtCard) => {
+// TODO: onClick考える
+const ArtCard = ({ artSummary, onClick: _onClick }: ArtCard) => {
   return (
     <div className={styles.cardContainer}>
       <Stack gap="16px" direction="row">
