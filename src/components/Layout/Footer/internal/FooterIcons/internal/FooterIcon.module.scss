@@ -1,0 +1,16 @@
+.selected {
+  color: $colorRed;
+}
+
+.buttonContainer {
+  cursor: pointer;
+  width: 100%;
+  user-select: none;
+}
+
+.label {
+  color: $colorBlack;
+  font-size: $fontSizeXSmall;
+  font-weight: $fontWeightNormal;
+  line-height: normal;
+}
