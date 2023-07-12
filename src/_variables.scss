@@ -26,6 +26,8 @@ $borderNormal: 2px solid;
 $borderThick: 3px solid;
 
 // Border Radius
+$borderRadiusSmall: 4px;
+$borderRadiusNormal: 8px;
 
 // zIndex
 $zIndexBackOfDefault: -1;
@@ -38,3 +40,6 @@ $zIndexSnackbar: 500;
 
 // Margin
 $mainContentsMarginTop: 24px;
+
+// Width
+$applicationMinWidth: 360px;
