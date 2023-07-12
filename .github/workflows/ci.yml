@@ -53,6 +53,8 @@ jobs:
         run: yarn install --immutable
       - name: fmt
         run: yarn fmt
+      - name: stylelint
+        run: yarn stylelint
       - name: lint
         run: yarn lint
 
