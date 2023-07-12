@@ -6,6 +6,7 @@ import { Stack } from '@/features/ui/Stack';
 import { H1_DESCRIPTION_TOP } from './SignUpConfirm.constants';
 import styles from './SignUpConfirm.module.scss';
 import { SignUpConfirmProps } from './SignUpConfirm.types';
+import { Spacer } from '@/features/ui/Spacer';
 
 const SignUpConfirm = ({
   onBackToInput,
@@ -22,20 +23,28 @@ const SignUpConfirm = ({
       <Stack>
         <Stack divider={<Divider />} gap="12px">
           <div className={styles.signUpItemContainer}>
+            <Spacer size="12px" />
             <p className={styles.signUpConfirmLabel}>メールアドレス</p>
-            <p className={styles.signUpConfirmValue}>{email}</p>
+            <Spacer size="8px" />
+            <p>{email}</p>
           </div>
           <div className={styles.signUpItemContainer}>
+            <Spacer size="12px" />
             <p className={styles.signUpConfirmLabel}>年齢層</p>
-            <p className={styles.signUpConfirmValue}>{age_group}</p>
+            <Spacer size="8px" />
+            <p>{age_group}</p>
           </div>
           <div className={styles.signUpItemContainer}>
+            <Spacer size="12px" />
             <p className={styles.signUpConfirmLabel}>性別</p>
-            <p className={styles.signUpConfirmValue}>{gender}</p>
+            <Spacer size="8px" />
+            <p>{gender}</p>
           </div>
           <div className={styles.signUpItemContainer}>
+            <Spacer size="12px" />
             <p className={styles.signUpConfirmLabel}>都道府県</p>
-            <p className={styles.signUpConfirmValue}>{prefecture}</p>
+            <Spacer size="8px" />
+            <p>{prefecture}</p>
           </div>
         </Stack>
         <Divider />
