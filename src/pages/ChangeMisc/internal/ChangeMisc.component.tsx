@@ -1,7 +1,6 @@
 import { memo } from 'react';
 
 import { NoFetchedDataException } from '@/error';
-import RecursiveNonNullable from '@/types/RecursiveNonNullable';
 import assertNever from '@/utils/assertNever';
 import { useAppSWR } from '@/utils/axios';
 import isNil from '@/utils/isNil';
@@ -70,9 +69,7 @@ const ChangeMisc = () => {
 
   if (isNil(data)) throw new NoFetchedDataException();
 
-  const { currentValues, ...formChoices } = data as RecursiveNonNullable<
-    typeof data
-  >;
+  const { currentValues, ...formChoices } = data;
 
   return (
     <InternalChangeMisc
