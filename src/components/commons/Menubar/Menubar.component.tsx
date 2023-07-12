@@ -28,6 +28,8 @@ export const Menubar = ({
       {...rest}
     >
       {isClicked ? <Close /> : <Dehaze />}
+      {/* <Typography>メニュー</Typography> */}
     </MuiButton>
+
   );
 };
