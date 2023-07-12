@@ -1,7 +1,8 @@
 {
-  "recommendations": [
-    "zixuanchen.vitest-explorer",
-    "eamodio.gitlens",
-    "editorconfig.editorconfig"
-  ]
+	"recommendations": [
+		"zixuanchen.vitest-explorer",
+		"eamodio.gitlens",
+		"editorconfig.editorconfig",
+		"stylelint.vscode-stylelint"
+	]
 }
