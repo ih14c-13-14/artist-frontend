@@ -1,12 +1,12 @@
 import { Button } from '@/features/ui/Button';
 import { Divider } from '@/features/ui/Divider';
 import { FormPageSection } from '@/features/ui/FormPageSection';
+import { Spacer } from '@/features/ui/Spacer';
 import { Stack } from '@/features/ui/Stack';
 
 import { H1_DESCRIPTION_TOP } from './SignUpConfirm.constants';
 import styles from './SignUpConfirm.module.scss';
 import { SignUpConfirmProps } from './SignUpConfirm.types';
-import { Spacer } from '@/features/ui/Spacer';
 
 const SignUpConfirm = ({
   onBackToInput,
