@@ -16,7 +16,6 @@ const ChangeEmail = () => {
     getValues,
   });
 
-  console.log(isValid);
   return (
     <FormPageSection
       type="h1"

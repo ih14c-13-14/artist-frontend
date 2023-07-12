@@ -11,14 +11,11 @@ export const useSignUpCompleted = () => {
   const location = useLocation();
   const locationState = location.state as DirectAccessState;
 
-  console.log(locationState);
-
   if (
     isNil(locationState) ||
     isNil(locationState.isDirectAccess) ||
     !locationState.isDirectAccess
   ) {
-    console.log('navigate');
     navigate(routes.mapShow.path);
   }
 
