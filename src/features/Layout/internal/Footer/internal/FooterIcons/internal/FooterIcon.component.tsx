@@ -4,8 +4,8 @@ import { useMemo } from 'react';
 import { Icon } from '@/features/ui/Icon';
 import { Stack } from '@/features/ui/Stack';
 
+import styles from './FooterIcon.module.scss';
 import { FooterIconsProps } from './FooterIcon.types';
-import styles from './FooterIcons.module.scss';
 
 const FooterIcon = ({ type, isSelected, onClick }: FooterIconsProps) => {
   const title = useMemo(() => {
