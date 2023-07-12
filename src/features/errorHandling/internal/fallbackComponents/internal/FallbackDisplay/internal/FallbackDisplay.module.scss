@@ -6,19 +6,19 @@
 }
 
 .title {
-  font-size: 32px;
+  font-size: $fontSizeXXLarge;
   color: $colorRed;
 }
 
 .subTitle {
-  font-size: 24px;
+  font-size: $fontSizeXLarge;
   color: $colorBlack;
-  font-weight: 700;
+  font-weight: $fontWeightBold;
   line-height: 21px;
 }
 
 .contentRows {
   color: $colorBlack;
-  font-weight: 400;
+  font-weight: $fontWeightNormal;
   line-height: 21px;
 }

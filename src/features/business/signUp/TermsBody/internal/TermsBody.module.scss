@@ -4,7 +4,8 @@
   padding: 12px;
   height: 192px;
   border: 1px solid $colorBlack;
-  background-color: #f4f6f8;
+  background-color: #f4f6f8; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
+
   // 高さはみ出したらスクロール
   overflow-y: scroll;
 }

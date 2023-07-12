@@ -13,12 +13,14 @@
 
 .containedButton {
   @include button;
+
   color: $colorWhite;
   background-color: $colorRed;
 }
 
 .outlinedButton {
   @include button;
+
   color: $colorRed;
   background-color: $colorWhite;
   border: 1px solid $colorRed;
@@ -26,6 +28,7 @@
 
 .plainButton {
   @include button;
+
   color: $colorRed;
   background-color: $colorWhite;
   border: none;
