@@ -1,6 +1,6 @@
 import { Control, UseFormRegister } from 'react-hook-form';
 
-import { Choices } from '@/features/form/inputs/commons/types';
+import { paths } from '@/generated/schema';
 
 import { SignUpFormType } from '../../SignUp.types';
 
@@ -12,11 +12,5 @@ export type SignUpFormProps = {
   isValid: boolean;
   isTermsAgreed: boolean;
   onTermsCheckboxChange: () => void;
-  formChoices: {
-    [key in keyof SignUpFormType]?: Choices<number>;
-  } & {
-    age_group: Choices<number>;
-    gender: Choices<number>;
-    prefecture: Choices<number>;
-  };
+  formChoices: paths['/api/v1/users/signup-page/choices']['get']['responses']['200']['content']['application/json'];
 };

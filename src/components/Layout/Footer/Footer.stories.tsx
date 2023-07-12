@@ -10,7 +10,6 @@ const FooterStory: ComponentMeta<typeof Footer> = {
 
 export default FooterStory;
 
-// NOTE: reserveとcancelのモック用のパス
 const dummyPath = {
   map: {
     path: '/map/show/',

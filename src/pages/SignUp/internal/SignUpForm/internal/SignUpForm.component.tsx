@@ -50,7 +50,7 @@ const SignUpForm = ({
             name={Fields.age_group}
             control={control}
             render={({ field }) => (
-              <SelectInput {...field} choices={formChoices.age_group} />
+              <SelectInput {...field} choices={formChoices.age_groupChoices} />
             )}
           />
         </InputWrapper>
@@ -59,7 +59,7 @@ const SignUpForm = ({
             name={Fields.gender}
             control={control}
             render={({ field }) => (
-              <RadioGroup {...field} choices={formChoices.gender} />
+              <RadioGroup {...field} choices={formChoices.genderChoices} />
             )}
           />
         </InputWrapper>
@@ -68,7 +68,7 @@ const SignUpForm = ({
             name={Fields.prefecture}
             control={control}
             render={({ field }) => (
-              <SelectInput {...field} choices={formChoices.prefecture} />
+              <SelectInput {...field} choices={formChoices.prefectureChoices} />
             )}
           />
         </InputWrapper>
