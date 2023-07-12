@@ -16,7 +16,7 @@ const FallbackDisplay = (props?: FallbackDisplayProps) => {
   const navigate = useNavigate();
   const handleClickReturnToTop = useCallback(() => {
     const routes = getRoutes();
-    navigate(routes.index.path);
+    navigate(routes.mapShow.path);
   }, [navigate]);
 
   return (
