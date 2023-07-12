@@ -1,6 +1,7 @@
 import { Button } from '@/features/ui/Button';
 import { Divider } from '@/features/ui/Divider';
 import { FormPageSection } from '@/features/ui/FormPageSection';
+import { Spacer } from '@/features/ui/Spacer';
 import { Stack } from '@/features/ui/Stack';
 
 import { H1_DESCRIPTION_TOP } from './SignUpConfirm.constants';
@@ -20,22 +21,25 @@ const SignUpConfirm = ({
       descriptionTop={H1_DESCRIPTION_TOP}
     >
       <Stack>
-        <Divider />
         <Stack divider={<Divider />} gap="12px">
-          <div className={styles.exampleContainer}>
-            <p>メールアドレス</p>
+          <div className={styles.signUpItemContainer}>
+            <p className={styles.signUpConfirmLabel}>メールアドレス</p>
+            <Spacer size="8px" />
             <p>{email}</p>
           </div>
-          <div className={styles.exampleContainer}>
-            <p>年齢層</p>
+          <div className={styles.signUpItemContainer}>
+            <p className={styles.signUpConfirmLabel}>年齢層</p>
+            <Spacer size="8px" />
             <p>{age_group}</p>
           </div>
-          <div className={styles.exampleContainer}>
-            <p>性別</p>
+          <div className={styles.signUpItemContainer}>
+            <p className={styles.signUpConfirmLabel}>性別</p>
+            <Spacer size="8px" />
             <p>{gender}</p>
           </div>
-          <div className={styles.exampleContainer}>
-            <p>都道府県</p>
+          <div className={styles.signUpItemContainer}>
+            <p className={styles.signUpConfirmLabel}>都道府県</p>
+            <Spacer size="8px" />
             <p>{prefecture}</p>
           </div>
         </Stack>

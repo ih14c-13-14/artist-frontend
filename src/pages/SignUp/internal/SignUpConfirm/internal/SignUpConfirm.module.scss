@@ -1,5 +1,9 @@
 @import '@/_variables';
 
-.exampleContainer {
+.signUpItemContainer {
   width: 100%;
+}
+
+.signUpConfirmLabel {
+  font-weight: $fontWeightBold;
 }
