@@ -1,17 +1,25 @@
+import { NoFetchedDataException } from '@/error';
 import { InputWrapper } from '@/features/form/inputs/commons/InputWrapper';
 import { Divider } from '@/features/ui/Divider';
 import { FormPageSection } from '@/features/ui/FormPageSection';
 import { Stack } from '@/features/ui/Stack';
+import isNil from '@/utils/isNil';
 
 import { useSettings } from './Settings.hooks';
 import styles from './Settings.module.scss';
 
-/**
- * TODO: APIスキーマ策定後データフェッチ作る
- */
 const Settings = () => {
-  const { onMiscChangeClicked, onEmailChangeClicked, onPasswordChangeClicked } =
-    useSettings();
+  const {
+    onMiscChangeClicked,
+    onEmailChangeClicked,
+    onPasswordChangeClicked,
+    data,
+    isLoading,
+  } = useSettings();
+
+  // TODO: ローディング中のフォールバックUIを考えておく
+  if (isLoading) return <div>loading...</div>;
+  if (isNil(data)) throw new NoFetchedDataException();
 
   return (
     <FormPageSection
@@ -26,9 +34,9 @@ const Settings = () => {
             <Divider />
             <Stack direction="row" px="12px" alignItems="center">
               <div className={styles.dataContainer}>
-                <div className={styles.data}>10代</div>
-                <div className={styles.data}>男性</div>
-                <div className={styles.data}>神奈川県</div>
+                <div className={styles.data}>{data.age_group}</div>
+                <div className={styles.data}>{data.gender}</div>
+                <div className={styles.data}>{data.prefecture}</div>
               </div>
               <a className={styles.anchor} onClick={onMiscChangeClicked}>
                 変更する
@@ -41,7 +49,7 @@ const Settings = () => {
           <Divider />
           <Stack direction="row" px="12px" alignItems="center">
             <div className={styles.dataContainer}>
-              <div className={styles.data}>mail@example.com</div>
+              <div className={styles.data}>{data.email}</div>
             </div>
             <a className={styles.anchor} onClick={onEmailChangeClicked}>
               変更する
