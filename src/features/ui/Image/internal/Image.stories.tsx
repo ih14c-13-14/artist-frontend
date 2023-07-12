@@ -8,8 +8,6 @@ const ImageStory: Meta<typeof Image> = {
   args: {
     src: imageFile,
     width: 200,
-    height: 300,
-    fit: undefined,
   },
 };
 

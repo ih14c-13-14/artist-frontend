@@ -1,17 +1,7 @@
-import { MUIImage } from '@/features/ui/library';
+type Props = JSX.IntrinsicElements['img'];
 
-import type { ImageProps } from './Image.types';
-
-const Image = ({ src, alt, fit = 'cover', width, height }: ImageProps) => {
-  return (
-    <MUIImage
-      src={src}
-      width={width}
-      height={height}
-      fit={fit}
-      duration={0}
-      alt={alt}
-    />
-  );
+const Image = ({ src, alt, ...props }: Props) => {
+  return <img src={src} alt={alt} {...props} />;
 };
+
 export default Image;
