@@ -56,6 +56,9 @@ export const getRoutes = () => {
     changeMisc: {
       path: '/settings/change-misc/',
     },
+    changeMiscCompleted: {
+      path: '/settings/change-misc/completed/',
+    },
   } as const satisfies Record<
     string,
     { path: Path | ((args: Record<string, string>) => Path) }

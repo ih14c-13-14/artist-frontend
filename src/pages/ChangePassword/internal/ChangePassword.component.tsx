@@ -17,7 +17,6 @@ const ChangePassword = () => {
     getValues,
   });
 
-  console.log(isValid);
   return (
     <FormPageSection type="h1" title="パスワードの変更">
       <form onSubmit={onSubmit} noValidate>

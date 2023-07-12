@@ -12,7 +12,6 @@ export type EmailChangeArgs = NonNullable<
 
 export const useChangeEmailMutation = () => {
   const { userId } = useWhoAmI();
-  console.log(userId);
   const mutate = useCallback(
     async (args: EmailChangeArgs) => {
       try {

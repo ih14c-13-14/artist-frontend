@@ -12,7 +12,6 @@ export type PasswordChangeArgs = NonNullable<
 
 export const usePasswordChangeMutation = () => {
   const { userId } = useWhoAmI();
-  console.log(userId);
   const mutate = useCallback(
     async (args: PasswordChangeArgs) => {
       try {

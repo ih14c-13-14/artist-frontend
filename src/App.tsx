@@ -7,6 +7,7 @@ import { ErrorBoundary } from '@/features/errorHandling';
 import { ChangeEmail } from '@/pages/ChangeEmail';
 import { ChangeEmailSubmitted } from '@/pages/ChangeEmailCompleted';
 import { ChangeMisc } from '@/pages/ChangeMisc';
+import { ChangeMiscCompleted } from '@/pages/ChangeMiscCompleted';
 import { ChangePassword } from '@/pages/ChangePassword';
 import { MapShow } from '@/pages/MapShow';
 import { PasswordForget } from '@/pages/PasswordForget';
@@ -39,6 +40,10 @@ function App() {
               <Route
                 path={routes.signUpCompleted.path}
                 element={<SignUpCompleted />}
+              />
+              <Route
+                path={routes.changeMiscCompleted.path}
+                element={<ChangeMiscCompleted />}
               />
               <Route path={routes.settings.path} element={<Settings />} />
               <Route path={routes.changeEmail.path} element={<ChangeEmail />} />

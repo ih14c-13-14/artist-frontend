@@ -1,17 +1,16 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useInvalidDirectAccess } from '@/features/navigate/hooks/useInvalidDirectAccess';
+import { Button } from '@/features/ui/Button';
 import { getRoutes } from '@/routes/getRoutes';
 
-export const useSignUpCompleted = () => {
-  useInvalidDirectAccess();
+const BackToTopButton = () => {
   const routes = getRoutes();
   const navigate = useNavigate();
-
   const onButtonClick = useCallback(() => {
     navigate(routes.mapShow.path);
   }, [navigate, routes.mapShow.path]);
-
-  return { onButtonClick };
+  return <Button onClick={onButtonClick}>トップへ戻る</Button>;
 };
+
+export default BackToTopButton;
