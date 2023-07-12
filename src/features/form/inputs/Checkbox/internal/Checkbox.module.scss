@@ -51,8 +51,8 @@
 
 .container input[type='checkbox']:checked + span::after {
   position: absolute;
-  top: 3px;
-  left: -22px;
+  top: 4px;
+  left: -21px;
   content: '';
   width: 10px;
   height: 6px;
