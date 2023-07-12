@@ -43,6 +43,7 @@ const InternalChangeMisc = ({
             onBackToInput={onBackToInput}
             onSubmit={onSubmit}
             getValues={getValues}
+            formChoices={formChoices}
           />
         );
       default:
