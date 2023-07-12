@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { getRoutes } from '@/routes/getRoutes';
 import { DirectAccessState } from '@/routes/utils/types';
+import { useAppSWR } from '@/utils/axios';
 
 import { PAGE_TYPE } from './SignUp.constants';
 import { SignUpFormType } from './SignUp.types';
@@ -56,6 +57,11 @@ export const useSignUp = ({
     });
   }, [getValues, navigate, routes.signUpCompleted.path, signUp]);
 
+  const { data: formChoices, isLoading } = useAppSWR({
+    url: '/api/v1/users/signup-page/choices',
+    method: 'get',
+  });
+
   return {
     pageType,
     onBackToSignIn,
@@ -64,5 +70,7 @@ export const useSignUp = ({
     isTermsAgreed,
     onTermsCheckboxChange,
     onSubmit,
+    isLoading,
+    formChoices,
   };
 };

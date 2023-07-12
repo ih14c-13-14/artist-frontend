@@ -1,4 +1,3 @@
-import { Choices } from '@/features/form/inputs/commons/types';
 import { useForm } from '@/hooks/useForm';
 import validation, { resolver } from '@/utils/validation/validation';
 
@@ -31,52 +30,11 @@ export const useSignUpForm = () => {
     resolver: resolver(schema),
   });
 
-  const devFormChoices = {
-    age_group: [
-      {
-        id: 10,
-        name: '10代',
-      },
-      {
-        id: 20,
-        name: '20代',
-      },
-    ],
-    gender: [
-      {
-        id: 1,
-        name: '男性',
-      },
-      {
-        id: 2,
-        name: '女性',
-      },
-      {
-        id: 3,
-        name: 'その他',
-      },
-    ],
-    prefecture: [
-      {
-        id: 10,
-        name: '群馬県',
-      },
-      {
-        id: 20,
-        name: '長野県',
-      },
-    ],
-  } as const satisfies {
-    [key in keyof SignUpFormType]?: Choices<number>;
-  };
-  const formChoices = devFormChoices;
-
   return {
     register,
     control,
     isValid,
     getValues,
-    formChoices,
     handleSubmit: handleSubmit(() => {}),
   };
 };
