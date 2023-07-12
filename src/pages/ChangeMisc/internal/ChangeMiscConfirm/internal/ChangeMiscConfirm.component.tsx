@@ -12,6 +12,7 @@ const ChangeMiscConfirm = ({
   getValues,
   formChoices,
   onBackToInput,
+  onSubmit,
 }: ChangeMiscConfirmProps) => {
   const values = getValues();
   const ageGroupChoices = mapIdAndName(formChoices.age_groupChoices);
@@ -42,7 +43,7 @@ const ChangeMiscConfirm = ({
         <Button variant="OUTLINED" onClick={onBackToInput}>
           訂正する
         </Button>
-        <Button>登録する</Button>
+        <Button onClick={onSubmit}>登録する</Button>
       </Stack>
     </FormPageSection>
   );
