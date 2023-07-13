@@ -28,7 +28,7 @@ function App() {
     <BrowserRouter>
       <ErrorBoundary>
         <Routes>
-          <Route path="/" element={<AuthGuard />}>
+          <Route element={<AuthGuard />}>
             <Route element={<MapLayout />}>
               <Route path={routes.mapShow.path} element={<MapShow />} />
             </Route>
@@ -59,7 +59,7 @@ function App() {
               <Route path="/*" element={<FallbackDisplay />} />
             </Route>
           </Route>
-          <Route path="/" element={<GuestGuard />}>
+          <Route element={<GuestGuard />}>
             <Route element={<Layout />}>
               <Route path={routes.signIn.path} element={<SignIn />} />
               <Route path={routes.signUp.path} element={<SignUp />} />
