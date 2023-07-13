@@ -4,11 +4,11 @@ import { useTabs } from './Tabs.hooks';
 import type { TabsProps } from './Tabs.types';
 
 const Tabs = ({ sx, ...rest }: TabsProps) => {
-  const { tabIndicatorSx } = useTabs();
+  const { tabsSx, tabIndicatorSx } = useTabs({ sx });
 
   return (
     <MuiTabs
-      sx={sx}
+      sx={tabsSx}
       TabIndicatorProps={{
         sx: tabIndicatorSx,
       }}

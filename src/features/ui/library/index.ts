@@ -32,6 +32,8 @@ export {
   Tabs as MuiTabs,
   Toolbar as MuiToolbar,
   Typography as MuiTypography,
+  tabClasses as muiTabClasses,
+  tabsClasses as muiTabsClasses,
 } from '@mui/material';
 export type {
   BoxProps as MuiBoxProps,
