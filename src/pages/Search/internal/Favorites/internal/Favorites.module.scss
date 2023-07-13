@@ -1,0 +1,19 @@
+@import '@/_variables';
+
+.title {
+  color: $colorBlack;
+  text-align: center;
+  font-size: $fontSizeXLarge;
+  font-style: normal;
+  font-weight: $fontWeightBold;
+  line-height: normal;
+}
+
+.description {
+  color: $colorBlack;
+  text-align: center;
+  font-size: $fontSizeNormal;
+  font-style: normal;
+  font-weight: $fontWeightNormal;
+  line-height: 21px; /* 150% */
+}
