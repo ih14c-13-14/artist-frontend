@@ -2,6 +2,9 @@ import { CSSProperties, PropsWithChildren } from 'react';
 
 type StackChildrenProps = Pick<CSSProperties, 'flexDirection' | 'gap'>;
 
+/**
+ * @deprecated Use '@/features/ui/Stack' instead.
+ */
 export const StackChildren = ({
   children,
   flexDirection = 'column',
