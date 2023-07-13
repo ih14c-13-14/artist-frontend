@@ -38,7 +38,7 @@ const TabContainer = <T extends BaseTabs>(props: TabContainerProps<T>) => {
                 {...a11yProps(prefix, `${tab.value}`)}
                 sx={{
                   '&.MuiButtonBase-root:hover': {
-                    color: '#0F89E3',
+                    color: '#E60010',
                     backgroundColor: '#FAFBFC',
                   },
                 }}
