@@ -1,1 +1,1 @@
-export { default as ArdCard } from './internal/ArtCard.component';
+export { default as ArtCard } from './internal/ArtCard.component';
