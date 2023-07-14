@@ -1,7 +1,12 @@
 const getConfig = () => ({
   api: {
     url: (defaultUrl: string): string => {
-      return document.querySelector('#api-base-url')?.textContent ?? defaultUrl;
+      // 改行やスペースを取り除く
+      return (
+        document
+          .querySelector('#api-base-url')
+          ?.textContent?.replace(/\s+/g, '') ?? defaultUrl
+      );
     },
   },
 });
