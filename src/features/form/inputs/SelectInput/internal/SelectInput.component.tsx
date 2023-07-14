@@ -37,12 +37,17 @@ const SelectInput = <TValue extends unknown = string>(
     disabled,
     label = SELECT_INPUT_DEFAULT_DISPLAY_LABELS.EMPTY,
     dataTestid,
+    choices = [],
     ...rest
   }: SelectInputProps<TValue>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ref?: Ref<any>
 ) => {
-  const { options, currentOption, handleSelect } = useHooks({ width, ...rest });
+  const { options, currentOption, handleSelect } = useHooks({
+    width,
+    choices,
+    ...rest,
+  });
 
   const {
     container: selectContainerStyle,
