@@ -1,0 +1,10 @@
+@import '@/_variables';
+
+.label {
+  color: $colorRed;
+  font-size: $fontSizeXSmall;
+  font-style: normal;
+  font-weight: $fontWeightNormal;
+  line-height: normal;
+  user-select: none;
+}
