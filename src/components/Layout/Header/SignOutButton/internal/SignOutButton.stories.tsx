@@ -4,9 +4,13 @@ import SignOutButton from './SignOutButton.component';
 
 const SignOutButtonStory: Meta<typeof SignOutButton> = {
   component: SignOutButton,
-  args: {
-    type: 'Activity',
-  },
+  decorators: [
+    Story => (
+      <div style={{ width: '70px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default SignOutButtonStory;
