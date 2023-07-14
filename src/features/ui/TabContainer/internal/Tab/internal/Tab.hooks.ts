@@ -1,3 +1,4 @@
+import { COLOR } from '@/constants/COLOR';
 import { muiTabClasses, type SxProps, type Theme } from '@/features/ui/library';
 import mergeSx from '@/utils/mergeSx';
 
@@ -11,7 +12,7 @@ export const useTab = ({ sx }: UseTabProps) => {
       color: '#D9D9D9',
     },
     [`&.${muiTabClasses.selected}`]: {
-      color: '#E60010',
+      color: COLOR.PRIMARY,
       fontSize: '14px',
       fontStyle: 'normal',
       fontWeight: 700,

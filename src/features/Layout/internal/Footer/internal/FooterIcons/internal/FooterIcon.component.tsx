@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useMemo } from 'react';
 
+import { COLOR } from '@/constants/COLOR';
 import { Icon } from '@/features/ui/Icon';
 import { Stack } from '@/features/ui/Stack';
 
@@ -22,7 +23,7 @@ const FooterIcon = ({ type, isSelected, onClick }: FooterIconsProps) => {
   return (
     <div className={styles.buttonContainer} onClick={onClick}>
       <Stack width="100%" alignItems="center" gap="0">
-        <Icon type={type} fill={isSelected ? '#e60010' : '#333'} />
+        <Icon type={type} fill={isSelected ? COLOR.PRIMARY : '#333'} />
         <p
           className={clsx(
             styles.label,

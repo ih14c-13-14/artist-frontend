@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 
+import { COLOR } from '@/constants/COLOR';
 import { Icon } from '@/features/ui/Icon';
 import { Image } from '@/features/ui/Image';
 import { Spacer } from '@/features/ui/Spacer';
@@ -24,7 +25,7 @@ const ArtCard = ({
   );
 
   const favoriteIconColor = useMemo(() => {
-    return artSummary.is_favorited ? '#e60010' : '#9D9D9D';
+    return artSummary.is_favorited ? COLOR.PRIMARY : '#9D9D9D';
   }, [artSummary.is_favorited]);
 
   return (

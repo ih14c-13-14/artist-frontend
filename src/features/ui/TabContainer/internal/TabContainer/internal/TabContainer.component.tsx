@@ -1,3 +1,4 @@
+import { COLOR } from '@/constants/COLOR';
 import { Stack } from '@/features/ui/Stack';
 
 import { useTabContainerHooks } from './TabContainer.hooks';
@@ -38,7 +39,7 @@ const TabContainer = <T extends BaseTabs>(props: TabContainerProps<T>) => {
                 {...a11yProps(prefix, `${tab.value}`)}
                 sx={{
                   '&.MuiButtonBase-root:hover': {
-                    color: '#E60010',
+                    color: COLOR.PRIMARY,
                     backgroundColor: '#FAFBFC',
                   },
                 }}

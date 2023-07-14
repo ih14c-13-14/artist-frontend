@@ -1,3 +1,4 @@
+import { COLOR } from '@/constants/COLOR';
 import {
   muiTabsClasses,
   type SxProps,
@@ -9,7 +10,7 @@ export const useTabs = ({ sx }: { sx?: SxProps<Theme> }) => {
   const tabIndicatorSx = {
     [`&.${muiTabsClasses.indicator}`]: {
       height: 3,
-      backgroundColor: '#E60010',
+      backgroundColor: COLOR.PRIMARY,
     },
   } as const satisfies SxProps<Theme>;
 
